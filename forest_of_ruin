@@ -1,1 +1,53 @@
-hfgwk,idkhnawbkszdcbaslzie,kc
+You awaken in a forest,
+
+ * Look around
+ ->look_around
+ * Close your eyes
+ ->close_eyes
+ 
+ ==look_around
+ You are standing in a clearing. The light is filtering through the trees, the sun fighting through to hit your face. 
+ Two paths lead off from the clearing. 
+ +Take the path to the right
+ ->right
+ +Take the path to the left 
+ ->left
+ ==close_eyes
+ You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin.Though you hear sounds of people, you cannot be certain that you are not being watched.
+*Follow your ears
+->right
+*Follow your intuition
+->left
+
+
+==right
+//route to donkey
+You walk deeper into the woods.The ground is cool underfoot, the air has a chill here. You think of soft carpet and wood floors and wish you were home. You hear water ahead of you.
+
++Continue on
+->stream
+
+==stream
+You reach a stream, on the other side you see the forest thinning, and can make out the faint shape of a building through the trees.
++Wade through the water
+->wade
++Jump across
+->monastery
+
+==wade
+Your clothes feel heavy in the frigid water, the current tugs at you aggressively.
+Out of the corner of your eye, you see something glinting at the bottom of the stream. 
+You hear a sound in the woods behind you, almost like an intake of breath.
+*Cross the stream quickly
+->monastery
+*Investigate the glinting
+->shell
+
+==shell
+->END
+
+
+==monastery
+->END
+==left
+//route to statonmaster
