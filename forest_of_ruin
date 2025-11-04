@@ -4,7 +4,7 @@ You awaken in a forest,
  ->look_around
  * Close your eyes
  ->close_eyes
- 
+
  ==look_around
  You are standing in a clearing. The light is filtering through the trees, the sun fighting through to hit your face. 
  Two paths lead off from the clearing. 
@@ -28,13 +28,16 @@ You walk deeper into the woods.The ground is cool underfoot, the air has a chill
 ->stream
 
 ==stream
+
+
 You reach a stream, on the other side you see the forest thinning, and can make out the faint shape of a building through the trees.
-+Wade through the water
+*{not monastery} [Wade through the water]
 ->wade
 +Jump across
 ->monastery
 
 ==wade
+//
 Your clothes feel heavy in the frigid water, the current tugs at you aggressively.
 Out of the corner of your eye, you see something glinting at the bottom of the stream. 
 You hear a sound in the woods behind you, almost like an intake of breath.
@@ -44,10 +47,20 @@ You hear a sound in the woods behind you, almost like an intake of breath.
 ->shell
 
 ==shell
+Plunging your hand into the cold water, you fumble around until the icy water becomes too much to bear. You open your palm 
 ->END
 
 
 ==monastery
-->END
+On the otherside of the stream,
+->grove
+
 ==left
-//route to statonmaster
+//route to stationmaster
+
+==grove
+You are back in the grove
+*Take the path to the right
+->right
+*Take the path to the left
+->left
