@@ -1,46 +1,54 @@
 You awaken in a forest,
 
- * Look around
+ * [Look around]
  ->look_around
- * Close your eyes
+ * [Close your eyes]
  ->close_eyes
+ ==grove
+ The same two paths lead off from the clearing
+ 
+ +[Take the path to the {monastery: monastery | right}]
+ ->right
+ +[Take the path to the {station: station house| left}]
+ ->left
  
  ==look_around
  You are standing in a clearing. The light is filtering through the trees, the sun fighting through to hit your face. 
  Two paths lead off from the clearing. 
- +Take the path to the right
+ +[Take the path to the right]
  ->right
- +Take the path to the left 
+ +[Take the path to the left]
  ->left
  ==close_eyes
  You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin.Though you hear sounds of people, you cannot be certain that you are not being watched.
-*Follow your ears
+*[Follow your ears]
 ->right
-*Follow your intuition
+*[Follow your intuition]
 ->left
 
 
 ==right
 //route to donkey
-You walk deeper into the woods.The ground is cool underfoot, the air has a chill here. You think of soft carpet and wood floors and wish you were home. You hear water ahead of you.
+You walk deeper into the woods. The ground is cool underfoot, the air has a chill here. You think of soft carpet and wood floors and wish you were home. You hear water ahead of you.
+//variable text for rentry 
 
-+Continue on
++[Continue on]
 ->stream
 
 ==stream
 You reach a stream, on the other side you see the forest thinning, and can make out the faint shape of a building through the trees.
-+Wade through the water
++ [Wade through the water]
 ->wade
-+Jump across
++[Jump across]
 ->monastery
 
 ==wade
 Your clothes feel heavy in the frigid water, the current tugs at you aggressively.
 Out of the corner of your eye, you see something glinting at the bottom of the stream. 
 You hear a sound in the woods behind you, almost like an intake of breath.
-*Cross the stream quickly
+*[Cross the stream quickly]
 ->monastery
-*Investigate the glinting
+*[Investigate the glinting]
 ->shell
 
 ==shell
@@ -51,3 +59,75 @@ You hear a sound in the woods behind you, almost like an intake of breath.
 ->END
 ==left
 //route to statonmaster
+You walk deeper into the woods. Everything is quieter here, and darker too. The shadows seem to grow out from the spaces between leaves. You see something looking back at you out of one of these spaces. 
+//text needs to be different after this first encounter
+
+*  { not station }         [Reach into the shadows]          ->critter
++ {station} [Make your way swiftly, avoiding any gazes that catch your eye] ->station
+* {not station} [Try to ignore it as best as possible]  ->station
+
+==critter
+You pull back the leaves and push back the darkness and the bearer of those watchful eyes is revealed to be an unusually calm rabbit. As it gazes at you with those too-big, too-smart eyes, it seems to make a decision. It swiftly bites you on the hand and lopes back into the darkness.
+
+*[Continue on] ->station
+*[Follow the rabbit] The rabbit didn't seem like it was in any hurry, but a quick search reveals nothing. Back to the path then. ->station
+
+==station
+
+{grove or station_house: You make your way back to the outside of the old station house. The trees rustle all around you.| You make your way through the trees, {critter: nursing the weeping bite you now sport on your hand,|trying to put the thought of those large yellow eyes and the teeth that probably belonged to their bearer out of your head,} until, without warning, you find yourself standing before an old building.}
++{station_house or grove}[Approach the station house] ->station_house
++{station_house or grove}[Turn Back] You take the path back to the grove you first found yourself in. ->grove
+* {not grove} [Inspect the building] A comfortable looking old thing, if slightly overgrown. What you first took for a porch you quickly realise is actually a train platform, complete with a timetable and benches.
+* {not grove} [Look around] As you glance around, looking for any signs of civilization that may accompany this strange structure, something in the distance catches your eye; A line that you follow right to your feet and you find yourself standing upon railway tracks, hidden by leaves and grasses, either end receding into the gloam. 
+
+- You realise you must be at an old station house - maybe there's a way out of the woods after all.
+++[Approach the station house] ->station_house
+++[Turn Back] You make your way back to the grove you first found yourself in ->grove
+
+
+==station_house
+{information_board or station_master: You are alone on the platform aside from {station_master: the figure of the station master, still doing who knows what in the waiting room |the mysterious silhouette in the doorway}, and of course the information board.|Despite the clear lack of any trains you sheepishly look both ways before you cross the tracks and make your way up and onto the platform. You can see the information board more clearly,and just behind it the silhouette of a figure through a frosted glass door.}  
+
++ [look at the information board] -> information_board
++ [Go through the door] -> station_master 
+
+==information_board
+
+A confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns that you're sure aren't there, or at least don't exist anymore, and going alongisde a coastline that you can't recognise. The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful. 
+
+->station_house
+
+==station_master
+
+When you open the door you're greeted what you assume must once have been a waiting room for the passengers on whatever trains arrived and departed from this erstwhile trainstation, though one of the back windows has a broken pane, and through it the forest has endavoured to reclaim the space. 
+
+In the middle of the space stands what must be the station master. The hat tips you off. That and the name badge that has 'STATION MASTER' printed on it in block capitals. No name though. 
+
+She looks at you without surprise, without any feeling really. Maybe she''s waiting for you to say something. 
+
+* "Hello["], I'm..." - you begin to introduce yourself, but you realise your name has slipped right out of your mind in this moment
+** "Lost."[] You pale slightly at the reality of your situation.
+"Good Afternoon Lost. I'm the station master, how may I be of service?" She replies, unblinking.
+***"My name isn't Lost, it's what I am."[] You manage to splutter.
+"Oh, I'm sorry. Names, Beings, they're all the same to me." She doesn't look particularly sorry. 
+****"So your name is just...["]Station Master then, is it?" 
+She pauses for a moment. "Yes, I suppose it is."
+*****"Can you help me or not?"[] You roll your eyes. This isn't the situation for jokes.
+She cocks her head. "You may have to be a little bit more specific. Anything to do with this station, yes, if you were bleeding out, I'd probably struggle a little bit.{ critter: Though that bite of yours does look painful, I don't think medical assitance is too urgent.|But I don't think you're in any danger of that happening.}" 
+****"It doesn't matter...["] I need your help trying to get out of here."
+"I'm afraid I can't take you anywhere myself, but a train certainly could, and luckily for you, you happen to be in a train station." 
+***"Look, can you help my find my way out of this forest?"
+"My navigation skill aren't what they used to be, but a train would be able to whisk you elsewhere, I'm sure." 
+** "Looking for the station master"
+"That would be me," she taps her name badge with a well-manicured fingernail. "How can I help you?"
+- She smiles but it doesn't quite reach her eyes. You can't tell how old she is. 
+
+*"What time is the next train?" 
+*"Where am I?"[] you ask, suddenly aware of your own ignorance.
+"The train station, of course." She finally blinks. 
+**"That's not what I mean["]. Where's the train station?"
+"In the forest. You must have seen the trees, surely." You feel like this line of questioning isn't going to lead you anywhere.
+***"What time is the next train?"[] you sigh.
+-
+
+-> grove
