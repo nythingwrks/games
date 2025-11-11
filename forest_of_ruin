@@ -61,7 +61,8 @@ You hear a sound in the woods behind you, almost like an intake of breath.
 ->END
 ==left
 //route to statonmaster
-You walk deeper into the woods. Everything is quieter here, and darker too. The shadows seem to grow out from the spaces between leaves. You see something looking back at you out of one of these spaces. 
+//CHANGES START HERE
+You walk deeper into the woods. Everything is quieter here. Shadows seem to grow from the spaces between leaves, and glancing at them you see something looking back at you. 
 //text needs to be different after this first encounter
 
 *  { not station }         [Reach into the shadows]          ->critter
@@ -69,32 +70,37 @@ You walk deeper into the woods. Everything is quieter here, and darker too. The 
 * {not station} [Try to ignore it as best as possible]  ->station
 
 ==critter
-You pull back the leaves and push back the darkness and the bearer of those watchful eyes is revealed to be an unusually calm rabbit. As it gazes at you with those too-big, too-smart eyes, it seems to make a decision. It swiftly bites you on the hand and lopes back into the darkness.
+You pull back the leaves to reveal an unusually calm rabbit. As it gazes at you with those too-big, too-smart eyes, it seems to make a decision. 
+*[Try to pet it]
+->pet
 
 *[Continue on] ->station
-*[Follow the rabbit] The rabbit didn't seem like it was in any hurry, but a quick search reveals nothing. Back to the path then. 
 
 ->station
+==pet
+You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back into the darkness. Didn't anyone ever tell you not to touch wild animals?
+
+*[Keep following the path] ->station
 
 ==station
 
-{grove or station_house: You make your way back to the outside of the old station house. The trees rustle all around you.| You make your way through the trees, {critter: nursing the weeping bite you now sport on your hand,|trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
+{grove or station_house: You make your way back to the outside of the old station house. The trees rustle all around you.| You make your way through the trees, {pet: nursing the weeping bite you now sport on your hand,|trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
 +{station_house or grove}[Approach the station house] ->station_house
 +{station_house or grove}[Go back down the path] You take the path back to the grove you first found yourself in. ->grove
-* {not grove} [Inspect the building] A comfortable looking old thing, if slightly overgrown. What you first took for a porch you quickly realise is actually a train platform, complete with a timetable and benches.
+* {not grove} [Inspect the building] A comfortable looking old thing, if slightly overgrown. What you first took for a porch you quickly realise is actually a train platform, complete with an information board and benches.
 * {not grove} [Look around] As you glance around, looking for any signs of civilization that may accompany this strange structure, something in the distance catches your eye; a line that you follow right to your feet. 
 
-You're standing on railway tracks hidden by leaves and grasses, either end receding into the gloam. 
+- You're standing on railway tracks hidden by leaves and grasses, either end receding into the gloam. 
 
 - You realise you must be at an old station house - maybe there's a way out of the woods after all.
 ++[Approach the station house] ->station_house
-++[Turn Back] You make your way back to the grove you first found yourself in ->grove
+++[Turn Back] You make your way back to the grove you first found yourself in. ->grove
 
 
 ==station_house
-{information_board or station_master: You are alone on the platform aside from {station_master: the figure of the station master, still doing who knows what in the waiting room |the mysterious silhouette in the doorway}, and of course the information board.|Despite the clear lack of any trains you sheepishly look both ways before you cross the tracks and make your way up and onto the platform. You can see the information board more clearly, and just behind it the silhouette of a figure through a frosted glass door.}  
+{information_board or station_master: You are alone on the platform aside from {station_master: the figure of the station master, still doing who knows what in the waiting room |the mysterious silhouette in the doorway}, and of course the information board.|You make your way up and onto the platform. You can see the information board more clearly, and just behind it the frosted glass door of a small waiting room.}  
 
-+ [look at the information board] -> information_board
++ [Inspect the information board] -> information_board
 + {not riddle_answer} [Go through the door] -> station_master
 + {riddle_answer} [Go through the door] -> riddle_answer
 + {riddle_answer} [Go back] -> station
@@ -109,48 +115,61 @@ The next train to where you think 'here' is will either arrive in half an hour, 
 
 ==station_master
 
-When you open the door you're greeted what you assume must once have been a waiting room for the passengers on whatever trains arrived and departed from this erstwhile train station, though one of the back windows has a broken pane, and through it the forest has endavoured to reclaim the space.
+You open the door to see a modest waiting room, muffled by a thick layer of dust. One of the back windows is broken and through it the forest has begun to reclaim the space.
 
-In the middle of the space stands what must be the station master. The hat tips you off. That and the name badge that has 'STATION MASTER' printed on it in block capitals. No name though. 
+A figure stands in the middle of the room, wearing an immaculate double-breasted coat. Her name badge reads "STATION MASTER".
 
-She looks at you without surprise, without any feeling really. Maybe she''s waiting for you to say something. 
+*[Speak to the Station Master]
+->conversation
+*[Go back]
+->station_house
 
-* "Hello["], I'm..." - you begin to introduce yourself, but you realise your name has slipped right out of your mind in this moment.
-** "Lost."[] You pale slightly at the reality of your situation.
-"Good Afternoon Lost. I'm the station master, how may I be of service?" She replies, unblinking.
-***"My name isn't Lost, it's what I am."[] You manage to splutter.
-"Oh, I'm sorry. Names, Beings, they're all the same to me." She doesn't look particularly sorry. 
-****"So your name is just...["]Station Master then, is it?" 
-She pauses for a moment. "Yes, I suppose it is."
-*****"Can you help me or not?"[] You roll your eyes. You don't have time for jokes.
-She cocks her head. "You may have to be a little bit more specific. Anything to do with this station, yes, if you were bleeding out, I'd probably struggle a little bit.{ critter: Though that bite of yours does look painful, I don't think medical assitance is too urgent.| But I don't think you're in any danger of that happening.}" 
-****"It doesn't matter...["] I need your help trying to get out of here."
-"I'm afraid I can't take you anywhere myself, but a train certainly could, and luckily for you, you happen to be in a train station." 
-***"Look, can you help my find my way out of this forest?"
-"My navigation skill aren't what they used to be, but a train would be able to whisk you elsewhere, I'm sure." 
-** "Looking for the station master"
+==conversation
+You clear your throat.
+* [Say hello] 
+You begin to introduce yourself, but realise your name has slipped right out of your mind. 
+** [Tell her you are lost]
+"Good Afternoon, Lost. I'm the station master, how may I be of service?" She replies, unblinking.
+***[Correct her] You tell her your name isn't 'Lost', that it's just what you are.
+"Oh, of course. I'm sorry."
+
+****[...]
+She doesn't look particularly sorry. 
+*****[Ask her name]
+She pauses. "Station master is fine."
+*****[Ask her to help you] 
+She cocks her head. 
+"You may have to be a little bit more specific. Anything to do with this station, probably yes. However, if you were in dire need of a buttermilk pancake or were bleeding out, I'd probably struggle a little bit.{ critter: That bite of yours does look painful, though I doubt it'll scar.| But I don't think you're in any danger of that happening.}" 
+ 
+*** [Ask how to leave the forest]
+"I've long since forgotten the route on foot, but there's certainly a train that could take you to your destination." 
+** [Tell her you are looking for the station master]
 "That would be me," she taps her name badge with a well-manicured fingernail. "How can I help you?"
+
 - She smiles but it doesn't quite reach her eyes. You can't tell how old she is. 
 
-*"What time is the next train?" 
-*"Where am I?"[] you ask, suddenly aware of your own ignorance.
+*[Ask when the next train is]
+*[Ask where you are] You ask where you both are,  suddenly aware of your own ignorance.
 "The train station, of course." She finally blinks. 
-**"That's not what I mean["]. Where is the train station?"
+**[Press further] You ask her where the train station is.
 "In the forest. You must have seen the trees, surely." You feel like this line of questioning isn't going to lead you anywhere.
-***"What time is the next train?"[] you sigh.
-- "Well that depends on where you want to go. We have an information baord outside with routes and times, i'm not sure if you've seen it."
-*"Out["]. Out of the forest." you say through gritted teeth
-*{information_board} "Yes I have["], it was... unhelpful"
-"I'm sorry to hear that. I'll talk to someone about updating it." You don't think she will. "Regardless, it can be quite useful if you know what you're looking for." 
-**"I just want to get out of here.["] Please."
-*{not information_board} "No, I haven't["], I saw it outside, but I went to talk to you first"
-"I see. It has all of the routes and timetables on it, but of course I can tell you most what you need."
-**"I just want to get out of here.["] Please."
-- "Ah. Trains <i>out</i> of the woods." The stationmaster thinks for a moment. "That may be somewhat difficult. I think the next train should - oh." She pauses.
-*"Yes?"
-*"What?"
-*"Please can you just tell me." 
+***[Ask when the next train is]
+- She seems faintly amused. "That depends on where you want to go. We have an information board outside with routes and times."
+*[I want to leave the forest]
+*{information_board} [I've already been there.] You tell her it was unhelpful.
+"I'm sorry to hear that. I'll talk to someone about updating it." 
+You don't think she will.  
+**[Ask her how to leave the forest]
+*{not information_board} [I haven't looked at it yet.] You admit you came straight to talk to her.
+"I see. No bother, I know its contents better than most."
+**[Ask how to leave the forest]
+- "Ah. Trains <i>out</i> of the woods." The stationmaster thinks for a moment. "I could tell you, but..."
+*[But?]
+Her blank eyes take on a glint of mischief. "Well, I'm rather enjoying having the company... I'd be sad to lose it. What would I gain by helping you leave?"
+***Ask what she wants.
+//EDIT TO FIT NEW SEGUE
 - "It's just that - well, the last visitor I had was quite some time ago, and he told me this story that, for the life of me, I just haven't been able to figure out."
+//CUT OR EDIT:
 *"I don't see what this has to do with me."
 *"I just want to know when my train gets here."
 *"Go on then."[] You suspect you don't have any choice in the matter.
