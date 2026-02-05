@@ -291,16 +291,13 @@ You don't think she will.
 - "Ah. Trains <i>out</i> of the woods." The stationmaster thinks for a moment. "I could tell you, but..."
 *[But?]
 Her blank eyes take on a glint of mischief. "Well, I'm rather enjoying having the company... I'd be sad to lose it. What would I gain by helping you leave?"
-***Ask what she wants.
-//EDIT TO FIT NEW SEGUE
+***[Ask what she wants.]
 - "Actually, I might find it in me to help you if you help me first. An old man passed through a short while ago and told me a story that I can't make head or tails of..." She looks at you expectantly.
 
-* Let her speak
-* Leave the station
-->
+* [Let her speak]
+* [Tell her you don't have time for this] She continues, ignoring you completely. 
 
-[] You suspect you don't have any choice in the matter.
-- She continues, ignoring you completely. "Let's see if I remember it...
+- "Let's see if I remember it....
 
 A good many years ago, this forest was part of an old kingdom, whose aging king had three sons, each capable in their own way, vying for their father's favour. He loved all of his sons equally though, and could not bear to see them fight. 
 
