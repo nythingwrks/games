@@ -168,11 +168,13 @@ You don't think she will.
 Her blank eyes take on a glint of mischief. "Well, I'm rather enjoying having the company... I'd be sad to lose it. What would I gain by helping you leave?"
 ***Ask what she wants.
 //EDIT TO FIT NEW SEGUE
-- "It's just that - well, the last visitor I had was quite some time ago, and he told me this story that, for the life of me, I just haven't been able to figure out."
-//CUT OR EDIT:
-*"I don't see what this has to do with me."
-*"I just want to know when my train gets here."
-*"Go on then."[] You suspect you don't have any choice in the matter.
+- "Actually, I might find it in me to help you if you help me first. An old man passed through a short while ago and told me a story that I can't make head or tails of..." She looks at you expectantly.
+
+* Let her speak
+* Leave the station
+->
+
+[] You suspect you don't have any choice in the matter.
 - She continues, ignoring you completely. "Let's see if I remember it...
 
 A good many years ago, this forest was part of an old kingdom, whose aging king had three sons, each capable in their own way, vying for their father's favour. He loved all of his sons equally though, and could not bear to see them fight. 
