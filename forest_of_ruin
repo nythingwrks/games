@@ -1,56 +1,54 @@
-~ SEED_RANDOM(235)
-
 You awaken in a forest,
-
- * [Look around]
+VAR has = "nothing"
+ * Look around
  ->look_around
- * [Close your eyes]
+ * Close your eyes
  ->close_eyes
- ==grove
- The same two paths lead off from the clearing
- 
- +[Take the path to the {monastery: monastery | right}]
- ->right
- +[Take the path to the {station: station house| left}]
- ->left
- 
+==grove
+{ station:You return to the grove. Where will you go now? |You are back in the grove}
++Take the path to the right
+->right
++Take the path to the left
+->left
  ==look_around
  You are standing in a clearing. The light is filtering through the trees, the sun fighting through to hit your face. 
  Two paths lead off from the clearing. 
- +[Take the path to the right]
+ +Take the path to the right
  ->right
- +[Take the path to the left]
+ +Take the path to the left 
  ->left
  ==close_eyes
- You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin. Though you hear sounds of people, you cannot be certain that you are not being watched.
-*[Follow your ears]
-{~-> right | ->left}
-*[Follow your intuition]
-{~-> right | ->left}
+ You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin. Though you do not hear sounds of people, you cannot be certain that you are not being watched.
+*Follow your ears
+->right
+*Follow your intuition
+->left
 
 
 ==right
 //route to donkey
-You walk deeper into the woods. The ground is cool underfoot, the air has a chill here. You think of soft carpet and wood floors and wish you were home. You hear water ahead of you.
-//variable text for rentry 
+You walk deeper into the woods.The ground is cool underfoot, the air has a chill here. You think of soft carpet and wood floors and wish you were home. You hear water ahead of you.
 
-+[Continue on]
++Continue on
 ->stream
 
 ==stream
-You reach a stream, on the other side you see the forest thinning, and can make out the faint shape of a building through the trees.
-+ [Wade through the water]
+
+
+You reach a stream. On the other side you see the forest thinning, and can make out the faint shape of a building through the trees.
+*{not monastery} [Wade through the water]
 ->wade
-+[Jump across]
++Jump across
 ->monastery
 
 ==wade
+//
 Your clothes feel heavy in the frigid water, the current tugs at you aggressively.
 Out of the corner of your eye, you see something glinting at the bottom of the stream. 
 You hear a sound in the woods behind you, almost like an intake of breath.
-*[Cross the stream quickly]
+*Cross the stream quickly
 ->monastery
-*[Investigate the glinting]
+*Investigate the glinting
 ->shell
 
 ==shell
@@ -183,10 +181,9 @@ The slab has a pearlescent mosiac on it, pieces of shell forming an ornate spira
 //gain option to tell edgy joke ("you here the grinding of stone against stone, and notice a section of ruined wall you didnt see before. Inscribed in it are the words "The donkey has a dark sense of humour")
 *Return to the entrance of the Monastery
 ->enter_mon
-
-
-//route to stationmaster
 ==left
+//route to statonmaster
+
 You walk deeper into the woods. Everything is quieter here. Shadows seem to grow from the spaces between leaves, and glancing at them you see something looking back at you. 
 //text needs to be different after this first encounter
 
@@ -291,16 +288,13 @@ You don't think she will.
 - "Ah. Trains <i>out</i> of the woods." The stationmaster thinks for a moment. "I could tell you, but..."
 *[But?]
 Her blank eyes take on a glint of mischief. "Well, I'm rather enjoying having the company... I'd be sad to lose it. What would I gain by helping you leave?"
-***Ask what she wants.
-//EDIT TO FIT NEW SEGUE
+***[Ask what she wants.]
 - "Actually, I might find it in me to help you if you help me first. An old man passed through a short while ago and told me a story that I can't make head or tails of..." She looks at you expectantly.
 
-* Let her speak
-* Leave the station
-->
+* [Let her speak]
+* [Tell her you don't have time for this] She continues, ignoring you completely. 
 
-[] You suspect you don't have any choice in the matter.
-- She continues, ignoring you completely. "Let's see if I remember it...
+- "Let's see if I remember it...
 
 A good many years ago, this forest was part of an old kingdom, whose aging king had three sons, each capable in their own way, vying for their father's favour. He loved all of his sons equally though, and could not bear to see them fight. 
 
@@ -403,3 +397,8 @@ She recites, picture perfect as before. You wonder how long she's been turning t
 The station master pauses to consider this {knows_t && knows_p && knows_c : and her face lights up in a smile. "Oh shit dude ur train is here better go get it bro see yah bye" She pushes you into your train -> END | and frowns. "No, that doesn't feel quite right." She taps her chin and looks back at you. -> riddle_wrong }
 
 -> grove
+
+ 
+
+
+    -> END
