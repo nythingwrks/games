@@ -54,14 +54,139 @@ You hear a sound in the woods behind you, almost like an intake of breath.
 ->shell
 
 ==shell
+~has= "shell"
+Plunging your hand into the icy water, you fumble around until the cold becomes too much to bear. You open your fist and see a small iridescent shell nestled in your palm. You pocket it.
+*Finish crossing the stream
+->monastery
+
 ->END
 
 
 ==monastery
-->END
+ {enter_mon: You follow the path to a familiar set of ruins. You have returned to the monastery.|Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. You have found The Monastery.} 
+
++[Enter the Monastery]
+->enter_mon
++[Return to the grove]
+->grove
+
+==enter_mon
+{approach_donkey or explore_mon: You are standing in the entryway of the Monastery. The old donkey is still happily chewing his grass.| You carefully cross the moss-covered threshold of The Monastery. The ground beyond is blanketed by a tall yellow grass. Beyond the monastery, the horizon is swallowed up again by thick forest. An old donkey is a few yards of, feeding in the grass contentedly.}  
+//Buggy!!! when you come back after stationmaster the below options don't show
++[Approach the donkey]
+->approach_donkey
++[Explore The Monastery]
+->explore_mon
++[Return to the grove]
+->grove
+
+==approach_donkey
+
+{quiet: |You approach the donkey. Hearing your footsteps, it lifts its head and regards you blankly.} 
+{confession:The donkey is looking at you. You feel a little judged}
+{not conversation and approach_donkey>3:You feel like you're missing something...Maybe you should try the other path.}
++{quiet<4}[Stay quiet]
+->quiet
+*[Confess something]
+->confession
++[Walk away]
+->enter_mon
++{conversation} [Tell a joke]->joke
+
+==quiet
+{quiet>1: You and the donkey stand together in a companionable silence|You and the donkey stand in awkward silence}
+{quiet>2: He is now your friend.}
+//Need approach donkey options to become available again?
+->approach_donkey
+
+==confession
+You tell the donkey that ??? INSERT FUNNY CONFESSION
+->approach_donkey
+
+==no_joke
+ You think of the station master and her riddle.
++[Return to the grove]
+->grove
++[Spend more time in the monastery]
+->enter_mon
+
+==joke
+{existential_joke: You don't feel like joking anymore.->no_joke}
+The donkey looks at you expectantly.
+*[Tell a knock-knock joke]
+->knock_knock
+*[Tell an existential joke]
+->existential_joke
+
+*[Tell a silly joke]
+->silly_joke
+
+*Go back
+->enter_mon
+*{secret} Tell a dark joke
+->dark_joke
+
+//NEED TO WRITE JOKES
+==knock_knock
+Knock Knock
+Who's There
+Tank.
+Tank who?
+You’re welcome.
+
+You have to say both parts because the donkey can't speak.
+He seems unimpressed.
+
+*Try a different joke
+->joke
+==existential_joke
+You ask the donkey if he ever wonders why he's here. If he ever dreams of death. You can't think of a way to make that funny.
+*[...]
+->existential_joke1
+==existential_joke1 
+The donkey seems to consider your words. The edges of the forest darken and you become uncomfortably aware of your own mortality. 
+*[...]
+->existential_joke2
+==existential_joke2
+You feel a little faint, and reality warps a little. You see marble halls, towering columns. Three brothers on their thrones. You hear the donkey's braying laugh and the sing of metal through air. Blood soaking fine green silk. The sound of a  goblet clattering to the ground.
+
+->no_joke
+==silly_joke
+You do a committed but amateur impression of Kermit attempting to sing a song about tax fraud. The donkey doesn't quite get it.
+*Try a different joke
+->joke
+
+==dark_joke
+->DONE
+
+==explore_mon
+You wander around the monastery. Stone slabs litter the ground, delicate carvings and mosiacs eroded by time. A ray of sun breaks through the clouds and catches on one of the slabs.
+*Inspect the glittering slab
+->slab
+*{not more_explore} Keep exploring
+->more_explore
+*Turn back
+->enter_mon//ADD SOME MONASTERY LORE. MAYBE THE SHELL FITS HERE SOMEHOW?MOSIAC?
+
+==slab
+The slab has a pearlescent mosiac on it, pieces of shell forming an ornate spiral winding out from the center. You notice one of the shells is missing.{not shell: You wish you had something you could put there.}
+*{shell}[Place the shell from the river in the gap.]
+->secret
+*Explore more
+->more_explore
+
+==more_explore
+//ONE MORE LORE ESQUE FEATURE OF THE MONASTERY
+->DONE
+
+==secret
+//gain option to tell edgy joke ("you here the grinding of stone against stone, and notice a section of ruined wall you didnt see before. Inscribed in it are the words "The donkey has a dark sense of humour")
+*Return to the entrance of the Monastery
+->enter_mon
+
+
+//route to stationmaster
 ==left
-//route to statonmaster
-//CHANGES START HERE
 You walk deeper into the woods. Everything is quieter here. Shadows seem to grow from the spaces between leaves, and glancing at them you see something looking back at you. 
 //text needs to be different after this first encounter
 
