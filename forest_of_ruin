@@ -1,3 +1,5 @@
+~ SEED_RANDOM(235)
+
 You awaken in a forest,
 
  * [Look around]
@@ -20,11 +22,11 @@ You awaken in a forest,
  +[Take the path to the left]
  ->left
  ==close_eyes
- You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin.Though you hear sounds of people, you cannot be certain that you are not being watched.
+ You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin. Though you hear sounds of people, you cannot be certain that you are not being watched.
 *[Follow your ears]
-->right
+{~-> right | ->left}
 *[Follow your intuition]
-->left
+{~-> right | ->left}
 
 
 ==right
@@ -59,7 +61,8 @@ You hear a sound in the woods behind you, almost like an intake of breath.
 ->END
 ==left
 //route to statonmaster
-You walk deeper into the woods. Everything is quieter here, and darker too. The shadows seem to grow out from the spaces between leaves. You see something looking back at you out of one of these spaces. 
+//CHANGES START HERE
+You walk deeper into the woods. Everything is quieter here. Shadows seem to grow from the spaces between leaves, and glancing at them you see something looking back at you. 
 //text needs to be different after this first encounter
 
 *  { not station }         [Reach into the shadows]          ->critter
@@ -67,67 +70,211 @@ You walk deeper into the woods. Everything is quieter here, and darker too. The 
 * {not station} [Try to ignore it as best as possible]  ->station
 
 ==critter
-You pull back the leaves and push back the darkness and the bearer of those watchful eyes is revealed to be an unusually calm rabbit. As it gazes at you with those too-big, too-smart eyes, it seems to make a decision. It swiftly bites you on the hand and lopes back into the darkness.
+You pull back the leaves to reveal an unusually calm rabbit. As it gazes at you with those too-big, too-smart eyes, it seems to make a decision. 
+*[Try to pet it]
+->pet
 
 *[Continue on] ->station
-*[Follow the rabbit] The rabbit didn't seem like it was in any hurry, but a quick search reveals nothing. Back to the path then. ->station
+
+->station
+==pet
+You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back into the darkness. Didn't anyone ever tell you not to touch wild animals?
+
+*[Keep following the path] ->station
 
 ==station
 
-{grove or station_house: You make your way back to the outside of the old station house. The trees rustle all around you.| You make your way through the trees, {critter: nursing the weeping bite you now sport on your hand,|trying to put the thought of those large yellow eyes and the teeth that probably belonged to their bearer out of your head,} until, without warning, you find yourself standing before an old building.}
+{grove or station_house: You make your way back to the outside of the old station house. The trees rustle all around you.| You make your way through the trees, {pet: nursing the weeping bite you now sport on your hand,|trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
 +{station_house or grove}[Approach the station house] ->station_house
-+{station_house or grove}[Turn Back] You take the path back to the grove you first found yourself in. ->grove
-* {not grove} [Inspect the building] A comfortable looking old thing, if slightly overgrown. What you first took for a porch you quickly realise is actually a train platform, complete with a timetable and benches.
-* {not grove} [Look around] As you glance around, looking for any signs of civilization that may accompany this strange structure, something in the distance catches your eye; A line that you follow right to your feet and you find yourself standing upon railway tracks, hidden by leaves and grasses, either end receding into the gloam. 
++{station_house or grove}[Go back down the path] You take the path back to the grove you first found yourself in. ->grove
+* {not grove} [Inspect the building] A comfortable looking old thing, if slightly overgrown. What you first took for a porch you quickly realise is actually a train platform, complete with an information board and benches.
+* {not grove} [Look around] As you glance around, looking for any signs of civilization that may accompany this strange structure, something in the distance catches your eye; a line that you follow right to your feet. 
+
+- You're standing on railway tracks hidden by leaves and grasses, either end receding into the gloam. 
 
 - You realise you must be at an old station house - maybe there's a way out of the woods after all.
 ++[Approach the station house] ->station_house
-++[Turn Back] You make your way back to the grove you first found yourself in ->grove
+++[Turn Back] You make your way back to the grove you first found yourself in. ->grove
 
 
 ==station_house
-{information_board or station_master: You are alone on the platform aside from {station_master: the figure of the station master, still doing who knows what in the waiting room |the mysterious silhouette in the doorway}, and of course the information board.|Despite the clear lack of any trains you sheepishly look both ways before you cross the tracks and make your way up and onto the platform. You can see the information board more clearly,and just behind it the silhouette of a figure through a frosted glass door.}  
+{information_board or station_master: You are alone on the platform aside from {station_master: the figure of the station master, still doing who knows what in the waiting room |the mysterious silhouette in the doorway}, and of course the information board.|You make your way up and onto the platform. You can see the information board more clearly, and just behind it the frosted glass door of a small waiting room.}  
 
-+ [look at the information board] -> information_board
-+ [Go through the door] -> station_master 
++ [Inspect the information board] -> information_board
++ {not riddle_answer} [Go through the door] -> station_master
++ {riddle_answer} [Go through the door] -> riddle_answer
++ {riddle_answer} [Go back] -> station
 
 ==information_board
 
-A confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns that you're sure aren't there, or at least don't exist anymore, and going alongisde a coastline that you can't recognise. The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful. 
+A confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns that you're sure aren't there, or at least don't exist <i>anymore</i>, and going alongisde a coastline that you can't recognise. 
 
-->station_house
+The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful. 
+
++ [Look away] ->station_house
 
 ==station_master
 
-When you open the door you're greeted what you assume must once have been a waiting room for the passengers on whatever trains arrived and departed from this erstwhile trainstation, though one of the back windows has a broken pane, and through it the forest has endavoured to reclaim the space. 
+You open the door to see a modest waiting room, muffled by a thick layer of dust. One of the back windows is broken and through it the forest has begun to reclaim the space.
 
-In the middle of the space stands what must be the station master. The hat tips you off. That and the name badge that has 'STATION MASTER' printed on it in block capitals. No name though. 
+A figure stands in the middle of the room, wearing an immaculate double-breasted coat. Her name badge reads "STATION MASTER".
 
-She looks at you without surprise, without any feeling really. Maybe she''s waiting for you to say something. 
+*[Speak to the Station Master]
+->conversation
+*[Go back]
+->station_house
 
-* "Hello["], I'm..." - you begin to introduce yourself, but you realise your name has slipped right out of your mind in this moment
-** "Lost."[] You pale slightly at the reality of your situation.
-"Good Afternoon Lost. I'm the station master, how may I be of service?" She replies, unblinking.
-***"My name isn't Lost, it's what I am."[] You manage to splutter.
-"Oh, I'm sorry. Names, Beings, they're all the same to me." She doesn't look particularly sorry. 
-****"So your name is just...["]Station Master then, is it?" 
-She pauses for a moment. "Yes, I suppose it is."
-*****"Can you help me or not?"[] You roll your eyes. This isn't the situation for jokes.
-She cocks her head. "You may have to be a little bit more specific. Anything to do with this station, yes, if you were bleeding out, I'd probably struggle a little bit.{ critter: Though that bite of yours does look painful, I don't think medical assitance is too urgent.|But I don't think you're in any danger of that happening.}" 
-****"It doesn't matter...["] I need your help trying to get out of here."
-"I'm afraid I can't take you anywhere myself, but a train certainly could, and luckily for you, you happen to be in a train station." 
-***"Look, can you help my find my way out of this forest?"
-"My navigation skill aren't what they used to be, but a train would be able to whisk you elsewhere, I'm sure." 
-** "Looking for the station master"
+==conversation
+You clear your throat.
+* [Say hello] 
+You begin to introduce yourself, but realise your name has slipped right out of your mind. 
+** [Tell her you are lost]
+"Good Afternoon, Lost. I'm the station master, how may I be of service?" She replies, unblinking.
+***[Correct her] You tell her your name isn't 'Lost', that it's just what you are.
+"Oh, of course. I'm sorry."
+
+****[...]
+She doesn't look particularly sorry. 
+*****[Ask her name]
+She pauses. "Station master is fine."
+*****[Ask her to help you] 
+She cocks her head. 
+"You may have to be a little bit more specific. Anything to do with this station, probably yes. However, if you were in dire need of a buttermilk pancake or were bleeding out, I'd probably struggle a little bit.{ critter: That bite of yours does look painful, though I doubt it'll scar.| But I don't think you're in any danger of that happening.}" 
+ 
+*** [Ask how to leave the forest]
+"I've long since forgotten the route on foot, but there's certainly a train that could take you to your destination." 
+** [Tell her you are looking for the station master]
 "That would be me," she taps her name badge with a well-manicured fingernail. "How can I help you?"
+
 - She smiles but it doesn't quite reach her eyes. You can't tell how old she is. 
 
-*"What time is the next train?" 
-*"Where am I?"[] you ask, suddenly aware of your own ignorance.
+*[Ask when the next train is]
+*[Ask where you are] You ask where you both are,  suddenly aware of your own ignorance.
 "The train station, of course." She finally blinks. 
-**"That's not what I mean["]. Where's the train station?"
+**[Press further] You ask her where the train station is.
 "In the forest. You must have seen the trees, surely." You feel like this line of questioning isn't going to lead you anywhere.
-***"What time is the next train?"[] you sigh.
--
+***[Ask when the next train is]
+- She seems faintly amused. "That depends on where you want to go. We have an information board outside with routes and times."
+*[I want to leave the forest]
+*{information_board} [I've already been there.] You tell her it was unhelpful.
+"I'm sorry to hear that. I'll talk to someone about updating it." 
+You don't think she will.  
+**[Ask her how to leave the forest]
+*{not information_board} [I haven't looked at it yet.] You admit you came straight to talk to her.
+"I see. No bother, I know its contents better than most."
+**[Ask how to leave the forest]
+- "Ah. Trains <i>out</i> of the woods." The stationmaster thinks for a moment. "I could tell you, but..."
+*[But?]
+Her blank eyes take on a glint of mischief. "Well, I'm rather enjoying having the company... I'd be sad to lose it. What would I gain by helping you leave?"
+***Ask what she wants.
+//EDIT TO FIT NEW SEGUE
+- "Actually, I might find it in me to help you if you help me first. An old man passed through a short while ago and told me a story that I can't make head or tails of..." She looks at you expectantly.
+
+* Let her speak
+* Leave the station
+->
+
+[] You suspect you don't have any choice in the matter.
+- She continues, ignoring you completely. "Let's see if I remember it...
+
+A good many years ago, this forest was part of an old kingdom, whose aging king had three sons, each capable in their own way, vying for their father's favour. He loved all of his sons equally though, and could not bear to see them fight. 
+
+So when the time came, he divided the imperial regalia: a crown, a sword, and a goblet, between each son and told them they'd all rule together, believing foolishly that the temptation of power could be defeated by bonds of blood. 
+
+* [...]
+
+- On his deathbed the king ordered his throne dismantled and three new ones constructed, using the constituent parts of the old. When he died, these three thrones were set in place at the royal court, side by side, and from these thrones the brothers ruled as a trinity, for a while, one always in green, one in black, and one in red.
+
+*[...]
+
+- One day the brothers, adorned with the symbols of the state, were holding court when a strange man with a donkey wandered into the castle and asked a simple question. 
+
+"Which one of you will betray the others?" 
+
+To the kingdom's eternal regret they did not throw him out then and there.
+
+*[...]
+
+- The cunning brother, in red, contemplated the question for a few moments. The king in black turned to look to his brothers on the right and asked them if he knew who the man was. The green king - furthest from him - just shrugged. The naive brother, adjusting his crown, loudly declared that they were united and would never turn upon each other. The brash king on the leftmost throne angrily retorted that the man had no business asking such a question of the kings and struck him, disturbing the king beside him who put down his cup and hissed at his brothers to maintain their decorum."
+
+A stillness suffocated all three suddenly, as the man rose from where had fallen, and his donkey smiled and let out its braying laugh that echoed round and up into the hall far longer than it should have. There was a moment of heartbeats, three in turn, as the fate of a kingdom balanced on a coin's-edge. Then it fell.
+
+*[...]
+
+- The king with the sword, trembling, raised it, and separated head from shoulders his brother with the crown, then plunged the blade into the heart of his brother with the cup. The lords and ladies of the court scrambled to do something, anything, but they were too late. 
+
+The king with the sword took the crown off his brother's head where it lay, put his other brother's goblet to their wounds and toasted the man as he led his donkey out of the castle and into the woods.
+
+*[...]
+
+- "And that's where he left me as his train arrived. I've been thinking over and over and I can't for the life of me figured out which brother did it. Was he brash, cunning, or naive? What colour did he wear? Where did he sit? If you could lend me your mind, just for a moment, I'd be incredibly grateful."
+
+*"Sure, why not."[]
+"Splendid!"
+*"Can't you just tell me when my train is?"[]
+"It shouldn't take that long. I can tell you right now that you have plenty of time before your train arrives to figure out the answer."
+*"I don't really have a choice, do I?"[]
+"I'm not sure I know what you mean."
+- -> riddle_answer
+
+==riddle_wrong
+~ knows_t = false
+~ knows_c = false
+~ knows_p = false
+
+"Want to give it another shot?" -> riddle_answer
+
+==riddle_answer
+
+VAR r_colour = ""
+VAR k_trait = ""
+VAR t_pos = ""
+
+VAR knows_t = false
+VAR knows_c = false
+VAR knows_p = false
+
+
+{"If you think you know now please do share." | <> The station master looks up and smiles placidly.}
+
++"I need a moment."[] You mumble to her as you head out of the waiting room away from this strange woman. -> station_house
++"Could I hear the end of the story again[?"], just the parts about what each king did after the man talked to them."
+"Of course! I did say it was a difficult one! 
+
+The cunning brother, in red, contemplated the question for a few moments. The king in black turned to look to his brothers on the right and asked them if he knew who the man was. The green king - furthest from him - just shrugged. The naive brother, adjusting his crown, loudly declared that they were united and would never turn upon each other. The brash king on the leftmost throne angrily retorted that the man had no business asking such a question of the kings and struck him, disturbing the king beside him who put down his cup and hissed at his brothers to maintain their decorum."
+
+She recites, picture perfect as before. You wonder how long she's been turning this story over in her mind.-> riddle_wrong
+
++"The king with the sword..."[] you begin, feeling unsure of yourself. "Wore robes of..."
+++"Red.["] 
+~ r_colour = "red"
+++"Black.["]
+~ r_colour = "black"
+~ knows_c = true
+++"Green.["]
+~ r_colour = "green"
+-- <> He struck his brothers...
++++"Naïvely["]
+~ k_trait = "naïve"
++++"Cunningly["]
+~ k_trait = "cunning"
++++"Brashly["] 
+~ k_trait = "brash"
+~ knows_t = true 
+--- <>, from the...
+++++"Leftmost["]
+~ t_pos = "to the left of"
+++++"Middle["]
+~ t_pos = "in between"
+++++"Rightmost["]
+~ t_pos = "to the right of"
+~ knows_p = true
+---- <> throne."
+
+- She intones the following, almost in a trance: 
+
+"Sat on his throne {t_pos} his brothers, the king in {r_colour} raised his sword above his head and brought it down in two {k_trait} strikes." 
+
+The station master pauses to consider this {knows_t && knows_p && knows_c : and her face lights up in a smile. "Oh shit dude ur train is here better go get it bro see yah bye" She pushes you into your train -> END | and frowns. "No, that doesn't feel quite right." She taps her chin and looks back at you. -> riddle_wrong }
 
 -> grove
