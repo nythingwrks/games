@@ -179,7 +179,7 @@ You do your best impression of a snare drum. You could swear the donkey lets out
 ->DONE
 
 ==explore_mon
-You wander around the monastery{. Stone slabs litter the ground, delicate carvings and mosiacs eroded by time. A ray of sun breaks through the clouds and catches on one of the slabs. | again. The sun now catches on the shell mosaic and reflects onto that strange message you revealed earlier.}
+You wander around the monastery{. Stone slabs litter the ground, delicate carvings and mosiacs eroded by time. A ray of sun breaks through the clouds and catches on one of the slabs. | again. The sun now catches on the shell mosaic {not secret: properly, and the light diffracts around the room, casting stars onto the walls | and reflects onto that strange message you revealed earlier.}}
 
 *[Inspect the glittering slab]
 ->slab
