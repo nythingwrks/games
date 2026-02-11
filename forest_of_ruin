@@ -186,8 +186,9 @@ You wander around the monastery{. Stone slabs litter the ground, delicate carvin
 *[Inspect the glittering slab]
 ->slab
 *{not more_explore} [Keep exploring]
++{more_explore}[Return to the stained glass window]
 ->more_explore
-*Turn back
++[Turn back]
 ->enter_mon
 
 ==slab
