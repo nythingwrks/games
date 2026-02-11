@@ -194,14 +194,14 @@ You wander around the monastery{. Stone slabs litter the ground, delicate carvin
 The slab has a pearlescent mosiac on it, pieces of shell forming an ornate spiral winding out from the center. You notice one of the shells is missing.{not shell: You wish you had something you could put there.}
 *{shell}[Place the shell from the river in the gap.]
 ->secret
-*[Explore more]
++[Explore more]
 ->more_explore
 
 ==more_explore
-In a far corner of the monastery you find the remnants of a stained glass window, still partially intact. As the sparse sunlight illuminates it, you see it depicts three figures in majestic robes. One holds a cup, one a sword, and the final one holds nothing. The glass is shattered where his head should have been. 
+{In a far corner of the monastery you find the remnants of a stained glass window, still partially intact. As the sparse sunlight illuminates it, you see it depicts three figures in majestic robes. One holds a cup, one a sword, and the final one holds nothing. The glass is shattered where his head should have been.| You are back in the corner of the Monastery, looking up at the stained glass window}
 +[Return to the entrance of the Monastery]
 ->enter_mon
-+[Follow your ears]
+*{board_secret}[Follow your ears]
 ->lapinate_chantry
 
 ==secret
