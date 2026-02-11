@@ -327,7 +327,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 ==station_house
 {information_board or station_master:You are alone on the platform aside from {station_master: the figure of the station master, still doing who knows what in the waiting room|the frosted glass of the waiting room door, through which you now spy a silhouette,} and, of course, the information board.|You make your way up and onto the platform. You can see the information board more clearly, and just behind it the frosted glass door of a small waiting room.}  
 
-+ [Inspect the information board] -> information_board
++ {information_board<2}[Inspect the information board] -> information_board
 + {not riddle_answer} [Go through the door] -> station_master
 + {riddle_answer} [Go through the door] -> riddle_answer
 + {riddle_answer} [Go back] -> station
@@ -336,12 +336,9 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 {A confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns that you're sure aren't there, or at least don't exist <i>anymore</i>, and going alongisde a coastline that you can't recognise. | The same board as before with the same information. Confusing, jumbled, and entirely unintelligble. Your head begins to hurt after a while.}
 
-The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful.
+The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful. {pet and information_board>1: ->board_secret}
 
-* {pet and information_board>1} [Look away] ->board_secret 
-+ {not pet and information_board<2 or pet and information_board<2} [Look away] ->station_house
-+ {board_secret} [Look away] ->station_house 
-
++[Look away] ->station_house 
 
 ==board_secret
 
