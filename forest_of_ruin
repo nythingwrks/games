@@ -7,11 +7,11 @@ You awaken in a forest,
  * [Close your eyes]
  ->close_eyes
  ==grove
- The same two paths lead off from the clearing
+ The same two paths lead off from the clearing.
  
- +[Take the path to the {monastery: monastery | right}]
+ +[Take the path to {monastery: The Monastery | the right}]
  ->right
- +[Take the path to the {station_name: station house| left}]
+ +[Take the path to the {station_name: Station House| left}]
  ->left
  
  ==look_around
@@ -22,7 +22,7 @@ You awaken in a forest,
  +[Take the path to the left]
  ->left
  ==close_eyes
- You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin. Though you hear sounds of people, you cannot be certain that you are not being watched.
+ You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin. //remove?: Though you hear no sounds of people, you cannot be certain that you are not being watched.
 *[Follow your ears]
 {~-> right | ->left}
 *[Follow your intuition]
@@ -31,7 +31,7 @@ You awaken in a forest,
 
 ==right
 //route to donkey
-{stream: You head back towards the monastery, hearing the stream ahead of you|You walk deeper into the woods. The ground is cool underfoot, the air has a chill here. {board_secret: You can't think of a more wonderful place. | You think of soft carpet and wood floors and wish you were home.} You hear water ahead of you.}
+{stream: You head back towards the Monastery, hearing the stream ahead of you.|You walk deeper into the woods. The ground is cool underfoot, the air has a chill here. {board_secret: You can't think of a more wonderful place. | You think of soft carpet and wood floors and wish you were home.} You hear water ahead of you.}
 
 +[Continue on]
 ->stream
@@ -60,7 +60,7 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 
 
 ==monastery
- {monastery>1: You follow the path to a familiar set of ruins. You have returned to the monastery.|{board_secret:With an impressive bound, you easily clear the water.} Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p>You have found <b>The Monastery</b>.</p>} 
+ {monastery>1: You follow the path to a familiar set of ruins. You have returned to The Monastery.|{board_secret:With an impressive bound, you easily clear the water.} Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p>You have found <b>The Monastery</b>.</p>} 
 
 +[Enter the Monastery]
 ->enter_mon
@@ -70,7 +70,7 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 ->grove
 
 ==enter_mon
-{approach_donkey or explore_mon: You are standing in the entryway of the Monastery. The old donkey is still happily chewing his grass.| You carefully cross the moss-covered threshold of <b>The Monastery</b>. The ground beyond is blanketed by a tall yellow grass, the horizon is swallowed up again by thick forest. An old donkey is a few yards off, feeding in the grass contentedly.}  
+{approach_donkey or explore_mon: You are standing in the entryway of The Monastery. The old donkey is still happily chewing his grass.| You carefully cross the moss-covered threshold of The Monastery. The ground beyond is blanketed by a tall yellow grass, the horizon is swallowed up again by thick forest. An old donkey is a few yards off, feeding in the grass contentedly.}  
 
 +[Approach the donkey]
 ->approach_donkey
@@ -82,7 +82,7 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 ==approach_donkey
 
 {quiet or confession: |You approach the donkey. Hearing your footsteps, it lifts its head and regards you blankly.} 
-{confession and not quiet:The donkey is looking at you. You feel a little judged}
+{confession and not quiet:The donkey is looking at you. You feel a little judged.}
 {not conversation and approach_donkey>3:You feel like you're missing something...Maybe you should try the other path.}
 +{quiet<3}[Stay quiet]
 ->quiet
@@ -93,7 +93,7 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 +{conversation} [Tell a joke]->joke
 
 ==quiet
-{quiet>1: You and the donkey stand together in a companionable silence|You and the donkey stand in awkward silence}
+{quiet>1: You and the donkey stand together in a companionable silence.|You and the donkey stand in awkward silence.}
 {quiet>2: He is now your friend.}
 
 ->approach_donkey
@@ -108,7 +108,7 @@ You tell the donkey that you lied and told your friends that you got your driver
  You think of the station master and her riddle.
 +[Return to the grove]
 ->grove
-+[Spend more time in the monastery]
++[Spend more time in The Monastery]
 ->enter_mon
 
 ==joke
@@ -181,7 +181,7 @@ You do your best impression of a snare drum. You could swear the donkey lets out
 ->DONE
 
 ==explore_mon
-You wander around the monastery{. Stone slabs litter the ground, delicate carvings and mosiacs eroded by time. A ray of sun breaks through the clouds and catches on one of the slabs. | again. The sun now catches on the shell mosaic {not secret: properly, and the light diffracts around the room, casting stars onto the walls | and reflects onto that strange message you revealed earlier.}}
+You wander around The Monastery{. Stone slabs litter the ground, delicate carvings and mosaics eroded by time. A ray of sun breaks through the clouds and catches on one of the slabs. | again. The sun now catches on the shell mosaic {not secret: properly, and the light diffracts around the room, casting stars onto the walls. | and reflects onto that strange message you revealed earlier.}}
 
 *[Inspect the glittering slab]
 ->slab
@@ -199,15 +199,15 @@ The slab has a pearlescent mosiac on it, pieces of shell forming an ornate spira
 ->more_explore
 
 ==more_explore
-{In a far corner of the monastery you find the remnants of a stained glass window, still partially intact. As the sparse sunlight illuminates it, you see it depicts three figures in majestic robes. One holds a cup, one a sword, and the final one holds nothing. The glass is shattered where his head should have been.| You are back in the corner of the Monastery, looking up at the stained glass window}
-+[Return to the entrance of the Monastery]
+{In a far corner of The Monastery you find the remnants of a stained glass window, still partially intact. As the sparse sunlight illuminates it, you see it depicts three figures in majestic robes. One holds a cup, one a sword, and the final one holds nothing. The glass is shattered where the final figure's head should have been.| You are back in the corner of The Monastery, looking up at the stained glass window.}
++[Return to the entrance of The Monastery]
 ->enter_mon
 *{board_secret}[Follow your ears]
 ->lapinate_chantry
 
 ==secret
 You hear the grinding of stone against stone, and notice a section of ruined wall you don't remember seeing before. Inscribed in it are the words "The donkey has a dark sense of humour".
-+[Return to the entrance of the Monastery]
++[Return to the entrance of The Monastery]
 ->enter_mon
 *{not more_explore} [Explore more]
 ->more_explore
