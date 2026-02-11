@@ -11,7 +11,7 @@ You awaken in a forest,
  
  +[Take the path to the {monastery: monastery | right}]
  ->right
- +[Take the path to the {station: station house| left}]
+ +[Take the path to the {station_name: station house| left}]
  ->left
  
  ==look_around
@@ -31,7 +31,7 @@ You awaken in a forest,
 
 ==right
 //route to donkey
-{stream: You head back towards the monastery, hearing the stream ahead of you|You walk deeper into the woods. The ground is cool underfoot, the air has a chill here. You think of soft carpet and wood floors and wish you were home. You hear water ahead of you.}
+{stream: You head back towards the monastery, hearing the stream ahead of you|You walk deeper into the woods. The ground is cool underfoot, the air has a chill here. {board_secret: You can't think of a more wonderful place. | You think of soft carpet and wood floors and wish you were home.} You hear water ahead of you.}
 
 +[Continue on]
 ->stream
@@ -62,14 +62,16 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 
 ==monastery
  {monastery>1: You follow the path to a familiar set of ruins. You have returned to the Monastery.|Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p>You have found <b>The Monastery</b>.</p>} 
+ {enter_mon: You follow the path to a familiar set of ruins. You have returned to the monastery.|{board_secret:With an impressive bound, you easily clear the water.} Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p>You have found <b>The Monastery</b>.</p>} 
 
 +[Enter the Monastery]
 ->enter_mon
-+[Return to the grove]
++ {not board_secret}[Return to the grove]
+->grove
++{board_secret}[Hop back to the grove]
 ->grove
 
 ==enter_mon
-//after "gun" donkey needs to be gone
 {approach_donkey or explore_mon: You are standing in the entryway of the Monastery. The old donkey is still happily chewing his grass.| You carefully cross the moss-covered threshold of <b>The Monastery</b>. The ground beyond is blanketed by a tall yellow grass, the horizon is swallowed up again by thick forest. An old donkey is a few yards off, feeding in the grass contentedly.}  
 
 +[Approach the donkey]
@@ -199,9 +201,10 @@ The slab has a pearlescent mosiac on it, pieces of shell forming an ornate spira
 
 ==more_explore
 In a far corner of the monastery you find the remnants of a stained glass window, still partially intact. As the sparse sunlight illuminates it, you see it depicts three figures in majestic robes. One holds a cup, one a sword, and the final one holds nothing. The glass is shattered where his head should have been. 
-*[Return to the entrance of the Monastery]
++[Return to the entrance of the Monastery]
 ->enter_mon
-->DONE
++[Follow your ears]
+->lapinate_chantry
 
 ==secret
 You hear the grinding of stone against stone, and notice a section of ruined wall you don't remember seeing before. Inscribed in it are the words "The donkey has a dark sense of humour".
@@ -210,16 +213,82 @@ You hear the grinding of stone against stone, and notice a section of ruined wal
 *{not more_explore} [Explore more]
 ->more_explore
 
+==lapinate_chantry
+There is something humming - no - singing to you from behind the stained glass window.
+*[Break through]
+Disregarding any cuts, the song is too beautiful after all, you smash what remains of the window to pieces and clamber through to what hid behind it.
+-A small courtyard sits just behind where the window once stood. It appears to have been blocked off from the rest of the monastery sometime after its construction
+*[Look around]
 
+You get down onto your haunches and scrabble around in the dirt and grass looking for something - anything. 
 
-//route to stationmaster
+-(inscription){You find small beads inscribed with spirals, candle stumps, and fragments of wood that once had something carved on them. <i>Something</i> was once worshipped here. Something else. |What else?}
+
+*[look closer at the beads] You hold one of the beads up to your eye. They look to be made from bone. They appear slightly ovular in shape and each is tipped with a yellow opal, the veins of which run through the spiral etched into the ivory. ->inscription
+*[Smell the candles] They are lightly scented with spring flowers. ->inscription
+*[gather the pieces of wood together]You manage to connect some of the scraps of wood into the semblance of a whole text - it looks to be a prayer of some kind.
+
+<i>...and so our fecund lord, who bounds through the gloaming... make haste to greet your piteous subjects...we from whom you spring eternal...Lapinite songs uplift you...swiftly dash through warren and briar, bringing with your blessing...anoint our Lagomane as your chosen...use the vessel...bring forth your divine music...keen through the sepulchre...<i>
+
+-Your nose twitches as you read the fragments of an ancient call to an ancient god. Something is buried here. 
+
+*[BURROW]
+
+-You scratch-scratch-scratch at the hard-packed earth. You don't know what you're looking for, but you know it's here. Just as you begin to lose faith, your dirt-caked hands reveal something.
+
+*[UNEARTH]
+
+The figurine of a Hare, carved in the same material as the beads, with yellow opals for eyes, and whorls of opalite colour that indicate fur and claws. This is what was making the song. 
+
+-You can <b>smell</b> it, and <b>hear</b> it, and <b>taste</b> it. The song of things <b>growing</b>, of things <b>multiplying</b>, of things <b>becoming greater</b> than they are. The song of <b>creeping overgrowth</b> and <b>glut</b> and <b>rot</b>. It sings to you now of <b>change</b>, an <b>incredible change</b>. One already partly underway. 
+
+*[<b>ACCEPT THE SONG</b>]->transformation
+*[Reject the song] The hare figurine crumbles away to ash in your hands - leaving only its opal eyes. You feel a sharp burning from your bite. Your punishment, you suppose. You have a feeling the wound will never heal. 
+
+You should leave this place before something worse happens ->enter_mon
+
+==transformation
+
+The Bone-Hare's eyes glow yellow and the timpanic pounding - the cacophany of rush and dew and fervor coalesces into a single keening note whose resonance enters your body through the wound on your hand and from there reverberates through your very being. 
+*[<b>CHANGE</b>]
+<i>Wound closing - flesh tearing - muscle engorging - hair spreading - tooth elongating - nail sharpening - ear stretching - stature building - divine encapsulating
+
+<i>frog - viper - cicada - ant - butterfly  - alate - larvae - egg - embryo - spawn - paturate</i>
+
+<i>shed - molt - cocoon - pupate - metamorphise -</i> 
+**[EMERGE] 
+- I <b>am</b> now. I <b>smell</b> now I <b>hear</b> now. Out - out - out - time to <b>run</b>, time to <b>flee</b>. I once was lost. I once was other. I can <b>grow</b> more - must grow more. 
+**[ESCAPE]
+I <b>hop-hop-leap</b> over the stone walls. I land near a creature. A  creature. I did not see it once, what it truly was. Like my Lord, but older. Weaker. 
+***[RUIN] I <b>twitch-twitch-twitch</b> my nose and a great groaning I hear and I can feel the <b>growth</b> that overtakes the old-stone building. The Laughing Nightmare looks at me in surprise and makes to laugh again, but too late for he is already <b>flesh-become-rotten-become-skin-become-bone</b>.
+***[RUN]I care not for razing this place, what once was my Lord's, only for escaping. <b>Where to-where to- where to?</b>
+---I soar into the sky, over <b>rush-raging</b> stream and <b>thump-thump-thump</b> down into the glorious overgrowth. What a fool I was to fear it. Where to now?
+****[DUSTY TUNNEL] I <b>gallop-march</b>. What <b>strength</b> I have now, what skill. I am the greatest conjoining of my form and my lord; enough of me is still capable of what the <b>beast</b> is not. 
+****[NOISFUL PATH] I scurry-rush through the darkness and my new nose smells the angels of the undergrowth in their warrens. Alas I cannot fit, but I shall make a great warren of my own. 
+----I emerge at a ruined place. Some growth, not much. And that woman again. The vexing-hexing woman who tormented-toyed with me so when I desired leave. I would not wish such a thing now.
+*****[TALK]I <b>thump-land</b> on her platform and she emerges to see my glorious state. Her eyes widen and she seems frightened of me. <p>"You shouldn't have done that. Each to their own I suppose. I assume you won't be needing that train anymore then. Nor will you answer my question"</p> She laughs wanly. I tell her of my <b>purpose</b>. She knows there is nothing she can do. Perhaps she will leave. She will leave.
+*****[TERROR] I beat-beat-beat upon the ground and watch as the building becomes <b>consumed</b> evermore. She emerges from her den and stares at me.
+I tell her that she should have kept us away better. I know now I cannot-should-not kill her. 
+But with no station where is the stationmaster to go? I shall chase her from this place. The <b>pulse-lurch</b> of the <b>hunt</b> will have her. I can make it so.
+----- The sun begins to set. I must make a den. Make plans. ->rabbit_ending
+
+==rabbit_ending
+*[WARREN]
+-I burrow into that grove where I first found myself before I became. I shall home here. But my Lord is not so strong in this world anymore. Not like he was. He knows that <b>change</b> is in his nature. <b>Rot</b> is life too. And so he can<b> grow</b> again. I can make him <b>grow</b> again. The Lapinate Chantry fell, but I shall not. I shall... revitalise. 
+*[REFLECT]
+I have done much in a day. I have forgot myself, explored, and not found my old self but taken upon a new one. What luck that an empty vessel such as I would happen upon an emissary of the Bounding One. 
+
+Though I know such things can't be luck. 
+
+->END
+
 ==left
-{You walk deeper into the woods. Everything is quieter here. Shadows seem to grow from the spaces between leaves, and glancing at them you see something looking back at you.|You walk back into the deep-woods. You cannot help feeling watched again.{pet: Your bite throbs sympathetically. <i>It</i> watches you from the shadows, you know it.}}
-//text needs to be different after this first encounter
+{You walk deeper into the woods. Everything is quieter here. Shadows seem to grow from the spaces between leaves, and glancing at them you see something looking back at you.|You walk back into the deep-woods. You cannot help feeling watched again.{pet: Your bite throbs sympathetically. <i>It</i> watches you from the shadows, you know it.{board_secret: You feel strangely comforted by this}}}
 
 *  { not station }         [Reach into the shadows]          ->critter
-+ {station} [Make your way swiftly, avoiding any gazes that catch your eye] ->station
++ {station and not board_secret} [Make your way swiftly, avoiding any gazes that catch your eye] ->station
 * {not station} [Try to ignore it as best as possible]  ->station
++{board_secret} [Dance through the woods on nimble feet] ->station
 
 ==critter
 You pull back the leaves to reveal an unusually calm rabbit. As it gazes at you with those too-big, too-smart eyes, it seems to make a decision. 
@@ -235,18 +304,25 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 *[Keep following the path] ->station
 
 ==station
-//inconsistency, "back to the station house" if you do donkey path first but you haven't been yet
-{grove or station_house: You make your way back to the outside of the old station house. The trees rustle all around you.| You make your way through the trees, {pet: nursing the weeping bite you now sport on your hand,|trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
-+{station_house or grove}[Approach the station house] ->station_house
-+{station_house or grove}[Go back down the path] You take the path back to the grove you first found yourself in. ->grove
-* {not grove and not station_house} [Inspect the building] A comfortable looking old thing, if slightly overgrown. What you first took for a porch you quickly realise is actually a train platform, complete with an information board and benches.
-* {not grove and not station_house} [Look around] As you glance around, looking for any signs of civilization that may accompany this strange structure, something in the distance catches your eye; a line that you follow right to your feet. 
 
-- You're standing on railway tracks hidden by leaves and grasses, either end receding into the gloam. 
+{station_name: You make your way back to the outside of the old station house. The trees rustle all around you. {board_secret:You can smell them in the darknss of the forest, hear their footsteps in the undergrowth.}| You make your way through the trees, {pet: nursing the weeping bite you now sport on your hand,|trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
++{station_name}[Approach the station house] ->station_house
++{(station_house or grove) and not board_secret}[Go back down the path] You take the path back to the grove you first found yourself in. ->grove
++{board_secret}[Scurry back the way you came] The forest doesn't seem so dark anymore as you take the route back the way you came. 
+
+->grove
+
+* {not station_name} [Inspect the building] A comfortable looking old thing, if slightly overgrown. What you first took for a porch you quickly realise is actually a train platform, complete with an information board and benches.
+* {not station_name} [Look around] As you glance around, looking for any signs of civilization that may accompany this strange structure, something in the distance catches your eye; a line that you follow right to your feet. 
+
+- You're standing on railway tracks hidden by leaves and grasses, either end receding into the gloam. ->station_name
+
+==station_name
 
 - <p>You have found <b>The Station House</b>.</p> Maybe there's a way out of the woods after all?
 ++[Approach the station house] ->station_house
-++[Turn Back] You make your way back to the grove you first found yourself in. ->grove
+++{not board_secret}[Turn Back] You make your way back to the grove you first found yourself in. ->grove
+++{board_secret}[Hop back] With a spring in your step, you skip your way back to the grove you first found yourself in. ->grove
 
 
 ==station_house
@@ -259,11 +335,31 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==information_board
 
-A confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns that you're sure aren't there, or at least don't exist <i>anymore</i>, and going alongisde a coastline that you can't recognise. 
+{A confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns that you're sure aren't there, or at least don't exist <i>anymore</i>, and going alongisde a coastline that you can't recognise. | The same board as before with the same information. Confusing, jumbled, and entirely unintelligble. Your head begins to hurt after a while.}
 
-The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful. 
+The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful.
 
-+ [Look away] ->station_house
+* {pet and information_board>1} [Look away] ->board_secret 
++ {not pet and information_board<2 or pet and information_board<2} [Look away] ->station_house
++ {board_secret} [Look away] ->station_house 
+
+
+==board_secret
+
+You begin to turn away when the pain from the bite on your hand flares up again. Dark veins spiderweb out from the pair of weeping red marks that pulse with sensation.
+
+As you look up from your hand, you notice something on the board that you hadn't before. A smudge that you took to be paart of the map, but can now <i>smell</i> that it must be dirt. How had you not noticed that before?
+
+*[Scrape it off]
+
+You use the fingernails of your non-wounded hand to scrape the dirt off the surface of the map. Underneath it you find the symbol for a temple - or monastery maybe, and a name that means nothing to you.
+
+Yet as you read it, you can't help but feel your heart <i>thump-thump-thumping</i>.
+-Perhaps you should look out for the Lapinate Chantry, whatever that may be. 
+
+*[look away] ->station_house
+
+->END
 
 ==station_master
 
@@ -298,11 +394,12 @@ She cocks her head.
 ** [Tell her you are looking for the station master]
 "That would be me," she taps her name badge with a well-manicured fingernail. "How can I help you?"
 
-- She smiles but it doesn't quite reach her eyes. You can't tell how old she is. 
+- (wabbit_talk) {She smiles but it doesn't quite reach her eyes. You can't tell how old she is. | Her strange smile has fallen in a most discomforting way.}
 
+*{board_secret}[Ask what the Lapinate Chantry is] The stationmaster narrows her eyes. "Why woud you like to know? I have no answers that would satisfy you. I would advise you to explore the matter no further." ->wabbit_talk
 *[Ask when the next train is]
 *[Ask where you are] You ask where you both are,  suddenly aware of your own ignorance.
-"The train station, of course." She finally blinks. 
+"The train station, of course." She finally blinks.
 **[Press further] You ask her where the train station is.
 "In the forest. You must have seen the trees, surely." You feel like this line of questioning isn't going to lead you anywhere.
 ***[Ask when the next train is]
@@ -416,7 +513,7 @@ As you move to get away from this strange woman, she offers you some words of ad
 
 -> station_house
 
-* {enter_mon} [Ask for more time] "Pity. I shall be waiting with baited breath for your answer."
++ {riddle_answer>1} [Ask for more time] "Pity. I shall be waiting with baited breath for your answer."
 
 ->station_house
 
@@ -467,7 +564,7 @@ Her face lights up in a smile.
 
 She grins at your expression{riddle_wrong>4: before dropping her magazine onto a nearby chair | taking out her pocketwatch} and moving towards you.
 
-"{not approach_donkey and riddle_wrong<4:Somone as ingenious and discerning as yourself would know the answer to this, but alas, | Questions for another time, perhaps.} I believe you have a train to catch. It should be arriving any second now. For future reference it's the half-past train that takes you out of the woods."
+"{not approach_donkey and riddle_wrong<4:Somone as ingenious and discerning as youself would know the answer to this, but alas, | Questions for another time, perhaps.} I believe you have a train to catch. It should be arriving any second now. For furture reference it's the half-past train that takes you out of the woods."
 
 You hear a rumbling faintly coming from behind the door.
 
@@ -493,24 +590,16 @@ You burst out the door of the waiting room, onto the platfrom and see -
 "Hm. Well, you know how trains are. Should be here shortly. I've never heard of a delay longer than two hours. They often just cancel them in that case."
 
 She smiles unhelpfully. There's only one thing to do now.
-
 *[Wait] You sink down onto the ground and put your head in your hands. You're not sure how long you'll be stuck here.
 *[Complain] "Well I can't do anything about it, can, I? I'm just the stationmaster, I don't control the trains." You swear you see her wink.
-
 -"Tell you what, I've got a deck of cards. We can pass the time together."
-
 *[Wait]
-
--The stationmaster teaches you a complicated card game called 'Usurpation' that requires you to keep the black and red kings as far from each toher as possible. You teach her gin rummy.{riddle_wrong<1 and not approach_donkey: You beat her soundly at both and she sulks for a minute or two, clearly not used to losing | She beats you viciously at both}.
-
+-The stationmaster teaches you a complicated card game called 'Usurpation' that requires you to keep the black and red kings as far from each other as possible. You teach her gin rummy.{riddle_wrong<1 and not approach_donkey: You beat her soundly at both and she sulks for a minute or two, clearly not used to losing | She beats you viciously at both}.
 *[Wait]
-
 -After a while the stationmaster bustles off to her mysterious lodgings and returns with a tray of iced tea and buttermilk pancakes. You sit and have a lovely chat about birds. 
 
 You can see a dot on the railtracks to your left in the far distance. 
-
 *[Wait]
-
 -You get up to inspect the information board and the stationmaster follows you. She begins to explain how to interpret the map {not approach_donkey:and you find that you can {riddle_wrong<4:quite easily interpret it. Knowing what you know now, you shall have to retrun to the stationhouse for tea and card games again. |somewhat interpret it, though you have to sit down after a while as you head begins to spin and your vision blurs} |{riddle_wrong<4: and you can't begin to interpret it at all. The stationmaster brings you another cup of tea though, which is nice. | and you get so confused that you have to sit down. The stationmaster instead shows you her magazine collection. It's a train magazine, but they do have a swimsuit edition. Interesting.}} 
 
 The dot has grown somewhat bigger.
