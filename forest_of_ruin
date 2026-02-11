@@ -61,6 +61,7 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 
 
 ==monastery
+ {monastery>1: You follow the path to a familiar set of ruins. You have returned to the Monastery.|Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p>You have found <b>The Monastery</b>.</p>} 
  {enter_mon: You follow the path to a familiar set of ruins. You have returned to the monastery.|{board_secret:With an impressive bound, you easily clear the water.} Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p>You have found <b>The Monastery</b>.</p>} 
 
 +[Enter the Monastery]
@@ -178,6 +179,7 @@ You do your best impression of a snare drum. You could swear the donkey lets out
  ==gun
  You are holding a pistol in your left hand. The donkey is nowhere to be seen.
  *[Return to the entrance of The Monastery]
+ ->enter_mon
 ->DONE
 
 ==explore_mon
@@ -422,7 +424,10 @@ Her blank eyes take on a glint of mischief. "Well, I'm rather enjoying having th
 - "Let's see if I remember it..." 
 
 *[...]
+->riddle_begins
 
+->riddle_begins
+==riddle_begins==
 - <i>Many years ago, this forest was once the site of an ancient kingdom.</i>
 
 <i>The king, on his deathbed, bequeathed his three sons each equal part of the kingdom and gifted each an item from his imperial regalia.</i>
@@ -491,8 +496,9 @@ VAR knows_p = false
 
 
 {<> If you think you know now please do share." | <> The station master smiles at you placidly, waiting for you to speak.}
-
-*[Ask for some time to think about it] 
+*{gun} [Threaten her]
+->gun_end1
++[Ask for some more time to think about it] 
 "Of course! I haven't been able to figure it out and I've been at it for who knows how long."
 
 As you move to get away from this strange woman, she offers you some words of advice.
@@ -568,12 +574,17 @@ You burst out the door of the waiting room, onto the platfrom and see -
 
 ***[What?]
 ***[A train, surely]
+
 -...
+
 *[What do I see?]
+
 -You are alone on the platform aside from the figure of the station master, still doing who knows what in the waiting room and, of course, the information board.
+
 *[Inspect the information board] As you move towards the board
 *[Go through the door] As you make to head back inside
 *[Go back] As you make to leave
+
 - <> the stationmaster pokes her head out of the doorway. 
 
 "Hm. Well, you know how trains are. Should be here shortly. I've never heard of a delay longer than two hours. They often just cancel them in that case."
@@ -658,4 +669,43 @@ You smile and reach into your pocket before realsing that you never actually bot
 
 
 -> END
+==apology==
+You're not sure what got into you. She ignores your apology, but says "I see you met the Ass. Don't feel too bad. He has a way of getting into people's heads." <p></p>"Anyway," her eyes glaze over again, "that pesky story..."
+<p></p>
+->riddle_answer
+==gun_end1
+You tell the stationmaster that you are sick of these games, and you want her to tell you everything she knows <b>now</b> or else. She looks at you like she sees something you don't, but says nothing.
+*[Apologise]
+->apology
+*[Fall further]
+->gun_end2
+==gun_end2
+You put your hand in your pocket and feel the heavy weight of the gun. You can hear the donkey's laugh on the wind.
+*[Fall further]
+->gun_end3
+*[Turn back]
+->too_late
 
+==too_late
+{too_late>1: It's too late for that now |You are faintly aware that something is very very wrong. But your hands are moving on their own. }
+*[Fall further]
+->gun_end3
+*[Turn back]
+->too_late
+
+==gun_end3
+You raise the gun up so it's level with your shoulder. The stationmaster still hasn't spoken. Her expression is unusual; neutral with a hint of resignation. You see stained glass and hear metal clattering, cries of alarm.
+*[Shoot]
+->gun_end_final1
+==gun_end_final1
+The force of the shot knocks you both back. You taste iron and hear your heartbeat in your ears. The stationmaster's body is crumpled on the platform, its edges blurring. You feel a sudden shift, and stagger slightly.
+*[Look down]
+->gun_end_final2
+==gun_end_final2
+The gun is no longer in your hand. The light glances off of something on your chest 
+*[Inspect it]
+->gun_end_final3
+==gun_end_final3
+It's a small metal badge. The text on it reads STATION MASTER.
+
+->END
