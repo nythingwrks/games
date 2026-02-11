@@ -57,12 +57,10 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 *Finish crossing the stream
 ->monastery
 
-->END
 
 
 ==monastery
- {monastery>1: You follow the path to a familiar set of ruins. You have returned to the Monastery.|Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p>You have found <b>The Monastery</b>.</p>} 
- {enter_mon: You follow the path to a familiar set of ruins. You have returned to the monastery.|{board_secret:With an impressive bound, you easily clear the water.} Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p>You have found <b>The Monastery</b>.</p>} 
+ {monastery>1: You follow the path to a familiar set of ruins. You have returned to the monastery.|{board_secret:With an impressive bound, you easily clear the water.} Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p>You have found <b>The Monastery</b>.</p>} 
 
 +[Enter the Monastery]
 ->enter_mon
