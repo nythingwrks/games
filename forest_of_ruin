@@ -47,6 +47,8 @@ You awaken in a forest,
 Your clothes feel heavy in the frigid water, the current tugs at you aggressively.
 Out of the corner of your eye, you see something glinting at the bottom of the stream. 
 You hear a sound in the woods behind you, almost like an intake of breath.
+
+//maybe add something after this about crossing the stream quickly?
 *[Cross the stream quickly]
 ->monastery
 *[Investigate the glinting]
@@ -57,11 +59,10 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 *Finish crossing the stream
 ->monastery
 
-->END
 
 
 ==monastery
- {enter_mon: You follow the path to a familiar set of ruins. You have returned to the monastery.|{board_secret:With an impressive bound, you easily clear the water.} Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p>You have found <b>The Monastery</b>.</p>} 
+ {monastery>1: You follow the path to a familiar set of ruins. You have returned to the monastery.|{board_secret:With an impressive bound, you easily clear the water.} Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p>You have found <b>The Monastery</b>.</p>} 
 
 +[Enter the Monastery]
 ->enter_mon
@@ -104,13 +105,13 @@ You tell the donkey that you lied and told your friends that you got your driver
 *[...]
 ->approach_donkey
 
-//after you've told the existential joke you are sent here if you try and keep joking:
+//sending you back to the donkey as opposed to the entrance of the monastery again (in case you have more stuff to say/do to it
 ==no_joke
  You think of the station master and her riddle.
 +[Return to the grove]
 ->grove
-+[Spend more time in the monastery]
-->enter_mon
++[Try something else]
+->approach_donkey
 
 ==joke
 {existential_joke: You don't feel like joking anymore.->no_joke}
@@ -178,6 +179,7 @@ You do your best impression of a snare drum. You could swear the donkey lets out
  ==gun
  You are holding a pistol in your left hand. The donkey is nowhere to be seen.
  *[Return to the entrance of The Monastery]
+ ->enter_mon
 ->DONE
 
 ==explore_mon
@@ -187,21 +189,21 @@ You wander around the monastery{. Stone slabs litter the ground, delicate carvin
 ->slab
 *{not more_explore} [Keep exploring]
 ->more_explore
-*Turn back
++Turn back
 ->enter_mon
 
 ==slab
 The slab has a pearlescent mosiac on it, pieces of shell forming an ornate spiral winding out from the center. You notice one of the shells is missing.{not shell: You wish you had something you could put there.}
 *{shell}[Place the shell from the river in the gap.]
 ->secret
-*[Explore more]
++[Explore more]
 ->more_explore
 
 ==more_explore
-In a far corner of the monastery you find the remnants of a stained glass window, still partially intact. As the sparse sunlight illuminates it, you see it depicts three figures in majestic robes. One holds a cup, one a sword, and the final one holds nothing. The glass is shattered where his head should have been. 
+{In a far corner of the monastery you find the remnants of a stained glass window, still partially intact. As the sparse sunlight illuminates it, you see it depicts three figures in majestic robes. One holds a cup, one a sword, and the final one holds nothing. The glass is shattered where his head should have been. | You are back in the corner of the monastery with the stained glass window} 
 +[Return to the entrance of the Monastery]
 ->enter_mon
-+[Follow your ears]
+*{board_secret}[Follow your ears]
 ->lapinate_chantry
 
 ==secret
@@ -305,7 +307,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 {station_name: You make your way back to the outside of the old station house. The trees rustle all around you. {board_secret:You can smell them in the darknss of the forest, hear their footsteps in the undergrowth.}| You make your way through the trees, {pet: nursing the weeping bite you now sport on your hand,|trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
 +{station_name}[Approach the station house] ->station_house
-+{(station_house or grove) and not board_secret}[Go back down the path] You take the path back to the grove you first found yourself in. ->grove
++{(station_house or grove) and not board_secret}[Return to the grove] You take the path back to the grove you first found yourself in. ->grove
 +{board_secret}[Scurry back the way you came] The forest doesn't seem so dark anymore as you take the route back the way you came. 
 
 ->grove
@@ -319,32 +321,32 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 - <p>You have found <b>The Station House</b>.</p> Maybe there's a way out of the woods after all?
 ++[Approach the station house] ->station_house
-++{not board_secret}[Turn Back] You make your way back to the grove you first found yourself in. ->grove
+++{not board_secret}[Return to the grove] You make your way back to the grove you first found yourself in. ->grove
 ++{board_secret}[Hop back] With a spring in your step, you skip your way back to the grove you first found yourself in. ->grove
 
 
 ==station_house
 {information_board or station_master:You are alone on the platform aside from {station_master: the figure of the station master, still doing who knows what in the waiting room|the frosted glass of the waiting room door, through which you now spy a silhouette,} and, of course, the information board.|You make your way up and onto the platform. You can see the information board more clearly, and just behind it the frosted glass door of a small waiting room.}  
 
-+ [Inspect the information board] -> information_board
++ {information_board<2}[Inspect the information board] -> information_board
 + {not riddle_answer} [Go through the door] -> station_master
 + {riddle_answer} [Go through the door] -> riddle_answer
-+ {riddle_answer} [Go back] -> station
++ {riddle_answer} [Leave the platform] -> station
 
 ==information_board
 
 {A confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns that you're sure aren't there, or at least don't exist <i>anymore</i>, and going alongisde a coastline that you can't recognise. | The same board as before with the same information. Confusing, jumbled, and entirely unintelligble. Your head begins to hurt after a while.}
 
-The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful.
+The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful. {pet and information_board>1: ->board_secret}
 
-* {pet and information_board>1} [Look away] ->board_secret 
-+ {not pet and information_board<2 or pet and information_board<2} [Look away] ->station_house
-+ {board_secret} [Look away] ->station_house 
++ [Look away] ->station_house 
 
 
 ==board_secret
 
-You begin to turn away when the pain from the bite on your hand flares up again. Dark veins spiderweb out from the pair of weeping red marks that pulse with sensation.
+*[Look away]
+
+- You begin to turn away when the pain from the bite on your hand flares up again. Dark veins spiderweb out from the pair of weeping red marks that pulse with sensation.
 
 As you look up from your hand, you notice something on the board that you hadn't before. A smudge that you took to be paart of the map, but can now <i>smell</i> that it must be dirt. How had you not noticed that before?
 
@@ -398,9 +400,9 @@ She cocks her head.
 *[Ask when the next train is]
 *[Ask where you are] You ask where you both are,  suddenly aware of your own ignorance.
 "The train station, of course." She finally blinks.
-**[Press further] You ask her where the train station is.
+    **[Press further] You ask her where the train station is.
 "In the forest. You must have seen the trees, surely." You feel like this line of questioning isn't going to lead you anywhere.
-***[Ask when the next train is]
+        ***[Ask when the next train is]
 - She seems faintly amused. "That depends on where you want to go. We have an information board outside with routes and times."
 *[I want to leave the forest]
 *{information_board} [I've already been there.] You tell her it was unhelpful.
@@ -422,7 +424,10 @@ Her blank eyes take on a glint of mischief. "Well, I'm rather enjoying having th
 - "Let's see if I remember it..." 
 
 *[...]
+->riddle_begins
 
+->riddle_begins
+==riddle_begins==
 - <i>Many years ago, this forest was once the site of an ancient kingdom.</i>
 
 <i>The king, on his deathbed, bequeathed his three sons each equal part of the kingdom and gifted each an item from his imperial regalia.</i>
@@ -464,7 +469,7 @@ Her blank eyes take on a glint of mischief. "Well, I'm rather enjoying having th
 
 "And there it is. I'm sure you understand the pickle I'm in. I can't for the life of me figure out which brother did it. He had the sword obviosuly, but other than that it's a mystery. If you could figure out the answer to my little conundrum, I would be more than happy to tell you about your departing train." 
 
-*[Acquiese...begrudgingly]
+*[Acquiesce...begrudgingly]
 "Splendid!
 *[Ask once more when your train is arriving]
 "It shouldn't take that long. I can tell you right now that you have plenty of time before your train arrives to figure out the answer.
@@ -491,8 +496,9 @@ VAR knows_p = false
 
 
 {<> If you think you know now please do share." | <> The station master smiles at you placidly, waiting for you to speak.}
-
-*[Ask for some time to think about it] 
+*{gun} [Threaten her]
+->gun_end1
+*(askedonce)[Ask for some more time to think about it]
 "Of course! I haven't been able to figure it out and I've been at it for who knows how long."
 
 As you move to get away from this strange woman, she offers you some words of advice.
@@ -507,7 +513,7 @@ As you move to get away from this strange woman, she offers you some words of ad
 
 -> station_house
 
-+ {riddle_answer>1} [Ask for more time] "Pity. I shall be waiting with baited breath for your answer."
++ {askedonce} [Ask for more time] "Pity. I shall be waiting with baited breath for your answer."
 
 ->station_house
 
@@ -568,12 +574,17 @@ You burst out the door of the waiting room, onto the platfrom and see -
 
 ***[What?]
 ***[A train, surely]
+
 -...
+
 *[What do I see?]
+
 -You are alone on the platform aside from the figure of the station master, still doing who knows what in the waiting room and, of course, the information board.
+
 *[Inspect the information board] As you move towards the board
 *[Go through the door] As you make to head back inside
-*[Go back] As you make to leave
+*[Leave the platform] As you make to leave
+
 - <> the stationmaster pokes her head out of the doorway. 
 
 "Hm. Well, you know how trains are. Should be here shortly. I've never heard of a delay longer than two hours. They often just cancel them in that case."
@@ -624,7 +635,7 @@ You explain to her that, for some reason, you don't want to leave.
 
 "I'll be flattered and believe that to be about my company." Her face hides an emotion that you don't think you recognise.
 
-*You wonder if it is.
+*[You wonder what it is.]
 
 Whatever the case - be it the serenity of {enter_mon: the monastery| the woods}, the cosiness of the stationhouse, or just the escape from a life outside you can't remember, you know that you wish to stay. For now, at least.
 
@@ -658,4 +669,43 @@ You smile and reach into your pocket before realsing that you never actually bot
 
 
 -> END
+==apology==
+You're not sure what got into you. She ignores your apology, but says "I see you met the Ass. Don't feel too bad. He has a way of getting into people's heads." <p></p>"Anyway," her eyes glaze over again, "that pesky story..."
+<p></p>
+->riddle_answer
+==gun_end1
+You tell the stationmaster that you are sick of these games, and you want her to tell you everything she knows <b>now</b> or else. She looks at you like she sees something you don't, but says nothing.
+*[Apologise]
+->apology
+*[Fall further]
+->gun_end2
+==gun_end2
+You put your hand in your pocket and feel the heavy weight of the gun. You can hear the donkey's laugh on the wind.
+*[Fall further]
+->gun_end3
+*[Turn back]
+->too_late
 
+==too_late
+{too_late>1: It's too late for that now |You are faintly aware that something is very very wrong. But your hands are moving on their own. }
+*[Fall further]
+->gun_end3
+*[Turn back]
+->too_late
+
+==gun_end3
+You raise the gun up so it's level with your shoulder. The stationmaster still hasn't spoken. Her expression is unusual; neutral with a hint of resignation. You see stained glass and hear metal clattering, cries of alarm.
+*[Shoot]
+->gun_end_final1
+==gun_end_final1
+The force of the shot knocks you both back. You taste iron and hear your heartbeat in your ears. The stationmaster's body is crumpled on the platform, its edges blurring. You feel a sudden shift, and stagger slightly.
+*[Look down]
+->gun_end_final2
+==gun_end_final2
+The gun is no longer in your hand. The light glances off of something on your chest 
+*[Inspect it]
+->gun_end_final3
+==gun_end_final3
+It's a small metal badge. The text on it reads STATION MASTER.
+
+->END
