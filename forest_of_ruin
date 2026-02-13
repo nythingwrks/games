@@ -283,7 +283,7 @@ Though I know such things can't be luck.
 ->END
 
 ==left
-{You walk deeper into the woods. Everything is quieter here. Shadows seem to grow from the spaces between leaves, and glancing at them you see something looking back at you.|You walk back into the deep-woods. You cannot help feeling watched again.{pet: Your bite throbs sympathetically. <i>It</i> watches you from the shadows, you know it.{board_secret: You feel strangely comforted by this}}}
+{You walk deeper into the woods. Everything is quieter here. Shadows seem to grow from the spaces between leaves. Glancing at them, you see something looking back at you.|You walk back into the deep-woods. You still feel hidden eyes on you.{pet: Your bite throbs sympathetically. <i>It</i> watches you from the shadows, you know it.{board_secret: You feel strangely comforted by this}}}
 
 *  { not station }         [Reach into the shadows]          ->critter
 + {station and not board_secret} [Make your way swiftly, avoiding any gazes that catch your eye] ->station
@@ -305,7 +305,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==station
 
-{station_name: You make your way back to the outside of the old station house. The trees rustle all around you. {board_secret:You can smell them in the darknss of the forest, hear their footsteps in the undergrowth.}| You make your way through the trees, {pet: nursing the weeping bite you now sport on your hand,|trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
+{station_name: You make your way back to the outside of the old station house. The trees rustle all around you. {board_secret:You can smell them in the darknss of the forest, hear their footsteps in the undergrowth.}| You make your way through the trees {pet: , nursing the weeping bite you now sport on your hand,|, trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
 +{station_name}[Approach the station house] ->station_house
 +{(station_house or grove) and not board_secret}[Return to the grove] You take the path back to the grove you first found yourself in. ->grove
 +{board_secret}[Scurry back the way you came] The forest doesn't seem so dark anymore as you take the route back the way you came. 
@@ -326,7 +326,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 
 ==station_house
-{information_board or station_master:You are alone on the platform aside from {station_master: the figure of the station master, still doing who knows what in the waiting room|the frosted glass of the waiting room door, through which you now spy a silhouette,} and, of course, the information board.|You make your way up and onto the platform. You can see the information board more clearly, and just behind it the frosted glass door of a small waiting room.}  
+{information_board or station_master: You are alone on the platform aside from {station_master: the figure of the station master, still doing who knows what in the waiting room|the frosted glass of the waiting room door, through which you now spy a silhouette,} and, of course, the information board.|You make your way up and onto the platform. You can see the information board more clearly, and just behind it the frosted glass door of a small waiting room.}  
 
 + {information_board<2}[Inspect the information board] -> information_board
 + {not riddle_answer} [Go through the door] -> station_master
@@ -335,7 +335,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==information_board
 
-{A confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns that you're sure aren't there, or at least don't exist <i>anymore</i>, and going alongisde a coastline that you can't recognise. | The same board as before with the same information. Confusing, jumbled, and entirely unintelligble. Your head begins to hurt after a while.}
+{A confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns that you're sure aren't there, or at least don't exist <i>anymore</i>, and going along a coastline that you can't recognise. | The same board as before with the same information. Confusing, jumbled, and entirely unintelligible. Your head begins to hurt after a while.}
 
 The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful. {pet and information_board>1: ->board_secret}
 
@@ -347,14 +347,14 @@ The next train to where you think 'here' is will either arrive in half an hour, 
 
 You begin to turn away when the pain from the bite on your hand flares up again. Dark veins spiderweb out from the pair of weeping red marks that pulse with sensation.
 
-As you look up from your hand, you notice something on the board that you hadn't before. A smudge that you took to be paart of the map, but can now <i>smell</i> that it must be dirt. How had you not noticed that before?
+As you look up from your hand, you notice something on the board that you hadn't before. A smudge that you took to be part of the map, but now your sense of <i>smell</i> tells you must be dirt. How had you not noticed that before?
 
 *[Scrape it off]
 
-You use the fingernails of your non-wounded hand to scrape the dirt off the surface of the map. Underneath it you find the symbol for a temple - or monastery maybe, and a name that means nothing to you.
+You use the fingernails of your non-wounded hand to scrape the dirt off the surface of the map. Underneath it you find the symbol for a temple - or monastery maybe- and a name that means nothing to you.
 
 Yet as you read it, you can't help but feel your heart <i>thump-thump-thumping</i>.
--Perhaps you should look out for the Lapinate Chantry, whatever that may be. 
+-Perhaps you should look out for the <b>"Lapinate Chantry" </b>, whatever that may be. 
 
 *[look away] ->station_house
 
@@ -366,7 +366,7 @@ You open the door to see a modest waiting room, muffled by a thick layer of dust
 
 A figure stands in the middle of the room, wearing an immaculate double-breasted coat. Her name badge reads "STATION MASTER".
 
-*[Speak to the Station Master]
+*[Speak to the station master]
 ->conversation
 *[Go back]
 ->station_house
@@ -376,51 +376,52 @@ You clear your throat.
 * [Say hello] 
 You begin to introduce yourself, but realise your name has slipped right out of your mind. 
 ** [Tell her you are lost]
-"Good Afternoon, Lost. I'm the station master, how may I be of service?" She replies, unblinking.
+"Good Afternoon, Lost. I am the station master, how may I be of service?" She replies, unblinking.
 ***[Correct her] You tell her your name isn't 'Lost', that it's just what you are.
-"Oh, of course. I'm sorry."
+"Oh, of course. I am sorry."
 
 ****[...]
 She doesn't look particularly sorry. 
 *****[Ask her name]
 She pauses. "Station master is fine."
-*****[Ask her to help you] 
+*****[Ask her for help] 
 She cocks her head. 
-"You may have to be a little bit more specific. Anything to do with this station, probably yes. However, if you were in dire need of a buttermilk pancake or were bleeding out, I'd probably struggle a little bit.{ critter: That bite of yours does look painful, though I doubt it'll scar.| But I don't think you're in any danger of that happening.}" 
+"You may have to be a little bit more specific. Anything to do with this station, I probably can assist with. However, if you were in dire need of a buttermilk pancake or were bleeding out, I would probably struggle a little bit.{ critter: That bite of yours looks painful, but not serious. I suspect it will scar.| But I don't think you're in any danger of that happening.}" 
  
 *** [Ask how to leave the forest]
-"I've long since forgotten the route on foot, but there's certainly a train that could take you to your destination." 
+"I have long since forgotten the route on foot, but there is certainly a train that could take you to your destination." 
 ** [Tell her you are looking for the station master]
 "That would be me," she taps her name badge with a well-manicured fingernail. "How can I help you?"
 
 - (wabbit_talk) {She smiles but it doesn't quite reach her eyes. You can't tell how old she is. | Her strange smile has fallen in a most discomforting way.}
 
-*{board_secret}[Ask what the Lapinate Chantry is] The stationmaster narrows her eyes. "Why woud you like to know? I have no answers that would satisfy you. I would advise you to explore the matter no further." ->wabbit_talk
+*{board_secret}[Ask what the Lapinate Chantry is] The station master narrows her eyes. "Why would you like to know? I have no answers that would satisfy you. I would advise you to explore the matter no further." ->wabbit_talk
 *[Ask when the next train is]
 *[Ask where you are] You ask where you both are,  suddenly aware of your own ignorance.
 "The train station, of course." She finally blinks.
 **[Press further] You ask her where the train station is.
-"In the forest. You must have seen the trees, surely." You feel like this line of questioning isn't going to lead you anywhere.
+"In the forest. You must have seen the trees, surely." 
+<p>You feel like this line of questioning isn't going to lead you anywhere.</p>
 ***[Ask when the next train is]
 - She seems faintly amused. "That depends on where you want to go. We have an information board outside with routes and times."
-*[I want to leave the forest]
-*{information_board} [I've already been there.] You tell her it was unhelpful.
-"I'm sorry to hear that. I'll talk to someone about updating it." 
+*[Tell her you want to leave the forest]
+*{information_board} [Tell her you've already looked at it] You tell her it was unhelpful.
+"I am sorry to hear that. I will talk to someone about updating it." 
 You don't think she will.  
 **[Ask her how to leave the forest]
-*{not information_board} [I haven't looked at it yet.] You admit you came straight to talk to her.
+*{not information_board} [Tell her you haven't looked at it yet] You admit you came straight to talk to her.
 "I see. No bother, I know its contents better than most."
 **[Ask how to leave the forest]
 - "Ah. Trains <i>out</i> of the woods." The stationmaster thinks for a moment. "I could tell you, but..."
 *[But?]
-Her blank eyes take on a glint of mischief. "Well, I'm rather enjoying having the company... I'd be sad to lose it. What would I gain by helping you leave?"
-***[Ask what she wants.]
-- "Actually, I might find it in me to help you if you help me first. An old man passed through a short while ago and told me a story that I can't make head or tails of..." She looks at you expectantly.
+Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having the company... I would be sad to lose it. What would I gain by helping you leave?"
+***[Ask what she wants in return.]
+- "A pertinent question- I suppose might find it in me to help you if you help me first. There is something that has been bothering me. An old man passed through a short while ago and told me a story that I can not make head or tails of..." She looks at you expectantly.
 
 * [Let her speak]
 * [Tell her you don't have time for this] She continues, ignoring you completely. 
 
-- "Let's see if I remember it..." 
+- "Let me see if I remember it..." 
 
 *[...]
 ->riddle_begins
@@ -431,49 +432,49 @@ Her blank eyes take on a glint of mischief. "Well, I'm rather enjoying having th
 
 <i>The king, on his deathbed, bequeathed his three sons each equal part of the kingdom and gifted each an item from his imperial regalia.</i>
 
-*[A foolish decision]
+*[...]
 
-- <i>Three thrones were set in place at the royal court, and for a while the brothers ruled peacefully,  side by side.</i>
+- <i>Three thrones were set in place at the royal court and for a while the brothers ruled peacefully, side by side.</i>
 
-*[But peace can only last so long...]
+*[...]
 
-- <i>One day, a  man with a donkey entered the court seeking the brothers’ counsel. Each king sat resplendent in his signature colour, one in red, one in black and one in green.</i>
+- <i>One day, a man with a donkey entered the court seeking the brothers’ counsel. Each king sat resplendent in his signature colour: one in red, one in black and one in green.</i>
 
-*[Easy enough to tell them apart]
+*[...]
 
-- <i>There are many accounts of what happened that day, but all agree on the following: Firstly, the man spoke in a low voice,</i> 
+- <i>There are many accounts of what happened that day, but all agree on the following: Firstly, the man spoke in a low voice, his words inaudible to the nearby courtiers. </i> 
 
-*[Why was he there?]
+*[...]
 
-- <i>The most cunning king in red leaned back and paused in contemplation. From the left, the black-robed king leapt up and made as if to strike the man. The final brother, in green, adjusted his crown nervously.</i>  
+- <i>The most cunning king, in red, leaned back and paused to contemplate the man's words. From the left, the black-robed king leapt up and made as if to strike the man. The final brother, in green, adjusted his crown nervously.</i>  
 
-*[What did he say?]
+*[...]
 
 - <i>The donkey at the old man’s side let out a long braying laugh, shattering the tense silence.</i>
 
-*[What made the donkey laugh?]
+*[...]
 
 - <i>At once, the king who had been gifted the imperial sword drew it and ran the brother next to him through. </i>
 <i>The remaining king stood wide-eyed, looking over his slain brother’s body at the king with the sword. Unable to believe his own brother capable of such betrayal, he could not imagine the same fate would befall him. </i>
 
 <i>His expression remained fixed in disbelief as his head fell from his body. </i>   
 
-*[Why would brother betray brother?]
+*[...]
 
 - <i>Two clattering sounds rang out, first the goblet, and then the crown. The king with the sword took the crown from where it lay, and lifted his other brother's goblet to toast the man as he led his donkey out of the castle and into the woods.</i>
 
-*[As it always does, it ends with the woods]
+*[As it always does, it ends with the woods] 
 
 - The station master opens her eyes. You don't remember her closing them. 
 
-"And there it is. I'm sure you understand the pickle I'm in. I can't for the life of me figure out which brother did it. He had the sword obviosuly, but other than that it's a mystery. If you could figure out the answer to my little conundrum, I would be more than happy to tell you about your departing train." 
+"And there it is. I am sure you understand the pickle I am in. I cannot for the life of me figure out which brother did it. He had the sword, obviously, but the details beyond that escape me. If you could figure out the answer to my little conundrum, I would be more than happy to tell you about your departing train." 
 
-*[Acquiesce...begrudgingly]
-"Splendid!
+*[Acquiesce begrudgingly]
+"Splendid!"
 *[Ask once more when your train is arriving]
-"It shouldn't take that long. I can tell you right now that you have plenty of time before your train arrives to figure out the answer.
+"It should not take that long. I can tell you right now that you have plenty of time before your train arrives to figure out the answer."
 *[Ask if you have any choice in the matter]
-"I'm not sure I know what you mean.
+"I am not sure I know what you mean." It is quite clear that you don't.
 - -> riddle_answer
 
 ==riddle_wrong
@@ -494,15 +495,15 @@ VAR knows_c = false
 VAR knows_p = false
 
 
-{<> If you think you know now please do share." | <> The station master smiles at you placidly, waiting for you to speak.}
+{<> If you think you know now, please do share." | <> The station master smiles at you placidly, waiting for you to speak.}
 *{gun} [Threaten her]
 ->gun_end1
 *(askedonce)[Ask for some more time to think about it] 
-"Of course! I haven't been able to figure it out and I've been at it for who knows how long."
+"Of course! Take the time you need. I have been turning it over myself for who knows how long."
 
 As you move to get away from this strange woman, she offers you some words of advice.
 
-"I've heard that the nearby monastery has a certain equine abbot that may be able to help you. He loves a joke, so I've been told." 
+"I have heard that the nearby monastery has a certain equine abbot that may be able to help you. He loves a joke, so I've been told." 
 
 **{not enter_mon} [Equine abbot?]
 
@@ -518,7 +519,7 @@ As you move to get away from this strange woman, she offers you some words of ad
 
 + [Solve the tale]
 
-{riddle_wrong<4: "Excellent! Please go on." | "Oh good. I'll just..." The station master {riddle_wrong<5:produces a magazine seemingly from nowhere and begins flipping through it. "Don't mind me I'm still listening." You're not sure that she is.|returns to her magazine and idly flips to the next page. "Go on then."}}
+{riddle_wrong<4: "Excellent! Please go on." | "Oh good. I'll just..." The station master {riddle_wrong<5:produces a magazine seemingly from nowhere and begins flipping through it. "Pay me no mind, I am still listening." You're not sure that she is.|returns to her magazine and idly flips to the next page. "Go on then."}}
 
 ++"The king with the sword..."[] you begin, feeling unsure of yourself. "Wore robes of..."
 +++"Red.["] 
@@ -546,11 +547,11 @@ As you move to get away from this strange woman, she offers you some words of ad
 ~ t_pos = "to the right of"
 ----- <> throne."
 
-- She intones the following{riddle_wrong<4:, almost in a trance: | without pausing from reading{riddle_wrong<5:: |. She sounds almost bored.}}
+- She intones the following{riddle_wrong<4:, almost in a trance: | without pausing her magazine reading{riddle_wrong<5:: |. She sounds almost bored.}}
 
 "Sat on his throne {t_pos} his brothers, the king in {r_colour} raised his sword above his head and brought it down in two {k_trait} strikes." 
 
-The station master{riddle_wrong<4: pauses to consider this | looks up from her magazine}{knows_t && knows_p && knows_c :... -> the_end | and frowns. "No, that doesn't feel quite right." She taps her chin and looks back at you. -> riddle_wrong }
+The station master{riddle_wrong<4: pauses to consider this | looks up from her magazine}{knows_t && knows_p && knows_c :... -> the_end | and frowns. "No, that does not feel quite right." She taps her chin and looks back at you. -> riddle_wrong }
 
 -> grove
 
@@ -563,20 +564,16 @@ Her face lights up in a smile.
 
 She grins at your expression{riddle_wrong>4: before dropping her magazine onto a nearby chair | taking out her pocketwatch} and moving towards you.
 
-"{not approach_donkey and riddle_wrong<4:Somone as ingenious and discerning as youself would know the answer to this, but alas, | Questions for another time, perhaps.} I believe you have a train to catch. It should be arriving any second now. For furture reference it's the half-past train that takes you out of the woods."
+"{not approach_donkey and riddle_wrong<4:Perhaps you know better than I do. | Questions for another time, perhaps.} Right, I believe you have a train to catch. It should be arriving shortly. For future reference it is the half-past train that takes you out of the woods."
 
 You hear a rumbling faintly coming from behind the door.
 
-**[Go outside - to freedom!]
+**[Go to the platform]
 
 You burst out the door of the waiting room, onto the platfrom and see - 
+Empty forest, overgrown tracks. No train in sight.
 
-***[What?]
-***[A train, surely]
-
--...
-
-*[What do I see?]
+*[Look around]
 
 -You are alone on the platform aside from the figure of the station master, still doing who knows what in the waiting room and, of course, the information board.
 
@@ -586,20 +583,20 @@ You burst out the door of the waiting room, onto the platfrom and see -
 
 - <> the stationmaster pokes her head out of the doorway. 
 
-"Hm. Well, you know how trains are. Should be here shortly. I've never heard of a delay longer than two hours. They often just cancel them in that case."
+"Hm. Must have been rerouted. Well, you know how trains are. I've never heard of a delay longer than two hours. They often just cancel them in that case."
 
 She smiles unhelpfully. There's only one thing to do now.
 *[Wait] You sink down onto the ground and put your head in your hands. You're not sure how long you'll be stuck here.
-*[Complain] "Well I can't do anything about it, can, I? I'm just the stationmaster, I don't control the trains." You swear you see her wink.
--"Tell you what, I've got a deck of cards. We can pass the time together."
+*[Complain] "There is nothing I can do about it, is there ? I am just the stationmaster, I do not control the trains." You swear you see her wink.
+-"Tell you what, I have got a deck of cards. We can pass the time together."
 *[Wait]
--The stationmaster teaches you a complicated card game called 'Usurpation' that requires you to keep the black and red kings as far from each other as possible. You teach her gin rummy.{riddle_wrong<1 and not approach_donkey: You beat her soundly at both and she sulks for a minute or two, clearly not used to losing | She beats you viciously at both}.
+-The station master teaches you a complicated card game called 'Usurpation' that requires you to keep the black and red kings as far from each other as possible. You teach her gin rummy.{riddle_wrong<1 and not approach_donkey: You beat her soundly at both and she sulks for a minute or two, clearly not used to losing | She beats you viciously at both}.
 *[Wait]
--After a while the stationmaster bustles off to her mysterious lodgings and returns with a tray of iced tea and buttermilk pancakes. You sit and have a lovely chat about birds. 
+-After a while the station master bustles off to her mysterious lodgings and returns with a tray of iced tea and buttermilk pancakes. You sit and have a lovely chat about birds. 
 
 You can see a dot on the railtracks to your left in the far distance. 
 *[Wait]
--You get up to inspect the information board and the stationmaster follows you. She begins to explain how to interpret the map {not approach_donkey:and you find that you can {riddle_wrong<4:quite easily interpret it. Knowing what you know now, you shall have to retrun to the stationhouse for tea and card games again. |somewhat interpret it, though you have to sit down after a while as you head begins to spin and your vision blurs} |{riddle_wrong<4: and you can't begin to interpret it at all. The stationmaster brings you another cup of tea though, which is nice. | and you get so confused that you have to sit down. The stationmaster instead shows you her magazine collection. It's a train magazine, but they do have a swimsuit edition. Interesting.}} 
+-You get up to inspect the information board and the stationmaster follows you. She begins to explain how to interpret the map {not approach_donkey:and you find that you can {riddle_wrong<4:quite easily interpret it. Knowing what you know now, you shall have to retrun to the stationhouse for tea and card games again. |somewhat interpret it, though you have to sit down after a while as you head begins to spin and your vision blurs} |{riddle_wrong<4: and you can't begin to interpret it at all. The stationmaster brings you another cup of tea though, which is nice. | and you get so confused that you have to sit down. The station master instead shows you her magazine collection. It's a train magazine series, but they do have a swimsuit edition. Interesting.}} 
 
 The dot has grown somewhat bigger.
 
@@ -617,11 +614,11 @@ Before you lie down, you see that the dot is nearly double its original size.
 
 - It's dusk in the forest, and the shadows have grown deeper, though this is nicely offset by the orange underglow of the setting sun. 
 
-Your train is just pulling into the station as you emerge from the waiting room - the dying light plays nicely off of its red caboose. It screeches to a halt and a wood panelled door aligns itself perfectly infront of you. 
+Your train is just pulling into the station as you emerge from the waiting room - the dying light plays nicely off of its red caboose. It screeches to a halt and a wood panelled door aligns itself perfectly in front of you. 
 
 There is a pause, one in which no one exits the train, but one can get on it. 
 
-*[Stay] You turn around and find that you cannot bring yourself to get onto the train. ->stay_end
+*[Stay] You find you cannot bring yourself to get onto the train. ->stay_end
 *[Go] You reach for the door and open it, embarking on your erstwhile journey out of the woods. ->go_end
 
 ==stay_end
@@ -632,44 +629,44 @@ The stationmaster stands behind you.
 
 You explain to her that, for some reason, you don't want to leave.
 
-"I'll be flattered and believe that to be about my company." Her face hides an emotion that you don't think you recognise.
+"I will take that as a compliment to my company." Her face hides an emotion that you don't think you recognise.
 
 *[You wonder what it is.]
 
 Whatever the case - be it the serenity of {enter_mon: the monastery| the woods}, the cosiness of the stationhouse, or just the escape from a life outside you can't remember, you know that you wish to stay. For now, at least.
 
-"Luckily for you, I have a spare room. I'll get you settled in and we can wake up bright and early tomorrow with pancakes. I have some jobs that you can do while you're with me."
+"Luckily for you, I have a spare room. I shall get you settled in and we can wake up bright and early tomorrow with pancakes. I have some jobs that you can do while you are with me."
 
-The stationmaster takes you by the shoulders and leads you away from the edge of the platform as the train pulls away into the setting sun.
+The station master takes you by the shoulders and leads you away from the edge of the platform as the train pulls away into the setting sun.
 
 -> END
 
 ==go_end
 
-You turn around and wave at the stationmaster who waves back. 
+You turn around and wave at the station master, who waves back. 
 
-"It was lovely having you here. Hopefully I'll see you again soon?"
+"It was lovely having you here. Hopefully I will see you again soon?"
 
-You agree, though with the caveat that it be under more willing circumstances.
+You agree, though hope quietly for more willing circumstances.
 
-*[Go further into the train]
+*[Board the train]
 
 -Blessedly, the train is fairly empty, and you easily find a carriage to yourself. As you sink down onto the plush upholstery of the seating, you turn to the window and look out onto the platform. 
 
-The stationmaster busies herself clearing away the detritus the pair of you left and only turns as the train begins to pull away. You give her a wave that she returns and soon find yourself speeding through the forest at night. 
+The station master busies herself clearing away the detritus the pair of you left, only turning as the train begins to pull away. She watches you go, and you soon find yourself speeding through the forest at night. 
 
 *[Dream]
 
 <i>Three children in red and green and black. They fight over something that you can't quite make out. A figure in the corner laughs, a heavy, braying laugh. All is then lost amongst the trees.</i>
 
-You are roused from your slumber from a familiar looking man, who, through your groginess, you realise is the ticketmaster. 
+You are roused from your slumber from a familiar looking man, who, through your grogginess, you realise is the ticketmaster. 
 
-You smile and reach into your pocket before realsing that you never actually bothered to buy a ticket. Bother. 
+You smile and reach into your pocket before realising that you never actually bothered to buy a ticket. Bother. 
 
 
 -> END
 ==apology==
-You're not sure what got into you. She ignores your apology, but says "I see you met the Ass. Don't feel too bad. He has a way of getting into people's heads." <p></p>"Anyway," her eyes glaze over again, "that pesky story..."
+You're not sure what got into you. She ignores your apology, but says "I see you met the Ass. Do not feel too bad. He has a way of getting into people's heads." <p></p>"Anyway," her eyes glaze over again, "that pesky story..."
 <p></p>
 ->riddle_answer
 ==gun_end1
