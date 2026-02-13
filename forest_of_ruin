@@ -270,25 +270,14 @@ I <b>hop-hop-leap</b> over the stone walls. I land near a chewing creature. A  m
 
 ----I emerge at a ruined place. Some growth, not much. And that woman again. The vexing-hexing woman who tormented-toyed with me so when I desired leave. I would not wish such a thing now.
 
-*****[TALK]I <b>thump-land</b> on her platform and she emerges to see my glorious state. Her eyes widen. <p>"You shouldn't have done that. Each to their own, I suppose. I assume you won't be needing that train anymore then."</p> She laughs wanly. I tell her of my <b>purpose</b>. She knows there is nothing she can do. Perhaps she will leave. She will leave.
+*****[TALK]I <b>thump-land</b> on her platform and she emerges to see my glorious state. Her eyes widen. <p>"You should not have done that. Each to their own, I suppose. I assume you have no need of that train anymore then."</p> She laughs wanly. 
+I tell her of my <b>purpose</b>. To revive, reclaim; to call on growth and rot in the name of the Bounding One. Many will heed the song and soon our numbers shall grow strong once more.
+She knows there is nothing she can do. Perhaps she will leave. She will leave.
 *****[TERRORISE] I beat-beat-beat upon the ground and watch as the building becomes <b>consumed</b> by the creeping earth. She emerges from her crumbling den and stares at me.
 I tell her that she should have kept us away better. Her claim on this land is worthless now. I cannot kill her, unnatural entity, bridge to choking-smog barren land.
  The <b>pulse-lurch</b> of the <b>hunt</b> must have her never still. I can make it so.
 
------ The sun begins to set. I must make a den. Make plans. ->rabbit_ending 
-
-//fred: 1. worried laughing nightmare wont make sense if you havent told the donkey a joke - i think it's fine if things are a little mysterious - the wererabbit now knows more cuz of god stuff I'd imahine, which the player isn't exactly privy to (hence the perspective shift)
-//2. Potential lore gap, should stationmaster be affected by the donkey being killed? have suggested here instead that she is a bridge to the modern world which is what makes her difficult to kill as she's stronger + more of a concept. This is a very good point. I think the donkey is not killed permanently, but its physical form has been destroyed. (It would take a god to kill a god, and the wererabbit is not a god, only the vessel for one)
-//3. Imo, the below should be deleted and the rabbit ending should finish on "must make a den. make plans". lmk - i think fair point I was honestly just kinda cramming in lore here lol - i think what i was going for is that you're gna try and restart the cult (even if the god has changed from what it once was - ie god of spring to god of rot)
-
-==rabbit_ending
-*[WARREN]
--I burrow into that grove where I first found myself before I became. I shall home here. But my Lord is not so strong in this world anymore. Not like he was. He knows that <b>change</b> is in his nature. <b>Rot</b> is life too. And so he can<b> grow</b> again. I can make him <b>grow</b> again. The Lapinate Chantry fell, but I shall not. I shall... revitalise. 
-*[REFLECT]
-I have done much in a day. I have forgot myself, explored, and not found my old self but taken upon a new one. What luck that an empty vessel such as I would happen upon an emissary of the Bounding One. 
-
-Though I know such things can't be luck. 
-
+----- The sun begins to set. I must make a den. Make plans.
 ->END
 
 ==left
