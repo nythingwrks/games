@@ -223,7 +223,7 @@ You get down onto your haunches and scrabble around in the dirt and grass.
 
 -(inscription){You find small beads inscribed with spirals, candle stumps, and fragments of wood covered in faded carvings. <i>Something</i> was once worshipped here. |What else?}
 
-*[Inspect the beads] You hold one of the beads up to your eye. They look to be made from bone. They appear slightly ovular in shape and each is tipped with a yellow opal, the veins of which run through the spiral etched into the ivory. ->inscription  //fred: I find the last sentence unclear to imagine for some reason , can you think of another way to describe what you mean? 
+*[Inspect the beads] You hold one of the beads up to your eye. They look to be made from bone. They appear slightly ovular in shape and each is tipped with a yellow opal, the colour of which runs through the etched spirals like veins. ->inscription  //fred: I find the last sentence unclear to imagine for some reason , can you think of another way to describe what you mean? 
 *[Smell the candles] They are lightly scented with spring flowers. ->inscription
 *[Gather the wood together] You manage to connect some of the scraps of wood into the semblance of a whole text - it's a prayer of some kind.
 
@@ -277,9 +277,9 @@ I tell her that she should have kept us away better. Her claim on this land is w
 
 ----- The sun begins to set. I must make a den. Make plans. ->rabbit_ending 
 
-//fred: 1. worried laughing nightmare wont make sense if you havent told the donkey a joke
-//2. Potential lore gap, should stationmaster be affected by the donkey being killed? have suggested here instead that she is a bridge to the modern world which is what makes her difficult to kill as she's stronger + more of a concept.
-//3. Imo, the below should be deleted and the rabbit ending should finish on "must make a den. make plans". lmk 
+//fred: 1. worried laughing nightmare wont make sense if you havent told the donkey a joke - i think it's fine if things are a little mysterious - the wererabbit now knows more cuz of god stuff I'd imahine, which the player isn't exactly privy to (hence the perspective shift)
+//2. Potential lore gap, should stationmaster be affected by the donkey being killed? have suggested here instead that she is a bridge to the modern world which is what makes her difficult to kill as she's stronger + more of a concept. This is a very good point. I think the donkey is not killed permanently, but its physical form has been destroyed. (It would take a god to kill a god, and the wererabbit is not a god, only the vessel for one)
+//3. Imo, the below should be deleted and the rabbit ending should finish on "must make a den. make plans". lmk - i think fair point I was honestly just kinda cramming in lore here lol - i think what i was going for is that you're gna try and restart the cult (even if the god has changed from what it once was - ie god of spring to god of rot)
 
 ==rabbit_ending
 *[WARREN]
