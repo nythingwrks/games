@@ -33,12 +33,13 @@ You awaken in a forest,
 //route to donkey
 {stream: You head back towards the Monastery, hearing the stream ahead of you.|You walk deeper into the woods. The ground is cool underfoot, the air has a chill here. {board_secret: You can't think of a more wonderful place. | You think of soft carpet and wood floors and wish you were home.} You hear water ahead of you.}
 
-+[Continue on]
++{stream<3}[Continue on]
 ->stream
-
++{stream>2}[Continue on]
+->monastery
 ==stream
 {monastery:You reach the stream.|You reach a stream. On the other side you see the forest thinning and can make out the faint shape of a building through the trees.}
-+ {not monastery}[Wade through the water]
++{not wade}[Wade through the water]
 ->wade
 +[Jump across]
 ->monastery
@@ -61,7 +62,7 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 
 
 ==monastery
- {monastery>1: You follow the path to a familiar set of ruins. You have returned to The Monastery.|{board_secret:With an impressive bound, you easily clear the water.} Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p>You have found <b>The Monastery</b>.</p>} 
+{monastery>1: You follow the path to a familiar set of ruins{stream>2:, crossing the stream hurriedly. }<p>You have returned to <b>The Monastery</b>.</p>|{board_secret:With an impressive bound, you easily clear the water.} Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p>You have found <b>The Monastery</b>.</p>} 
 
 +[Enter the Monastery]
 ->enter_mon
@@ -84,7 +85,7 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 //if you keep going back to the donkey eventually you get none of this text - not exactly a porblem but maybe something to look into?
 {quiet or confession: |You approach the donkey. Hearing your footsteps, it lifts its head and regards you blankly.} 
 {confession and not quiet:The donkey is looking at you. You feel a little judged.}
-{not conversation and approach_donkey>3:You feel like you're missing something...Maybe you should try the other path.}
+{not conversation and approach_donkey>3:The donkey seems focused on his grazing. You feel like you're missing something...Maybe you should try the other path.}
 +{quiet<3}[Stay quiet]
 ->quiet
 *[Confess something]
@@ -92,7 +93,7 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 +[Walk away]
 ->enter_mon
 +{conversation} [Tell a joke]->joke
-
+ 
 ==quiet
 {quiet>1: You and the donkey stand together in a companionable silence.|You and the donkey stand in awkward silence.}
 {quiet>2: He is now your friend.}
@@ -100,7 +101,8 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 ->approach_donkey
 
 ==confession
-You tell the donkey that you lied and told your friends that you got your driver's license. You did it on a whim but now it's been years. If any one asks you to drive somewhere you just make an excuse to get out of it, like you've had a drink or think you need glasses. You fear it won't be long before a well-meaning friend stages an intervention (or books you an eye test). <p>You're not sure why you're telling the donkey this.</p>
+You tell the donkey that you lied and told your friends that you got your driver's license. You did it on a whim but now it's been years. If anyone asks you to drive somewhere you just make an excuse to get out of it, like you've had a drink or think you need glasses. You fear it won't be long before a well-meaning friend stages an intervention (or books you an eye test).
+<p>You're not sure why you're telling the donkey this.</p>
 *[...]
 ->approach_donkey
 
@@ -182,7 +184,7 @@ You do your best impression of a snare drum. You could swear the donkey lets out
 ->DONE
 
 ==explore_mon
-You wander around The Monastery{. Stone slabs litter the ground, delicate carvings and mosaics eroded by time. A ray of sun breaks through the clouds and catches on one of the slabs. | again. The sun now catches on the shell mosaic {not secret: properly, and the light diffracts around the room, casting stars onto the walls. | and reflects onto that strange message you revealed earlier.}}
+You wander around The Monastery{. Stone slabs litter the ground, delicate carvings and mosaics eroded by time. A ray of sun breaks through the clouds and catches on one of the slabs. | again. The sun catches on the  mosaic slab {not secret: and the light diffracts around the room, casting stars onto the walls. | and reflects onto that strange message you revealed earlier.}}
 
 *[Inspect the glittering slab]
 ->slab
@@ -196,9 +198,10 @@ You wander around The Monastery{. Stone slabs litter the ground, delicate carvin
 The slab has a pearlescent mosiac on it, pieces of shell forming an ornate spiral winding out from the center. You notice one of the shells is missing.{not shell: You wish you had something you could put there.}
 *{shell}[Place the shell from the river in the gap.]
 ->secret
-+[Explore more]
++{not more_explore}[Explore more]
 ->more_explore
-
++{more_explore}[Return to the entrance of the Monastery]
+->enter_mon
 ==more_explore
 {In a far corner of The Monastery you find the remnants of a stained glass window, still partially intact. As the sparse sunlight illuminates it, you see it depicts three figures in majestic robes. One holds a cup, one a sword, and the final one holds nothing. The glass is shattered where the final figure's head should have been.| You are back in the corner of The Monastery, looking up at the stained glass window.}
 +[Return to the entrance of The Monastery]
