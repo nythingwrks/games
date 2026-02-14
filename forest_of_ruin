@@ -216,17 +216,17 @@ You hear the grinding of stone against stone, and notice a section of ruined wal
 ==lapinate_chantry
 There is something humming - no - singing to you from behind the stained glass window.
 *[Break through]
-Disregarding any cuts, the song is too beautiful after all, you smash what remains of the window to pieces and clamber through to what hid behind it.
--A small courtyard sits just behind where the window once stood. It appears to have been blocked off from the rest of the monastery sometime after its construction
+You smash what remains of the window to pieces and clamber through, the song's urgent beauty distracting you from any cuts.
+-You enter a small hidden courtyard. It appears to have been blocked off from the rest of the monastery sometime after its construction.
 *[Look around]
 
-You get down onto your haunches and scrabble around in the dirt and grass looking for something - anything. 
+You get down onto your haunches and scrabble around in the dirt and grass. 
 
--(inscription){You find small beads inscribed with spirals, candle stumps, and fragments of wood that once had something carved on them. <i>Something</i> was once worshipped here. Something else. |What else?}
+-(inscription){You find small beads inscribed with spirals, candle stumps, and fragments of wood covered in faded carvings. <i>Something</i> was once worshipped here. |What else?}
 
-*[look closer at the beads] You hold one of the beads up to your eye. They look to be made from bone. They appear slightly ovular in shape and each is tipped with a yellow opal, the veins of which run through the spiral etched into the ivory. ->inscription
+*[Inspect the beads] You hold one of the beads up to your eye. They look to be made from bone. They appear slightly ovular in shape and each is tipped with a yellow opal, the colour of which runs through the etched spirals like veins. ->inscription  //fred: I find the last sentence unclear to imagine for some reason , can you think of another way to describe what you mean? 
 *[Smell the candles] They are lightly scented with spring flowers. ->inscription
-*[gather the pieces of wood together]You manage to connect some of the scraps of wood into the semblance of a whole text - it looks to be a prayer of some kind.
+*[Gather the wood together] You manage to connect some of the scraps of wood into the semblance of a whole text - it's a prayer of some kind.
 
 <i>...and so our fecund lord, who bounds through the gloaming... make haste to greet your piteous subjects...we from whom you spring eternal...Lapinite songs uplift you...swiftly dash through warren and briar, bringing with your blessing...anoint our Lagomane as your chosen...use the vessel...bring forth your divine music...keen through the sepulchre...<i>
 
@@ -238,18 +238,18 @@ You get down onto your haunches and scrabble around in the dirt and grass lookin
 
 *[UNEARTH]
 
-The figurine of a Hare, carved in the same material as the beads, with yellow opals for eyes, and whorls of opalite colour that indicate fur and claws. This is what was making the song. 
+A figurine of a Hare, carved in the same material as the beads, with yellow opals for eyes. This is what was making the song. 
 
 -You can <b>smell</b> it, and <b>hear</b> it, and <b>taste</b> it. The song of things <b>growing</b>, of things <b>multiplying</b>, of things <b>becoming greater</b> than they are. The song of <b>creeping overgrowth</b> and <b>glut</b> and <b>rot</b>. It sings to you now of <b>change</b>, an <b>incredible change</b>. One already partly underway. 
 
 *[<b>ACCEPT THE SONG</b>]->transformation
-*[Reject the song] The hare figurine crumbles away to ash in your hands - leaving only its opal eyes. You feel a sharp burning from your bite. Your punishment, you suppose. You have a feeling the wound will never heal. 
+*[Reject the song] The hare figurine crumbles away to ash in your hands - leaving only its opal eyes. The bite on your hand throbs sharply. You have a feeling it will never fully heal. 
 
 You should leave this place before something worse happens ->enter_mon
 
 ==transformation
 
-The Bone-Hare's eyes glow yellow and the timpanic pounding - the cacophany of rush and dew and fervor coalesces into a single keening note whose resonance enters your body through the wound on your hand and from there reverberates through your very being. 
+The Bone-Hare's eyes glow yellow and the timpanic pounding, the cacophany of rush and dew and fervor, coalesces into a single keening note. Beginning in the wound on your hand, it reverberates through your very being. 
 *[<b>CHANGE</b>]
 <i>Wound closing - flesh tearing - muscle engorging - hair spreading - tooth elongating - nail sharpening - ear stretching - stature building - divine encapsulating
 
@@ -257,29 +257,28 @@ The Bone-Hare's eyes glow yellow and the timpanic pounding - the cacophany of ru
 
 <i>shed - molt - cocoon - pupate - metamorphise -</i> 
 **[EMERGE] 
+
 - I <b>am</b> now. I <b>smell</b> now I <b>hear</b> now. Out - out - out - time to <b>run</b>, time to <b>flee</b>. I once was lost. I once was other. I can <b>grow</b> more - must grow more. 
+
 **[ESCAPE]
-I <b>hop-hop-leap</b> over the stone walls. I land near a creature. A  creature. I did not see it once, what it truly was. Like my Lord, but older. Weaker. 
-***[RUIN] I <b>twitch-twitch-twitch</b> my nose and a great groaning I hear and I can feel the <b>growth</b> that overtakes the old-stone building. The Laughing Nightmare looks at me in surprise and makes to laugh again, but too late for he is already <b>flesh-become-rotten-become-skin-become-bone</b>.
-***[RUN]I care not for razing this place, what once was my Lord's, only for escaping. <b>Where to-where to- where to?</b>
----I soar into the sky, over <b>rush-raging</b> stream and <b>thump-thump-thump</b> down into the glorious overgrowth. What a fool I was to fear it. Where to now?
-****[DUSTY TUNNEL] I <b>gallop-march</b>. What <b>strength</b> I have now, what skill. I am the greatest conjoining of my form and my lord; enough of me is still capable of what the <b>beast</b> is not. 
-****[NOISFUL PATH] I scurry-rush through the darkness and my new nose smells the angels of the undergrowth in their warrens. Alas I cannot fit, but I shall make a great warren of my own. 
+I <b>hop-hop-leap</b> over the stone walls. I land near a chewing creature. A  malevolent creature. I did not see it before for what it truly was. Like my Lord, but older. Weaker. 
+***[RUIN] I <b>twitch-twitch-twitch</b> my nose and a great groaning I hear and I can feel the <b>growth</b> that overtakes the old-stone building. The Laughing Nightmare looks at me in surprise and makes to laugh again, but too late for he is already <b>flesh-become-rotten-become-skin-become-bone</b>. 
+***[RUN] <b>Where to-where to- where to?</b>
+
+---I soar into the sky, over <b>rush-raging</b> stream and <b>thump-thump-thump</b> down into the glorious overgrowth. What a fool I was to fear it. Next-
+
+****[TUNNEL] I scurry-rush through the undergrowth. What <b>strength</b> I have now, what skill. I am the greatest conjoining of my form and my lord; enough of me is still capable of what the <b>beast</b> is not.  
+
 ----I emerge at a ruined place. Some growth, not much. And that woman again. The vexing-hexing woman who tormented-toyed with me so when I desired leave. I would not wish such a thing now.
-*****[TALK]I <b>thump-land</b> on her platform and she emerges to see my glorious state. Her eyes widen and she seems frightened of me. <p>"You shouldn't have done that. Each to their own I suppose. I assume you won't be needing that train anymore then. Nor will you answer my question"</p> She laughs wanly. I tell her of my <b>purpose</b>. She knows there is nothing she can do. Perhaps she will leave. She will leave.
-*****[TERROR] I beat-beat-beat upon the ground and watch as the building becomes <b>consumed</b> evermore. She emerges from her den and stares at me.
-I tell her that she should have kept us away better. I know now I cannot-should-not kill her. 
-But with no station where is the stationmaster to go? I shall chase her from this place. The <b>pulse-lurch</b> of the <b>hunt</b> will have her. I can make it so.
------ The sun begins to set. I must make a den. Make plans. ->rabbit_ending
 
-==rabbit_ending
-*[WARREN]
--I burrow into that grove where I first found myself before I became. I shall home here. But my Lord is not so strong in this world anymore. Not like he was. He knows that <b>change</b> is in his nature. <b>Rot</b> is life too. And so he can<b> grow</b> again. I can make him <b>grow</b> again. The Lapinate Chantry fell, but I shall not. I shall... revitalise. 
-*[REFLECT]
-I have done much in a day. I have forgot myself, explored, and not found my old self but taken upon a new one. What luck that an empty vessel such as I would happen upon an emissary of the Bounding One. 
+*****[TALK]I <b>thump-land</b> on her platform and she emerges to see my glorious state. Her eyes widen. <p>"You should not have done that. Each to their own, I suppose. I assume you have no need of that train anymore then."</p> She laughs wanly. 
+I tell her of my <b>purpose</b>. To revive, reclaim; to call on growth and rot in the name of the Bounding One. Many will heed the song and soon our numbers shall grow strong once more.
+She knows there is nothing she can do. Perhaps she will leave. She will leave.
+*****[TERRORISE] I beat-beat-beat upon the ground and watch as the building becomes <b>consumed</b> by the creeping earth. She emerges from her crumbling den and stares at me.
+I tell her that she should have kept us away better. Her claim on this land is worthless now. I cannot kill her, unnatural entity, bridge to choking-smog barren land.
+ The <b>pulse-lurch</b> of the <b>hunt</b> must have her never still. I can make it so.
 
-Though I know such things can't be luck. 
-
+----- The sun begins to set. I must make a den. Make plans.
 ->END
 
 ==left
