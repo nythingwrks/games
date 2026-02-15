@@ -12,7 +12,8 @@ You awaken in a forest,
  +[Take the path to {monastery: The Monastery | the right}]
  ->right
  +[Take the path to the {station_name: Station House| left}]
- ->left
+ {left>2 and not board_secret or pet:->station_name|->left}
+ 
  
  ==look_around
  You are standing in a clearing. The light is filtering through the trees, the sun fighting through to hit your face. 
@@ -33,13 +34,11 @@ You awaken in a forest,
 //route to donkey
 {stream: You head back towards the Monastery, hearing the stream ahead of you.|You walk deeper into the woods. The ground is cool underfoot, the air has a chill here. {board_secret: You can't think of a more wonderful place. | You think of soft carpet and wood floors and wish you were home.} You hear water ahead of you.}
 
-+{stream<3}[Continue on]
-->stream
-+{stream>2}[Continue on]
-->monastery
++[Continue on]
+{wade and stream>2: ->monastery |->stream}
 ==stream
 {monastery:You reach the stream.|You reach a stream. On the other side you see the forest thinning and can make out the faint shape of a building through the trees.}
-+{not wade}[Wade through the water]
+*[Wade through the water]
 ->wade
 +[Jump across]
 ->monastery
@@ -62,7 +61,7 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 
 
 ==monastery
-{monastery>1: You follow the path to a familiar set of ruins{stream>2:, crossing the stream hurriedly. }<p>You have returned to <b>The Monastery</b>.</p>|{board_secret:With an impressive bound, you easily clear the water.} Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p>You have found <b>The Monastery</b>.</p>} 
+{monastery>1:{wade and stream>2:Crossing the stream, you|You} continue along the path to a familiar set of ruins. <p></p>You have returned to <b>The Monastery</b>.|{board_secret:With an impressive bound, you easily clear the water.} Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p></p>You have found <b>The Monastery</b>.} 
 
 +[Enter the Monastery]
 ->enter_mon
@@ -85,10 +84,10 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 //if you keep going back to the donkey eventually you get none of this text - not exactly a porblem but maybe something to look into?
 {quiet or confession: |You approach the donkey. Hearing your footsteps, it lifts its head and regards you blankly.} 
 {confession and not quiet:The donkey is looking at you. You feel a little judged.}
-{not conversation and approach_donkey>3:The donkey seems focused on his grazing. You feel like you're missing something...Maybe you should try the other path.}
+{not conversation and quiet and confession>2:The donkey seems bored and is focused on his grazing. You feel like you're missing something...Maybe you should try the other path.}
 +{quiet<3}[Stay quiet]
 ->quiet
-*[Confess something]
++{confession<4}[Confess something]
 ->confession
 +[Walk away]
 ->enter_mon
@@ -101,9 +100,8 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 ->approach_donkey
 
 ==confession
-You tell the donkey that you lied and told your friends that you got your driver's license. You did it on a whim but now it's been years. If anyone asks you to drive somewhere you just make an excuse to get out of it, like you've had a drink or think you need glasses. You fear it won't be long before a well-meaning friend stages an intervention (or books you an eye test).
-<p>You're not sure why you're telling the donkey this.</p>
-*[...]
+You tell the donkey that {you pretend you don’t see people you know in public because you don’t have the social battery for small talk.| on a whim you once lied about having your drivers license. Now when people ask you to drive them places,  you feel like it's too weird to admit you lied about it so you're stuck coming up with excuses until you get around to actually taking lessons.| you still sleep with a night light.| you kicked a ball through an elderly neighbour's window by accident when you were a teenager and never owned up.}
++[...]
 ->approach_donkey
 
 //sending you back to the donkey as opposed to the entrance of the monastery again (in case you have more stuff to say/do to it 
@@ -210,7 +208,7 @@ The slab has a pearlescent mosiac on it, pieces of shell forming an ornate spira
 ->lapinate_chantry
 
 ==secret
-You hear the grinding of stone against stone, and notice a section of ruined wall you don't remember seeing before. Inscribed in it are the words "The donkey has a dark sense of humour".
+You hear the grinding of stone against stone, and notice a section of ruined wall you don't remember seeing before. Inscribed in it are the words "The Laughing Mule craves Darkness".
 +[Return to the entrance of The Monastery]
 ->enter_mon
 *{not more_explore} [Explore more]
@@ -321,25 +319,26 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==station_name
 
-- <p>You have found <b>The Station House</b>.</p> Maybe there's a way out of the woods after all?
+- {station_house:You are standing outside the<b> Station House</b>.| <p>You have found <b>The Station House</b>.</p> Maybe there's a way out of the woods after all?}
 ++[Approach the station house] ->station_house
 ++{not board_secret}[Return to the grove] You make your way back to the grove you first found yourself in. ->grove
 ++{board_secret}[Hop back] With a spring in your step, you skip your way back to the grove you first found yourself in. ->grove
 
 
 ==station_house
-{information_board or station_master: You are alone on the platform aside from {station_master: the figure of the station master, still doing who knows what in the waiting room|the frosted glass of the waiting room door, through which you now spy a silhouette,} and, of course, the information board.|You make your way up and onto the platform. You can see the information board more clearly, and just behind it the frosted glass door of a small waiting room.}  
+{information_board or station_master: You are alone on the platform aside from {station_master: the silhouette of the station master, still doing who knows what in the waiting room|the frosted glass of the waiting room door } and, of course, the information board.|You make your way up and onto the platform. You can see the information board more clearly, and just behind it the frosted glass door of a small waiting room.}  
 
 + {information_board<2}[Inspect the information board] -> information_board
 + {not riddle_answer} [Go through the door] -> station_master
 + {riddle_answer} [Go through the door] -> riddle_answer
 + {riddle_answer} [Leave the platform] -> station
-
++ [Go back]
+->station_name
 ==information_board
 
-{A confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns that you're sure aren't there, or at least don't exist <i>anymore</i>, and going along a coastline that you can't recognise. | The same board as before with the same information. Confusing, jumbled, and entirely unintelligible. Your head begins to hurt after a while.}
+{A confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns that you're sure aren't there, or at least don't exist <i>anymore</i>, and going along a coastline that you can't recognise. <p></p>The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful.| The same board as before with the same information. Confusing, jumbled, and entirely unintelligible. Your head begins to hurt after a while.}
 
-The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful. {pet and information_board>1: ->board_secret}
+ {pet and information_board>1: ->board_secret}
 
 +[Look away] ->station_house 
 
