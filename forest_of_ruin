@@ -331,7 +331,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 + {information_board<2}[Inspect the information board] -> information_board
 + {not riddle_answer} [Go through the door] -> station_master
 + {riddle_answer} [Go through the door] -> riddle_answer
-+ [Leave the platform] -> station_name
++ [Leave the platform] -> station_name 
 ->station_name
 ==information_board
 
@@ -357,8 +357,6 @@ Yet as you read it, you can't help but feel your heart <i>thump-thump-thumping</
 -Perhaps you should look out for the <b>"Lapinate Chantry" </b>, whatever that may be. 
 
 *[look away] ->station_house
-
-->END
 
 ==station_master
 
