@@ -305,8 +305,8 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==station
 
-{station_name: You make your way back to the outside of the old station house. The trees rustle all around you. {board_secret:You can smell them in the darknss of the forest, hear their footsteps in the undergrowth.}| You make your way through the trees {pet: , nursing the weeping bite you now sport on your hand,|, trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
-+{station_name}[Approach the station house] ->station_house
+{station_name: You make your way back to the outside of the old <b>Station House.</b> The trees rustle all around you. {board_secret:You can smell them in the darknss of the forest, hear their footsteps in the undergrowth.}| You make your way through the trees {pet: , nursing the weeping bite you now sport on your hand,|, trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
++{station_name}[Approach the Station House] ->station_house
 +{(station_house or grove) and not board_secret}[Return to the grove] You take the path back to the grove you first found yourself in. ->grove
 +{board_secret}[Scurry back the way you came] The forest doesn't seem so dark anymore as you take the route back the way you came. 
 
@@ -315,11 +315,11 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 * {not station_name} [Inspect the building] A comfortable looking old thing, if slightly overgrown. What you first took for a porch you quickly realise is actually a train platform, complete with an information board and benches.
 * {not station_name} [Look around] As you glance around, looking for any signs of civilization that may accompany this strange structure, something in the distance catches your eye; a line that you follow right to your feet. 
 
-- You're standing on railway tracks hidden by leaves and grasses, either end receding into the gloam. ->station_name
+- You're standing on railway tracks hidden by leaves and grasses, either end receding into the gloaming. ->station_name
 
 ==station_name
 
-- {station_house:You are standing outside the<b> Station House</b>.| <p>You have found <b>The Station House</b>.</p> Maybe there's a way out of the woods after all?}
+- {station_house:You are standing outside the<b> Station House</b>. The trees rustle all around you.| <p>You have found <b>The Station House</b>.</p> Maybe there's a way out of the woods after all?}
 ++[Approach the station house] ->station_house
 ++{not board_secret}[Return to the grove] You make your way back to the grove you first found yourself in. ->grove
 ++{board_secret}[Hop back] With a spring in your step, you skip your way back to the grove you first found yourself in. ->grove
@@ -331,8 +331,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 + {information_board<2}[Inspect the information board] -> information_board
 + {not riddle_answer} [Go through the door] -> station_master
 + {riddle_answer} [Go through the door] -> riddle_answer
-+ {riddle_answer} [Leave the platform] -> station
-+ [Go back]
++ [Leave the platform] -> station_name
 ->station_name
 ==information_board
 
