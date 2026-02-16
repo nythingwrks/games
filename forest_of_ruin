@@ -71,9 +71,9 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 ->grove
 
 ==enter_mon
-{approach_donkey or explore_mon: You are standing in the entryway of The Monastery. The old donkey is still happily chewing his grass.| You carefully cross the moss-covered threshold of The Monastery. The ground beyond is blanketed by a tall yellow grass, the horizon is swallowed up again by thick forest. An old donkey is a few yards off, feeding in the grass contentedly.}  
+{approach_donkey or explore_mon: You are standing in the entryway of The Monastery.{gun: The grass where the donkey had stood has carbonated, and still glows faintly with heat| The old donkey is still happily chewing his grass}.| You carefully cross the moss-covered threshold of The Monastery. The ground beyond is blanketed by a tall yellow grass, the horizon is swallowed up again by thick forest. An old donkey is a few yards off, feeding in the grass contentedly.}    
 
-+[Approach the donkey]
++{not gun}[Approach the donkey]
 ->approach_donkey
 +[Explore The Monastery]
 ->explore_mon
@@ -81,7 +81,7 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 ->grove
 
 ==approach_donkey
-//if you keep going back to the donkey eventually you get none of this text - not exactly a porblem but maybe something to look into?
+//if you keep going back to the donkey eventually you get none of this text - not exactly a problem but maybe something to look into?
 {quiet or confession: |You approach the donkey. Hearing your footsteps, it lifts its head and regards you blankly.} 
 {confession and not quiet:The donkey is looking at you. You feel a little judged.}
 {not conversation and quiet and confession>2:The donkey seems bored and is focused on his grazing. You feel like you're missing something...Maybe you should try the other path.}
