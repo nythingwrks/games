@@ -150,7 +150,7 @@ The donkey seems to consider your words. The edges of the forest darken and you 
 *[...]
 ->existential_joke2
 ==existential_joke2
-You feel a little faint, and reality warps a little. You see marble halls, towering columns. Three brothers on their thrones. You hear the donkey's braying laugh and the sing of metal through air. Blood soaking fine green silk. The sound of a  goblet clattering to the ground.
+You feel a little faint, and reality warps a little. You see marble halls, towering columns. Three brothers on their thrones. You hear the donkey's braying laugh and the sing of metal through air. Blood pooling through red robes and the sound of a  goblet clattering to the ground.
 
 ->no_joke
 ==silly_joke
@@ -185,7 +185,7 @@ You do your best impression of a snare drum. You could swear the donkey lets out
 ==explore_mon
 You wander around The Monastery{. Stone slabs litter the ground, delicate carvings and mosaics eroded by time. A ray of sun breaks through the clouds and catches on one of the slabs. | again. The sun catches on the  mosaic slab {not secret: and the light diffracts around the room, casting stars onto the walls. | and reflects onto that strange message you revealed earlier.}}
 
-*[Inspect the glittering slab]
++[Inspect the glittering slab]
 ->slab
 *{not more_explore} [Keep exploring] -> more_explore
 +{more_explore}[Return to the stained glass window]
@@ -202,7 +202,7 @@ The slab has a pearlescent mosiac on it, pieces of shell forming an ornate spira
 +{more_explore}[Return to the entrance of the Monastery]
 ->enter_mon
 ==more_explore
-{In a far corner of The Monastery you find the remnants of a stained glass window, still partially intact. As the sparse sunlight illuminates it, you see it depicts three figures in majestic robes. One holds a cup, one a sword, and the final one holds nothing. The glass is shattered where the final figure's head should have been.| You are back in the corner of The Monastery, looking up at the stained glass window.}
+{In a far corner of The Monastery you find the remnants of a stained glass window, still partially intact. As the sparse sunlight illuminates it, you see it depicts three figures in majestic robes. One in green on the left, one in red in the middle, and one in black on the right. The glass is shattered where the first figure's head should have been.| You are back in the corner of The Monastery, looking up at the stained glass window of a line of three imposing figures. The one on the right in green, the next in red and the last in black.}
 +[Return to the entrance of The Monastery]
 ->enter_mon
 *{board_secret}[Follow your ears]
@@ -454,13 +454,13 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 *[...]
 
 - <i>At once, the king who had been gifted the imperial sword drew it and ran the brother next to him through. </i>
-<i>The remaining king stood wide-eyed, looking over his slain brother’s body at the king with the sword. Unable to believe his own brother capable of such betrayal, he could not imagine the same fate would befall him. </i>
+<i>The remaining king stood wide-eyed, and ever the fool, watched the goblet roll from where it had fallen in between him and his kinslaying brother. He could not imagine the same fate would befall him. </i>
 
 <i>His expression remained fixed in disbelief as his head fell from his body. </i>   
 
 *[...]
 
-- <i>Two clattering sounds rang out, first the goblet, and then the crown. The king with the sword took the crown from where it lay, and lifted his other brother's goblet to toast the man as he led his donkey out of the castle and into the woods.</i>
+- <i>The king with the sword took the crown from where it lay, and lifted his other brother's goblet to toast the man as he led his donkey out of the castle and into the woods.</i>
 
 *[As it always does, it ends with the woods] 
 
