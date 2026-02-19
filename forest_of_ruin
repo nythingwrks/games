@@ -347,7 +347,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 You begin to turn away when the pain from the bite on your hand flares up again. Dark veins spiderweb out from the pair of weeping red marks that pulse with sensation.
 
-As you look up from your hand, you notice something on the board that you hadn't before. A smudge that you took to be part of the map, but now your sense of <i>smell</i> tells you must be dirt. How had you not noticed that before?
+- As you look up from your hand, you notice something on the board that you hadn't before. A smudge that you took to be part of the map, but now your sense of <i>smell</i> tells you must be dirt. How had you not noticed that before?
 
 *[Scrape it off]
 
@@ -356,7 +356,7 @@ You use the fingernails of your non-wounded hand to scrape the dirt off the surf
 Yet as you read it, you can't help but feel your heart <i>thump-thump-thumping</i>.
 -Perhaps you should look out for the <b>"Lapinate Chantry" </b>, whatever that may be. 
 
-*[look away] ->station_house
+*[Look away] ->station_house
 
 ==station_master
 
@@ -414,7 +414,7 @@ You don't think she will.
 *[But?]
 Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having the company... I would be sad to lose it. What would I gain by helping you leave?"
 ***[Ask what she wants in return.]
-- "A pertinent question- I suppose might find it in me to help you if you help me first. There is something that has been bothering me. An old man passed through a short while ago and told me a story that I can not make head or tails of..." She looks at you expectantly.
+- "A pertinent question- I suppose I might find it in me to help you if you help me first. There is something that has been bothering me. An old man passed through a short while ago and told me a story that I can not make head or tails of..." She looks at you expectantly.
 
 * [Let her speak]
 * [Tell her you don't have time for this] She continues, ignoring you completely. 
