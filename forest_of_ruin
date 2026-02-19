@@ -7,7 +7,7 @@ You awaken in a forest,
  * [Close your eyes]
  ->close_eyes
  ==grove
- The same two paths lead off from the clearing.
+ The same two paths lead off from the clearing.{confession>4: You notice a seagull lurking in the shadows in a corner of the grove that you hadn't noticed before. It makes no move to approach you, yet you feel strangely threatened.}
  
  +[Take the path to {monastery: The Monastery | the right}]
  ->right
@@ -85,9 +85,10 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 {quiet or confession: |You approach the donkey. Hearing your footsteps, it lifts its head and regards you blankly.} 
 {confession and not quiet:The donkey is looking at you. You feel a little judged.}
 {not conversation and quiet and confession>2:The donkey seems bored and is focused on his grazing. You feel like you're missing something...Maybe you should try the other path.}
+-(topside){confession<2: The donkey is looking at you. You feel a little judged.| }
 +{quiet<3}[Stay quiet]
 ->quiet
-+{confession<4}[Confess something]
++{confession<5}[Confess something]
 ->confession
 +[Walk away]
 ->enter_mon
@@ -100,10 +101,9 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 ->approach_donkey
 
 ==confession
-You tell the donkey that {you pretend you don’t see people you know in public because you don’t have the social battery for small talk.| on a whim you once lied about having your drivers license. Now when people ask you to drive them places,  you feel like it's too weird to admit you lied about it so you're stuck coming up with excuses until you get around to actually taking lessons.| 
-You are a little more afraid of staircases than you would like to admit.|you went through a phase of frog watching, and got extremely invested in their social dynamics. You caught them moving in a suspiciously coordinated manner into your neighbour's garden and you are still trying not to take it personally.}
+You tell the donkey that {you pretend you don’t see people you know in public because you don’t have the social battery for small talk.| on a whim you once lied about having your drivers license. Now when people ask you to drive them places,  you feel like it's too weird to admit you lied about it so you're stuck coming up with excuses until you get around to actually taking lessons.| you are a little more afraid of staircases than you would like to admit.|you went through a phase of frog watching, and got extremely invested in their social dynamics. You caught them moving in a suspiciously coordinated manner into your neighbour's garden and you are still trying not to take it personally. | you got in a fistfight with a seagull once. <p></p>You don't remember who won, but it's clear from the way the donkey is looking at you that it's money is on the seagull.}
 +[...]
-->approach_donkey
+->approach_donkey.topside
 
 //sending you back to the donkey as opposed to the entrance of the monastery again (in case you have more stuff to say/do to it 
 ==no_joke
