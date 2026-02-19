@@ -23,10 +23,3 @@ NELL NOTES:
 3. Should be able to ask the station madster to repeat the whole riddle (or at least an abridged version).
 Ideas: main path is staying there. Leaving should be conditional on something sneaky or hidden about mid way through the game. Also makes players less likely to lean into te gun ending?
 
-
-NOTES/QUESTIONS for testplayers:
-
-1. Need a 'turn back' before the station master launches into riddle?`
-
-DEBUGGING:
-we've checked that viewing the info board multiple times works regardless of whether you got bitten by the rabbit. 
