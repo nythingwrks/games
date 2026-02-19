@@ -55,7 +55,7 @@ You hear a sound in the woods behind you, almost like an intake of breath.
 
 ==shell
 Plunging your hand into the icy water, you fumble around until the cold becomes too much to bear. You open your fist and see a small iridescent shell nestled in your palm. You pocket it.
-*Finish crossing the stream
+*[Finish crossing the stream]
 ->monastery
 
 
@@ -511,7 +511,7 @@ As you move to get away from this strange woman, she offers you some words of ad
 
 -> station_house
 
-+ {askedonce} [Ask for more time] "Pity. I shall be waiting with baited breath for your answer."
++ {askedonce} [Ask for more time] "Pity. I shall be waiting with bated breath for your answer."
 
 ->station_house
 
@@ -568,7 +568,7 @@ You hear a rumbling faintly coming from behind the door.
 
 **[Go to the platform]
 
-You burst out the door of the waiting room, onto the platfrom and see - 
+You burst out the door of the waiting room, onto the platform and see - 
 Empty forest, overgrown tracks. No train in sight.
 
 ***[Look around]
@@ -594,7 +594,7 @@ She smiles unhelpfully. There's only one thing to do now.
 
 You can see a dot on the railtracks to your left in the far distance. 
 *[Wait]
--You get up to inspect the information board and the stationmaster follows you. She begins to explain how to interpret the map {not approach_donkey:and you find that you can {riddle_wrong<4:quite easily interpret it. Knowing what you know now, you shall have to retrun to the stationhouse for tea and card games again. |somewhat interpret it, though you have to sit down after a while as you head begins to spin and your vision blurs} |{riddle_wrong<4: and you can't begin to interpret it at all. The stationmaster brings you another cup of tea though, which is nice. | and you get so confused that you have to sit down. The station master instead shows you her magazine collection. It's a train magazine series, but they do have a swimsuit edition. Interesting.}} 
+-You get up to inspect the information board and the stationmaster follows you. She begins to explain how to interpret the map {not approach_donkey:and you find that you can {riddle_wrong<4:quite easily interpret it. Knowing what you know now, you shall have to return to the stationhouse for tea and card games again. |somewhat interpret it, though you have to sit down after a while as you head begins to spin and your vision blurs} |{riddle_wrong<4: and you can't begin to interpret it at all. The stationmaster brings you another cup of tea though, which is nice. | and you get so confused that you have to sit down. The station master instead shows you her magazine collection. It's a train magazine series, but they do have a swimsuit edition. Interesting.}} 
 
 The dot has grown somewhat bigger.
 
