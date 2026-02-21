@@ -96,7 +96,7 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
  
 ==quiet
 {quiet>1: You and the donkey stand together in a companionable silence.|You and the donkey stand in awkward silence.}
-{quiet>2: He is now your friend.}
+{quiet>2: Maybe he likes having the company.}
 
 ->approach_donkey
 
