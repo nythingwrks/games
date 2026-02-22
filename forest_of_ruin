@@ -7,13 +7,13 @@ You awaken in a forest,
  * [Close your eyes]
  ->close_eyes
  ==grove
- The same two paths lead off from the clearing.{confession>4: You notice a seagull lurking in the shadows in a corner of the grove that you hadn't noticed before. It makes no move to approach you, yet you feel strangely threatened.}
+ -(paths) The same two paths lead off from the clearing.{confession>4: You notice a seagull lurking in the shadows in a corner of the grove that you hadn't noticed before. It makes no move to approach you, yet you feel strangely threatened.}
  
  +[Take the path to {monastery: The Monastery | the right}]
  ->right
  +[Take the path to the {station_name: Station House| left}]
  {left>2 and not board_secret or pet:->station_name|->left}
-
+*{confession>4 and gun and not give_it_up} [Shoot the seagull] You shoot the seagull. There's a burst of feathers, but once they settle you see the seagull is entirely unharmed.->paths
 ==secret_tunnel
  {
  - secret_tunnel<2: The thing that is most apparent to you as you first clamber through the leaves is the {pet:smell. Leaves. Rot. Earth. Home. Things move to either side of you. You can hear them even when they travel far.| darkness. Even in the dark pathway to the Station House you did not feel so separate from the sky.}->tunnel_lost-> 
@@ -482,7 +482,7 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 * [Let her speak]
 * [Tell her you don't have time for this] She continues, ignoring you completely. 
 //gather
-- "{gun: Before I start- I see you are carrying something heavy. If you are not planning to use it, I can take it off your hands?| might be better left with me. Let me see if I remember it..."} 
+- "{gun: Before I start- I see you are carrying something heavy. If you are not planning to use it, I can take it off your hands?|  Let me see if I remember it..."} 
 *{gun} [Shoot her]
 ->gun_end_final1
 *{gun} [Hand her the gun]
@@ -726,14 +726,15 @@ The train pulls away into the setting sun. Looking out into the darkness of the 
 <p></p>
 -(limple)
 *[Look around]You take a look around the room. There's a small mirror on the far wall. Angling yourself so you don't have to face your own reflection, you observe the room through it. The shadows in the reflected room pool more deeply in its corners.->limple
-*[Lay down on the bed] You lay down on the bed, exhausted by the strangeness of the day. Drifting into sleep, you think of the life you cannot remember and did not return to. More trains will come, whether you take them or not. <p></p> Unsure of your own name, and now your future, you cross into a fitful sleep full of vivid dreams.
-<p></p> ** {gun}Awaken
-->king
-
+*[Lay down on the bed] You lay down on the bed, exhausted by the strangeness of the day. Drifting into sleep, you think of the life you cannot remember and did not return to. More trains will come, whether you take them or not. <p></p> Unsure of your own name, and now your future, you cross into a fitful sleep full of vivid dreams.{
+-gun:->king
+-else: ->END
+}
 ==king
+*[Awaken]
 You wake to a faint braying laugh. Night has long fallen, the world beyond the small window lost to the moonless oily night. Something glints in the mirror.
-*[Go to the mirror] 
-- As you move to the mirror, you feel a strange but familiar heaviness in your hand. It's hard to make out in the darkness, but as you approach you notice something off about your silhouette. It almost looks as if you are shrouded in thick black robes. 
+**[Go to the mirror] 
+- As you move to the mirror, you feel a strange but familiar heaviness in your hand. It's hard to make out in the darkness, but as you approach you notice something off about your silhouette. <p></p> It almost looks as if you are shrouded in thick black robes. 
 -> END
 
 ==go_end
