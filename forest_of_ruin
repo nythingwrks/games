@@ -13,7 +13,30 @@ You awaken in a forest,
  ->right
  +[Take the path to the {station_name: Station House| left}]
  {left>2 and not board_secret or pet:->station_name|->left}
+
+==secret_tunnel
+ {
+ - secret_tunnel<2: The thing that is most apparent to you as you first clamber through the leaves is the {pet:smell. Leaves. Rot. Earth. Home. Things move to either side of you. You can hear them even when they travel far.| darkness. Even in the dark pathway to the Station House you did not feel so separate from the sky.}->tunnel_lost-> 
+- else: 
+ You make your way through the dark{pet:, loamy undergrowth}. You can hear things all around you but can't quite make them out.{secret_tunnel>3:<p></p>Though you have been this way a number of times now, you're still never entirely sure when you'll emerge.}
+ }
+ ->->
  
+==tunnel_lost
+ *[Look around] 
+You turn around and all you can see is thicket-brush-branches. 
+You only took one step into the foliage, but wherever you came from is no longer one step behind you.
+-(topside)
+**{not pet}[Panic]You scrabble around in the darkness, scratching yourself on the branches to no avail.->topside 
+**{not pet}[Take deep breaths] Inhaling deeply, you try to get a hold of your surroundings. Slowly your eyes begin to adjust and you manage to
+**{pet}[Follow your ears]Why would you fret in such a welcome space as this?  You close your eyes and listen out intently. You can hear where the denizens of this deep place enter and exit and soon
+**{pet}[Follow your nose]Why would you fret in such a welcome space as this? You take in the musky air of the undergrowth. There are trails and paths leading out everywhere, and naturally
+-- <> find a path - more of a trail really - that {pet: will lead to somewhere familiar| must lead somewhere}. 
+***[Follow the trail]
+---You follow the trail {pet: confidently and|and begin to lose hope, but} eventually find what you think is an exit. 
+****[{pet: Exit |Escape}]
+----You push the branches out of the way, and breach into the sunlit world once more. <>
+->->
  
  ==look_around
  You are standing in a clearing. The light is filtering through the trees, the sun fighting through to hit your face. 
@@ -68,7 +91,7 @@ You rip the crab out of the shell and toss it aside, pocketing the shell.
 
 
 ==monastery
-{monastery>1:{wade and stream>2:Crossing the stream, you|You} continue along to a familiar set of ruins. <p></p>You have returned to <b>The Monastery</b>.|Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p></p>You have found <b>The Monastery</b>.} 
+{monastery>1:{wade and stream>2:Crossing the stream, you|You} continue along to a familiar set of ruins. <p></p>You have returned to <b>The Monastery</b>.|Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p></p>You have found <b>The Monastery</b>.}{station_name and not secret_tunnel:A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
 
 +[Enter the Monastery]
 ->enter_mon
@@ -76,6 +99,8 @@ You rip the crab out of the shell and toss it aside, pocketing the shell.
 ->grove
 +{board_secret}[Hop back to the grove]
 ->grove
+* {station_name and not secret_tunnel}[Clamber through the conspicuous bush] ->secret_tunnel->station_name
++{secret_tunnel}[Take the hidden path to the Station House]->secret_tunnel->station_name
 
 ==enter_mon
 {approach_donkey or explore_mon: You are standing in the entryway of The Monastery.{gun: The grass where the donkey had been standing is scorched, and still glows faintly with heat| The old donkey is still happily chewing his grass}.| You carefully cross the moss-covered threshold of The Monastery. The ground beyond is blanketed by a tall yellow grass, the horizon is swallowed up again by thick forest. An old donkey is a few yards off, feeding in the grass contentedly.}    
@@ -328,11 +353,12 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==station_name
 
-- {station_house:You are standing outside the<b> Station House</b>. The trees rustle all around you.| <p>You have found <b>The Station House</b>.</p> Maybe there's a way out of the woods after all?}
+- {station_house:You are standing outside the<b> Station House</b>. The trees rustle all around you.| <p>You have found <b>The Station House</b>.</p> Maybe there's a way out of the woods after all?}{station_name and not secret_tunnel:A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
 ++[Approach the station house] ->station_house
 ++{not board_secret}[Return to the grove] You make your way back to the grove you first found yourself in. ->grove
 ++{board_secret}[Hop back] With a spring in your step, you skip your way back to the grove you first found yourself in. ->grove
-
+* {enter_mon and not secret_tunnel}[Clamber through the conspicuous bush] ->secret_tunnel->monastery
++{secret_tunnel}[Take the hidden path to the Monastery]->secret_tunnel->monastery
 
 ==station_house
 {information_board or station_master: You are {give_it_up: now| } alone on the platform aside from {station_master: the silhouette of the station master, still doing who knows what in the waiting room|the frosted glass of the waiting room door } and, of course, the information board.|You make your way up and onto the platform. You can see the information board more clearly, and just behind it the frosted glass door of a small waiting room.}  
@@ -346,7 +372,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 {A confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns that you're sure aren't there, or at least don't exist <i>anymore</i>, and going along a coastline that you can't recognise. <p></p>The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful.| The same board as before with the same information. Confusing, jumbled, and entirely unintelligible. Your head begins to hurt after a while.}
 
- {pet and information_board>1: ->board_secret}
+{pet and information_board>1: ->board_secret}
 
 +[Look away] ->station_house 
 
