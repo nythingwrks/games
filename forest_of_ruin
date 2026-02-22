@@ -709,23 +709,31 @@ There is a pause, one in which no one exits the train, but one can get on it.
 *[Go] You reach for the door and open it, embarking on your erstwhile journey out of the woods. ->go_end
 
 ==stay_end
-
+//make more neutral/ dont erase scariness of woods/ less permanent+ gun conditional that you hear the donkey 
 The stationmaster stands behind you.
-
-"One last farewell?"
 
 You explain to her that, for some reason, you don't want to leave.
 
-"I will take that as a compliment to my company." Her face hides an emotion that you don't think you recognise.
+"I will take that as a compliment to my company." You see an emotion that you don't recognise cross her face.
 
-*[You wonder if it is.]
+The train pulls away into the setting sun. Looking out into the darkness of the woods, the station master turns to you.
 
-Whatever the case - be it the serenity of {enter_mon: the monastery| the woods}, the cosiness of the stationhouse, or just the escape from a life outside you can't remember, you know that you wish to stay. For now, at least.
+"Luckily for you, I have a spare room. I have some jobs that you can do while you are with me if you'd like to keep busy."
+{confession>4: Following her gaze, you see the beady eyes of a seagull looking out at you. A shiver runs down your spine. You know it's only a matter of time before you'll have to confront your past.}
 
-"Luckily for you, I have a spare room. I shall get you settled in and we can wake up bright and early tomorrow with pancakes. I have some jobs that you can do while you are with me."
+*[Accept]
+- The station master takes you by the shoulders and leads you away from the edge of the platform. She takes you to a plain but comfortable room in the Station House and leaves you to get settled.
+<p></p>
+-(limple)
+*[Look around]You take a look around the room. There's a small mirror on the far wall. Angling yourself so you don't have to face your own reflection, you observe the room through it. The shadows in the reflected room pool more deeply in its corners.->limple
+*[Lay down on the bed] You lay down on the bed, exhausted by the strangeness of the day. Drifting into sleep, you think of the life you cannot remember and did not return to. More trains will come, whether you take them or not. <p></p> Unsure of your own name, and now your future, you cross into a fitful sleep full of vivid dreams.
+<p></p> ** {gun}Awaken
+->king
 
-The station master takes you by the shoulders and leads you away from the edge of the platform as the train pulls away into the setting sun.
-
+==king
+You wake to a faint braying laugh. Night has long fallen, the world beyond the small window lost to the moonless oily night. Something glints in the mirror.
+*[Go to the mirror] 
+- As you move to the mirror, you feel a strange but familiar heaviness in your hand. It's hard to make out in the darkness, but as you approach you notice something off about your silhouette. It almost looks as if you are shrouded in thick black robes. 
 -> END
 
 ==go_end
