@@ -371,6 +371,8 @@ A figure stands in the middle of the room, wearing an immaculate double-breasted
 ->station_house
 
 ==conversation
+*{gun} [Shoot her]
+->gun_end_final1
 {pet: Now that you're standing closer to her, you notice she faintly smells of smoke and heat.} You clear your throat.
 * [Say hello] 
 You begin to introduce yourself, but realise your name has slipped right out of your mind. 
@@ -493,10 +495,9 @@ VAR knows_t = false
 VAR knows_c = false
 VAR knows_p = false
 
-
+*{gun} [Shoot her]
+->gun_end_final1
 {<> If you think you know now, please do share." | <> The station master smiles at you placidly, waiting for you to speak.}
-*{gun} [Threaten her]
-->gun_end1
 *(askedonce)[Ask for some more time to think about it] 
 "Of course! Take the time you need. I have been turning it over myself for who knows how long."
 
@@ -664,34 +665,6 @@ You smile and reach into your pocket before realising that you never actually bo
 
 
 -> END
-==apology==
-You're not sure what got into you. She ignores your apology, but says "I see you met the Ass. Do not feel too bad. He has a way of getting into people's heads." <p></p>"Anyway," her eyes glaze over again, "that pesky story..."
-<p></p>
-->riddle_answer
-==gun_end1
-You tell the stationmaster that you are sick of these games, and you want her to tell you everything she knows <b>now</b> or else. She looks at you like she sees something you don't, but says nothing.
-*[Apologise]
-->apology
-*[Fall further]
-->gun_end2
-==gun_end2
-You put your hand in your pocket and feel the heavy weight of the gun. You can hear the donkey's laugh on the wind.
-*[Fall further]
-->gun_end3
-*[Turn back]
-->too_late
-
-==too_late
-{too_late>1: It's too late for that now |You are faintly aware that something is very very wrong. But your hands are moving on their own. }
-*[Fall further]
-->gun_end3
-*[Turn back]
-->too_late
-
-==gun_end3
-You raise the gun up so it's level with your shoulder. The stationmaster still hasn't spoken. Her expression is unusual; neutral with a hint of resignation. You see stained glass and hear metal clattering, cries of alarm.
-*[Shoot]
-->gun_end_final1
 ==gun_end_final1
 The force of the shot knocks you both back. You taste iron and hear your heartbeat in your ears. The stationmaster's body is crumpled on the platform, its edges blurring. You feel a sudden shift, and stagger slightly.
 *[Look down]
