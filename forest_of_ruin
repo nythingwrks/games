@@ -370,6 +370,7 @@ A figure stands in the middle of the room, wearing an immaculate double-breasted
 *[Go back]
 ->station_house
 
+
 ==conversation
 *{gun} [Shoot her]
 ->gun_end_final1
@@ -485,6 +486,21 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 
 "Want to give it another shot?" -> riddle_answer
 
+==riddle_recap
+
++[...]
+
+<i>The king, on his deathbed, bequeathed his three sons each equal part of the kingdom and gifted each <b>an item from his imperial regalia</b>.</i>
+
+<i>Three thrones were set in place at the royal court, <b>side by side</b>. Each king sat resplendent in his signature colour: one in <b>red</b>, one in <b>black</b> and one in <b>green</b></i>
+
+<i>An old man with a donkey spoke to them one day. The most cunning king, in red, leaned back and paused to contemplate the man's words. From the left, the black-robed king leapt up and made as if to strike the man. The final brother, in green, adjusted his crown nervously.</i>  
+
+- <i>The donkey laughed and the king who had been gifted the imperial sword drew it and ran the brother next to him through. The remaining king stood wide-eyed, and ever the fool, watched the goblet roll from where it had fallen in between him and his kinslaying brother, but he too was struck down.</i>
+
++[...] "And there it is. The most pertinent details, anyway."
+->riddle_answer
+
 ==riddle_answer
 
 VAR r_colour = ""
@@ -516,6 +532,8 @@ As you move to get away from this strange woman, she offers you some words of ad
 + {askedonce} [Ask for more time] "Pity. I shall be waiting with bated breath for your answer."
 
 ->station_house
+
++[Ask for a recap] "Hard to follow isn't it? It's a strange and sad tale, but alas that I how it was told to me." ->riddle_recap
 
 + [Solve the tale]
 
@@ -552,8 +570,6 @@ As you move to get away from this strange woman, she offers you some words of ad
 "Sat on his throne {t_pos} his brothers, the king in {r_colour} raised his sword above his head and brought it down in two {k_trait} strikes." 
 
 The station master{riddle_wrong<3: pauses to consider this | looks up from her magazine}{knows_t && knows_p && knows_c :... -> the_end | and frowns. "No, that does not feel quite right." She taps her chin and looks back at you. -> riddle_wrong }
-
--> grove
 
 ==the_end
 
