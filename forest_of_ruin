@@ -18,13 +18,13 @@ You awaken in a forest,
  {
  - secret_tunnel<2: The thing that is most apparent to you as you first clamber through the leaves is the {pet:smell. Leaves. Rot. Earth. Home. Things move to either side of you. You can hear them even when they travel far.| darkness. Even in the dark pathway to the Station House you did not feel so separate from the sky.}->tunnel_lost-> 
 - else: 
- You make your way through the dark{pet:, loamy undergrowth}. You can hear things all around you but can't quite make them out.{secret_tunnel>3:<p></p>Though you have been this way a number of times now, you're still never entirely sure when you'll emerge.}
+ You make your way through the dark{pet:, loamy undergrowth}. You can hear things all around you but can't quite make them out.{secret_tunnel>3:<p></p>Though you have been this way a number of times now, you're still never entirely sure where you'll emerge.}
  }
  ->->
  
 ==tunnel_lost
  *[Look around] 
-You turn around and all you can see is thicket-brush-branches. 
+You turn around and all you can see is thicket and brush and branches. 
 You only took one step into the foliage, but wherever you came from is no longer one step behind you.
 -(topside)
 **{not pet}[Panic]You scrabble around in the darkness, scratching yourself on the branches to no avail.->topside 
