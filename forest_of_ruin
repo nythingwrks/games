@@ -7,13 +7,13 @@ You awaken in a forest,
  * [Close your eyes]
  ->close_eyes
  ==grove
- -(paths) The same two paths lead off from the clearing.{confession>4: You notice a seagull lurking in the shadows in a corner of the grove that you hadn't noticed before. It makes no move to approach you, yet you feel strangely threatened.}
+ The same two paths lead off from the clearing.{confession>4: You notice a seagull lurking in the shadows in a corner of the grove that you hadn't noticed before. It makes no move to approach you, yet you feel strangely threatened.}
  
  +[Take the path to {monastery: The Monastery | the right}]
  ->right
  +[Take the path to the {station_name: Station House| left}]
  {left>2 and not board_secret or pet:->station_name|->left}
-*{confession>4 and gun and not give_it_up} [Shoot the seagull] You shoot the seagull. There's a burst of feathers, but once they settle you see the seagull is entirely unharmed.->paths
+
 ==secret_tunnel
  {
  - secret_tunnel<2: The thing that is most apparent to you as you first clamber through the leaves is the {pet:smell. Leaves. Rot. Earth. Home. Things move to either side of you. You can hear them even when they travel far.| darkness. Even in the dark pathway to the Station House you did not feel so separate from the sky.}->tunnel_lost-> 
@@ -482,7 +482,7 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 * [Let her speak]
 * [Tell her you don't have time for this] She continues, ignoring you completely. 
 //gather
-- "{gun: Before I start- I see you are carrying something heavy. If you are not planning to use it, I can take it off your hands?|  Let me see if I remember it..."} 
+- "{gun: Before I start- I see you are carrying something heavy. If you are not planning to use it, I can take it off your hands?| might be better left with me. Let me see if I remember it..."} 
 *{gun} [Shoot her]
 ->gun_end_final1
 *{gun} [Hand her the gun]
@@ -547,7 +547,7 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 ~ knows_c = false
 ~ knows_p = false
 
-"Want to give it another shot?" -> riddle_answer
+"Want to give it another shot?" -> riddle_answer.topside
 
 ==riddle_recap
 
@@ -562,7 +562,7 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 - <i>The donkey laughed and the king who had been gifted the imperial sword drew it and ran the brother next to him through. The remaining king stood wide-eyed, and ever the fool, watched the goblet roll from where it had fallen in between him and his kinslaying brother, but he too was struck down.</i>
 
 +[...] "And there it is. The most pertinent details, anyway."
-->riddle_answer
+->riddle_answer.topside
 
 ==riddle_answer
 
@@ -574,34 +574,13 @@ VAR knows_t = false
 VAR knows_c = false
 VAR knows_p = false
 
-*{gun and not give_it_up}[Shoot her]
-->gun_end_final1
 {<> If you think you know now, please do share." | <> The station master smiles at you placidly, waiting for you to speak.}
-*(askedonce)[Ask for some more time to think about it] 
-"Of course! Take the time you need. I have been turning it over myself for who knows how long."
-
-As you return to the platform, she calls out behind you to offer you some words of advice.
-
-"I have heard that the nearby monastery has a certain {gun: Ass |equine abbot} that may be able to help you. He has a philosophical sense of humour, so I've been told." 
-
-**{not enter_mon and not gun} [Equine abbot?]
-
--> station_house
-
-**{enter_mon and not gun} [She must mean the donkey. You better go see it again... and tell it a joke?]
-
--> station_house
-
-**{gun}[Tell her he's gone]"Ah, that explains the gun. I suspect you'll come to regret acquiescing to his rather vulgar tastes. Regardless, there may be some useful insight into my tale elsewhere in the Monastery if you still wish to assist me."
-->station_house
+-(topside)
+*(askedonce)[Ask for some more time to think about it] ->donkey_direct
+*{gun and not give_it_up}[Shoot her]->gun_end_final1
 +[Ask for a recap] "Hard to follow isn't it? It's a strange and sad tale, but alas that is how it was told to me." ->riddle_recap
-
-+ {askedonce} [Ask for more time] "Pity. I shall be waiting with bated breath for your answer."
-
-->station_house
-
++ {askedonce} [Ask for more time] "Pity. I shall be waiting with bated breath for your answer."->station_house
 + [Solve the tale]
-
 {riddle_wrong<4: "Excellent! Please go on." | "Oh good. I'll just..." The station master {riddle_wrong<5:produces a magazine seemingly from nowhere and begins flipping through it. "Pay me no mind, I am still listening." You're not sure that she is.|returns to her magazine and idly flips to the next page. "Go on then."}}
 
 ++"The king with the sword..."[] you begin, feeling unsure of yourself. "Wore robes of..."
@@ -637,6 +616,22 @@ As you return to the platform, she calls out behind you to offer you some words 
 The station master{riddle_wrong<3: pauses to consider this | looks up from her magazine}{knows_t && knows_p && knows_c :... -> the_end | and frowns. "No, that does not feel quite right." She taps her chin and looks back at you. -> riddle_wrong }
 
 -> grove
+
+==donkey_direct
+"Of course! Take the time you need. I have been turning it over myself for who knows how long."
+
+As you return to the platform, she calls out behind you to offer you some words of advice.
+
+"I have heard that the nearby monastery has a certain {gun: Ass |equine abbot} that may be able to help you. He has a philosophical sense of humour, so I've been told." 
+
+**{not enter_mon and not gun} [Equine abbot?]
+-> station_house
+
+**{enter_mon and not gun} [She must mean the donkey. You better go see it again... and tell it a joke?]
+-> station_house
+
+**{gun}[Tell her he's gone]"Ah, that explains the gun. I suspect you'll come to regret acquiescing to his rather vulgar tastes. Regardless, there may be some useful insight into my tale elsewhere in the Monastery if you still wish to assist me."
+->station_house
 
 ==the_end
 
@@ -727,14 +722,16 @@ The train pulls away into the setting sun. Looking out into the darkness of the 
 -(limple)
 *[Look around]You take a look around the room. There's a small mirror on the far wall. Angling yourself so you don't have to face your own reflection, you observe the room through it. The shadows in the reflected room pool more deeply in its corners.->limple
 *[Lay down on the bed] You lay down on the bed, exhausted by the strangeness of the day. Drifting into sleep, you think of the life you cannot remember and did not return to. More trains will come, whether you take them or not. <p></p> Unsure of your own name, and now your future, you cross into a fitful sleep full of vivid dreams.{
--gun:->king
--else: ->END
+- gun: ->king
+- else: ->END
 }
+->END
 ==king
-*[Awaken]
+*[Awaken] 
+
 You wake to a faint braying laugh. Night has long fallen, the world beyond the small window lost to the moonless oily night. Something glints in the mirror.
-**[Go to the mirror] 
-- As you move to the mirror, you feel a strange but familiar heaviness in your hand. It's hard to make out in the darkness, but as you approach you notice something off about your silhouette. <p></p> It almost looks as if you are shrouded in thick black robes. 
+*[Go to the mirror] 
+- As you move to the mirror, you feel a strange but familiar heaviness in your hand. It's hard to make out in the darkness, but as you approach you notice something off about your silhouette. It almost looks as if you are shrouded in thick black robes. 
 -> END
 
 ==go_end
