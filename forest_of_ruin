@@ -594,7 +594,7 @@ As you return to the platform, she calls out behind you to offer you some words 
 
 **{gun}[Tell her he's gone]"Ah, that explains the gun. I suspect you'll come to regret acquiescing to his rather vulgar tastes. Regardless, there may be some useful insight into my tale elsewhere in the Monastery if you still wish to assist me."
 ->station_house
-+[Ask for a recap] "Hard to follow isn't it? It's a strange and sad tale, but alas that I how it was told to me." ->riddle_recap
++[Ask for a recap] "Hard to follow isn't it? It's a strange and sad tale, but alas that is how it was told to me." ->riddle_recap
 
 + {askedonce} [Ask for more time] "Pity. I shall be waiting with bated breath for your answer."
 
