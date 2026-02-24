@@ -16,11 +16,12 @@ You awaken in a forest,
 *{confession>4 and gun and not give_it_up} [Shoot the seagull] You shoot the seagull. There's a burst of feathers, but once they settle you see the seagull is entirely unharmed.->paths
 ==secret_tunnel
  {
- - secret_tunnel<2: The thing that is most apparent to you as you first clamber through the leaves is the {pet:smell. Leaves. Rot. Earth. Home. Things move to either side of you. You can hear them even when they travel far.| darkness. Even in the dark pathway to the Station House you did not feel so separate from the sky.}->tunnel_lost-> 
+ - secret_tunnel<2: The thing that is most apparent to you as you first clamber through the leaves is the {pet:smell. Leaves. Rot. Earth. Home. Things move to either side of you. You can hear them even when they travel far.| darkness. Even in the dark pathway to the Station House you did not feel so separate from the sky.}->tunnel_lost->
+- secret_tunnel==5 and key: As you make your way through the undergrowth, you notice that you're clutching the key you found earlier. It seems strangely warm to the touch. You push through the thicket and find your hand meets stone instead of the air you were expecting. ->secret_room->
 - else: 
- You make your way through the dark{pet:, loamy undergrowth}. You can hear things all around you but can't quite make them out.{secret_tunnel>3:<p></p>Though you have been this way a number of times now, you're still never entirely sure where you'll emerge.}
- }
- ->->
+ You make your way through the dark{pet:, loamy undergrowth}. You can hear things all around you but can't quite make them out.{secret_tunnel>3:<p></p>Though you have been this way a number of times now, you're still never entirely sure where you'll emerge.} 
+}
+->->
  
 ==tunnel_lost
  *[Look around] 
@@ -37,7 +38,72 @@ You only took one step into the foliage, but wherever you came from is no longer
 ****[{pet: Exit |Escape}]
 ----You push the branches out of the way, and breach into the sunlit world once more. <>
 ->->
- 
+
+==secret_room
+*[Ignore it] ->->
+*[Investigate the stone]
+
+- You push aside some of the brambles and find a small brass keyhole. 
+
+*[Put the key in the keyhole]
+
+You put the key in the keyhole and twist. At first nothing happens, but twisting it further, you hear something click in the lock mechanism buried within the stone. 
+
+- The <i>door</i> swings open. 
+*[Enter the room]
+
+You duck through the doorway, avoiding the now broken brambles. Once within you find yourself in a small dark room. You can't really make anything out. 
+-(scramble)
+*[Feel your way around the walls] You feel your way along the walls around the doorway and eventually alight upon a familiar shape. A lightswitch. You turn it on 
+*[Feel your way around the floor] You drop to your knees and feel your way around the floor. You don't find anything useful, but you do bang your head on something. ->scramble
+-You hear a faint humming as a generator somewhere whirrs into life once more. Lights begin to flicker on. As your eyes adjust a flashes of things come into focus. A persian carpet frayed at the edges. A richly adorned, but faded room. Everything is covered in a fine layer of dust. 
+*[Look around]
+As you look around you spot a number of things. ->things_in_room
+
+==things_in_room
+VAR contractdestroyed = false
+- (looking) 
++[Look at the chair]->looking
++[Look at the chest]->looking
+*[Look at the desk] ->desk
++[Look at the old poster] ->poster
++{desk}[Leave the room] You walk back through the doorway, into the brush, and soon find yourself wandering a trail you recognise.->->
+
+- (poster) It's a London & South Western train poster. It has a faded but colourful depiction of a countryside scene through a train window. ->looking
+
+- (chair) An old chair, but comfortable looking. It's draped in a number of blankets. You would sit on it, but it looks like a historical artifact. Better not. ->looking
+
+- (chest) An ornate steamer chest sits adjacent to one of the walls. You heave it open and cough as a cloud of dust fills the air. Inside you see an older version of a station master's uniform - mostly just more buttons, a yellowing dress that looks to be a century old in style, costume jewelery, and a small stuffed doll made out of scrap fabric. ->looking
+
+- (desk) {More of a bureau, really. All the drawers seem locked but on the writing surface sits an old notebook. Atop the backboard sits an old gramaphone. | }
+*[Turn on the gramaphone] The gramaphone starts playing with a lurch. The room seems to hum in approval as the music begins.->desk
+*[Read the notebook] Picking up the notebook, you realise eveything apart from the first few pages is blackened and scorched. Your fingers come away black with ash.
+->notebook
+
+- (finishnotebook) As you finish reading you hear a click and notice that one of the desk drawers is now slightly ajar.
+*[Open the desk drawer] You open the desk drawer and the smell of sulphur and coal permeates the small room. Inside the drawer is a surprisingly pristine sheet of paper and a lighter. 
+**[Read the paper] The document itself makes your head spin. It's a complex series of clauses, subclauses, caveats, and limitations. You manage to make out that it's a contract - what for you can't entirely say. It's signed at the bottom with a name you can't make out, and something that looks suspiciously like a hoofprint.
+- (contract)
+*****[Put it back] You put the contract back in the drawer, which then closes and locks itself with a click. ->looking
+*****(burn)[Burn it] When you touch the contract you find it almost uncomfortably warm. You flick the lighter a number of times before it catches and hold the flame to the paper. It does not burn. ->contract
+*****{burn}[Tear it] It takes a surprising amount of force to tear the paper, but you manage it nonetheless. The contract splits down the middle and as you go to tear it further, each half begins to flake away into ash until it is as if the contract never existed to begin with. 
+~ contractdestroyed = true
+->looking
+
+- (notebook)
+*[Read the first entry] 
+- <i>ENTRY 1 : This post has been nothing but odd. I wish Henry had assigned me to London, as I had requested, instead of this blasted route. On one of my walks in the endless gaps between trains, I stumbled across some  curious ruins. Planning to return tomorrow and investigate further."</i>
+*[Read on]
+- <i>"ENTRY 2: I wrote to Hattie today- I've missed Millicent's sixth birthday. God knows that girl is swell, bright as a button already! She does not get that from Hattie, and that's flat. My sweet niece, I hope I am home in time for her seventh. "</i>
+*[Read on]
+- <i>"ENTRY 3 :  Henry has sent a telagram informing me the schedule has been further reduced, the average Londoner seems to prefer to travel by automobile these days. I returned to the ruins- I believe they may be the site of an ancient monastery. There is a donkey that grazes there and I have taken to talking to him (since there's little other decent company). "</i> 
+
+Here you see several days go by without entry, and the handwriting becomes more erratic, the ink increasingly  smudged .  
+*[Read on]
+- <i>"ENTRY 6: I detest this place. I fear I am going mad from the endless waiting. More often than not my sleeping feet walk me to the ruins, and I awaken to darkness and the faint braying of his laughter.  The longer I spend away from my home, the more I seem to forget what ever rooted me there to begin with. "</i>
+
+- On the last page before the book turns charcoal, you read: "It will be done. He has promised me everything I have ever wished for."->finishnotebook
+
  ==look_around
  You are standing in a clearing. The light is filtering through the trees, the sun fighting through to hit your face. 
  Two paths lead off from the clearing. 
@@ -79,7 +145,7 @@ You hear a sound in the woods behind you, almost like an intake of breath.
 ==shell_choice
 Plunging your hand into the icy water, you fumble around until the cold becomes too much to bear. You open your fist and see a small iridescent shell nestled in your palm. A hermit crab has made a home in it.
 *[Toss it back] 
-->monastery
+->key
 *[Take it from the crab]
 ->shell
 
@@ -88,10 +154,16 @@ You rip the crab out of the shell and toss it aside, pocketing the shell.
 *[Finish crossing the stream]
 ->monastery
 
+==key
+VAR has_key = false 
+You decide to let the crab be. It shuffles off deeper into the stream, away from prying eyes. Underneath where the crab was you spot an old brass key half buried in the silt.
 
+*[Pick it up]
+~ has_key = true
+->monastery
 
 ==monastery
-{monastery>1:{wade and stream>2:Crossing the stream, you|You} continue along to a familiar set of ruins. <p></p>You have returned to <b>The Monastery</b>.|Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p></p>You have found <b>The Monastery</b>.}{station_name and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
+{monastery>1:{wade and stream>2:Crossing the stream, you|You} continue along to a familiar set of ruins. <p></p>You have returned to <b>The Monastery</b>.|Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p></p>You have found <b>The Monastery</b>.}{station_house and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
 
 +[Enter the Monastery]
 ->enter_mon
@@ -352,7 +424,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==station_name
 
-- {station_house:You are standing outside the<b> Station House</b>. The trees rustle all around you.| <p>You have found <b>The Station House</b>.</p>}{station_name and not secret_tunnel:A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
+- {station_house:You are standing outside the<b> Station House</b>. The trees rustle all around you.| <p>You have found <b>The Station House</b>.</p>}{station_name and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
 ++[Approach the station house] ->station_house
 ++{not board_secret}[Return to the grove] You make your way back to the grove you first found yourself in. ->grove
 ++{board_secret}[Hop back] With a spring in your step, you skip your way back to the grove you first found yourself in. ->grove
@@ -738,6 +810,7 @@ You turn around and wave at the station master, who waves back.
 
 You agree, though hope quietly for more willing circumstances.
 
+*{secret_room}[Invite her to come with you]
 *[Board the train]
 
 -Blessedly, the train is fairly empty, and you easily find a carriage to yourself. As you sink down onto the plush upholstery of the seating, you turn to the window and look out onto the platform. 
@@ -745,15 +818,22 @@ You agree, though hope quietly for more willing circumstances.
 The station master busies herself clearing away the detritus the pair of you left, only turning as the train begins to pull away. She watches you go, and you soon find yourself speeding through the forest at night. 
 
 *[Dream]
+- <i>Three children in red and green and black. They fight over something that you can't quite make out. A figure in the corner laughs, a heavy, braying laugh. All is then lost amongst the trees.</i>
+*[Wake up]
+{
+- not contractdestroyed: You awaken in a forest. 
+* [Look around]You are standing in a clearing. The light is filtering through the trees, the sun fighting through to hit your face. 
+ Two paths lead off from the clearing. ->END
+* [Close your eyes]You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin. ->END
 
-<i>Three children in red and green and black. They fight over something that you can't quite make out. A figure in the corner laughs, a heavy, braying laugh. All is then lost amongst the trees.</i>
+- else: 
 
 You are roused from your slumber from a familiar looking man, who, through your grogginess, you realise is the ticketmaster. 
 
 You smile and reach into your pocket before realising that you never actually bothered to buy a ticket. Bother. 
-
-
 -> END
+}
+
 ==give_it_up
 You hand the gun to the station master. She stows it away somewhere in her coat and begins her tale.
 ->riddle_begins
