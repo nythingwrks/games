@@ -63,8 +63,8 @@ As you look around you spot a number of things. ->things_in_room
 ==things_in_room
 VAR contractdestroyed = false
 - (looking) 
-+[Look at the chair]->looking
-+[Look at the chest]->looking
++[Look at the chair]->chair
++[Look at the chest]->chest
 *[Look at the desk] ->desk
 +[Look at the old poster] ->poster
 +{desk}[Leave the room] You walk back through the doorway, into the brush, and soon find yourself wandering a trail you recognise.->->
