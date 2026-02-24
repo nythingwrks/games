@@ -806,16 +806,16 @@ You wake to a faint braying laugh. Night has long fallen, the world beyond the s
 
 You turn around and wave at the station master, who waves back. 
 
-"It was lovely having you here. Hopefully I will see you again soon?"
+"It was lovely having you here. {contractdestroyed: Hopefully I will see you again soon.| I will see you again soon, I am sure."}
 
-You agree, though hope quietly for more willing circumstances.
+*{secret_room}[Invite her to come with you] 
+{not contractdestroyed: ->invitation | ->invitation_2}
 
-*{secret_room}[Invite her to come with you]
 *[Board the train]
 
--Blessedly, the train is fairly empty, and you easily find a carriage to yourself. As you sink down onto the plush upholstery of the seating, you turn to the window and look out onto the platform. 
+-(on_train) Blessedly, the train is fairly empty, and you easily find a carriage to yourself. As you sink down onto the plush upholstery of the seating, you turn to the window and look out onto the platform. 
 
-The station master busies herself clearing away the detritus the pair of you left, only turning as the train begins to pull away. She watches you go, and you soon find yourself speeding through the forest at night. 
+{contractdestroyed: The brass key is warm in your pocket. As the train pulls out of the station, you see the station master walk into the station house. Lights begin to turn off in each room, until the whole house is dark. It's hard to make out in the distance, but you think you see the station master walk into the woods.| The station master busies herself clearing away the detritus the pair of you left, only turning as the train begins to pull away. She watches you go, and you soon find yourself speeding through the forest at night. }
 
 *[Dream]
 - <i>Three children in red and green and black. They fight over something that you can't quite make out. A figure in the corner laughs, a heavy, braying laugh. All is then lost amongst the trees.</i>
@@ -833,6 +833,45 @@ You are roused from your slumber from a familiar looking man, who, through your 
 You smile and reach into your pocket before realising that you never actually bothered to buy a ticket. Bother. 
 -> END
 }
+==invitation
+A shadow passes over her face. " I cannot." 
+*[Board the train]->go_end.on_train
+*[Tell her you found her room] "Ah, I have not found my way back there in a while. Find anything of note?"
+-(askinglimple)
+*[Ask who Millicent is]She looks puzzled. "Someone I knew once, I expect."->askinglimple
+*[Tell her what you found] Her face is oddly absent of emotion. When you mention returning the contract to the desk, she looks as if she wants to say something, but holds her tongue. Once you've finished, she says "I am glad you left all as you found it." You're not sure if she means that. "Did you happen to hold on to the key?"->give_key
+
+-(give_key)
+*[Give her the key] You hand her the brass key. Her eyes widen and she clutches it tightly. She thanks you, and you feel a deep and genuine gratitude in her words. The train hoots, and you jump aboard, leaving her on the platform.->go_end.on_train
+
+==invitation_2
+A shadow passes over her face. " I cannot. I am bound here by a choice I made willingly and have regretted deeply since."
+*[Board the train]->go_end.on_train
+*[Tell her you found her room] "Ah, I have not found my way back there in a while. Find anything of note?"
+-(askinglimple)
+*[Ask who Millicent is]She looks puzzled. "Someone I knew once, I expect."->askinglimple
+*[Tell her you destroyed the contract] You begin to apologise for destroying her belongings without her permission- she interrupts you: "No need for an apology. I think we can excuse poor etiquette on this occasion." <p></p> You notice suddenly that {pet: she doesn't smell like smoke anymore.| there is more colour in her cheeks.} Her smile is genuine for the first time.
+-(askingwimple)
+*[Give her the key]
+You hand her the brass key. Her eyes widen and she clutches it tightly. She thanks you, and you feel a deep and genuine gratitude in her words.
+**[Ask her again to come with you]She asks if you mind waiting a short moment while she gathers her belongings. 
+***[Ask if the train will leave]She laughs. "No." She doesn't wait for further questions.
+***[Wait] You wait a while. The train waits too.
+
+-After a while, she returns in a yellow dress and a thick overcoat, holding the chest from her room. 
+
+*[Board the train together]You board the train together.
+
+- Blessedly, the train is fairly empty, and you easily find a carriage just for the two of you. As you sink down onto the plush upholstery of the seating, you turn to the window and look out onto the woods.
+
+*[Dream]
+ <i>You are standing in the Monastery at dawn. {lapinate_chantry: The long grass sways softly as you feel an unnatural breeze from the forest's edge. Looking out into the thicket you see a pair of yellow eyes watching you. When you meet their gaze, they vanish.|} The earth under your feet shudders and you watch as the ruins crumble around you. You know without seeing, as one does in dreams, that the station house is disintegrating too. Just before the sun breaks over the horizon, you hear a bitter, braying laugh echo through the rubble.</i> You awaken.
+*[Chat with the station master] You pass the time together, playing cards and trading interests (hers are mostly train related). As you get further into the journey, you feel as though a fog is lifting and your name returns to you. You introduce yourself properly, for the first time. She does the same. 
+
+- The ticket master, an elderly man with shrewd eyes and a sleepy smile, comes to check your tickets. As you realise you never bothered to buy one, your companion produces two from the pocket of her thick overcoat. Isn't it nice to have company?
+
+->END
+
 
 ==give_it_up
 You hand the gun to the station master. She stows it away somewhere in her coat and begins her tale.
@@ -849,5 +888,4 @@ The gun is no longer in your hand. The light glances off of something on your ch
 ->gun_end_final3
 ==gun_end_final3
 It's a small metal badge. The text on it reads STATION MASTER.
-
 ->END
