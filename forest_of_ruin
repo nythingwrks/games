@@ -1,4 +1,3 @@
-
 You awaken in a forest,
 
  * [Look around]
@@ -74,14 +73,14 @@ VAR contractdestroyed = false
 
 - (chest) An ornate steamer chest sits adjacent to one of the walls. You heave it open and cough as a cloud of dust fills the air. Inside you see an older version of a station master's uniform - mostly just more buttons, a yellowing dress that looks to be a century old in style, costume jewelery, and a small stuffed doll made out of scrap fabric. ->looking
 
-- (desk) {More of a bureau, really. All the drawers seem locked but on the writing surface sits an old notebook. Atop the backboard sits an old gramaphone. | }
-*[Turn on the gramaphone] The gramaphone starts playing with a lurch. The room seems to hum in approval as the music begins.->desk
-*[Read the notebook] Picking up the notebook, you realise eveything apart from the first few pages is blackened and scorched. Your fingers come away black with ash.
+- (desk) {More of a bureau, really. All the drawers seem locked but on the writing surface sits an old notebook. Atop the backboard sits an old gramophone. | }
+*[Turn on the gramophone] The gramophone starts playing with a lurch. The room seems to hum in approval as the music begins.->desk
+*[Read the notebook] Picking up the notebook, you realise everything apart from the first few pages is blackened and scorched. Your fingers come away black with ash.
 ->notebook
 
 - (finishnotebook) As you finish reading you hear a click and notice that one of the desk drawers is now slightly ajar.
 *[Open the desk drawer] You open the desk drawer and the smell of sulphur and coal permeates the small room. Inside the drawer is a surprisingly pristine sheet of paper and a lighter. 
-**[Read the paper] The document itself makes your head spin. It's a complex series of clauses, subclauses, caveats, and limitations. You manage to make out that it's a contract - what for you can't entirely say. It's signed at the bottom with a name you can't make out, and something that looks suspiciously like a hoofprint.
+**[Read the paper] The document itself makes your head spin. It's a complex series of clauses, subclauses, caveats, and limitations. You manage to make out that it's a contract - what for, you can't entirely say. It's signed at the bottom with a name you can't make out, and something that looks suspiciously like a hoofprint.
 - (contract)
 *****[Put it back] You put the contract back in the drawer, which then closes and locks itself with a click. ->looking
 *****(burn)[Burn it] When you touch the contract you find it almost uncomfortably warm. You flick the lighter a number of times before it catches and hold the flame to the paper. It does not burn. ->contract
@@ -95,9 +94,9 @@ VAR contractdestroyed = false
 *[Read on]
 - <i>"ENTRY 2: I wrote to Hattie today- I've missed Millicent's sixth birthday. God knows that girl is swell, bright as a button already! She does not get that from Hattie, and that's flat. My sweet niece, I hope I am home in time for her seventh. "</i>
 *[Read on]
-- <i>"ENTRY 3 :  Henry has sent a telagram informing me the schedule has been further reduced, the average Londoner seems to prefer to travel by automobile these days. I returned to the ruins- I believe they may be the site of an ancient monastery. There is a donkey that grazes there and I have taken to talking to him (since there's little other decent company). "</i> 
+- <i>"ENTRY 3 :  Henry has sent a telegram informing me the schedule has been further reduced, the average Londoner seems to prefer to travel by automobile these days. I returned to the ruins- I believe they may be the site of an ancient monastery. There is a donkey that grazes there and I have taken to talking to him (since there's little other decent company). "</i> 
 
-Here you see several days go by without entry, and the handwriting becomes more erratic, the ink increasingly  smudged .  
+Here you see several days go by without entry. The handwriting becomes more erratic, the ink increasingly smudged.  
 *[Read on]
 - <i>"ENTRY 6: I detest this place. I fear I am going mad from the endless waiting. More often than not my sleeping feet walk me to the ruins, and I awaken to darkness and the faint braying of his laughter.  The longer I spend away from my home, the more I seem to forget what ever rooted me there to begin with. "</i>
 
@@ -269,7 +268,7 @@ You do a committed but amateur impression of Kermit attempting to sing a song ab
 "My grandfather said my generation relies too much on the latest technology."
 You pause for effect
 "I called him a hypocrite and unplugged his life support."
-*[Add a <i>badum tss</i>]You do your best impression of a snare drum. You could swear the donkey lets out a little sigh of dissapointment.
+*[Add a <i>badum tss</i>]You do your best impression of a snare drum. You could swear the donkey lets out a little sigh of disappointment.
 *[Wait]
 - It doesn't seem to land.
 *[Try something else]
@@ -409,7 +408,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==station
 
-{station_name: You make your way back to the outside of the old <b>Station House.</b> The trees rustle all around you. {board_secret:You can smell them in the darknss of the forest, hear their footsteps in the undergrowth.}| You make your way through the trees {pet: , nursing the weeping bite you now sport on your hand,|, trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
+{station_name: You make your way back to the outside of the old <b>Station House.</b> The trees rustle all around you. {board_secret:You can smell them in the darkness of the forest, hear their footsteps in the undergrowth.}| You make your way through the trees {pet: , nursing the weeping bite you now sport on your hand,|, trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
 +{station_name}[Approach the Station House] ->station_house
 +{(station_house or grove) and not board_secret}[Return to the grove] You take the path back to the grove you first found yourself in. ->grove
 +{board_secret}[Scurry back the way you came] The forest doesn't seem so dark anymore as you take the route back the way you came. 
