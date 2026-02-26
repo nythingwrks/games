@@ -169,7 +169,7 @@ You decide to let the crab be. It shuffles off deeper into the stream, away from
 ->grove
 +{board_secret}[Hop back to the grove]
 ->grove
-* {station_name and not secret_tunnel}[Clamber through the conspicuous bush] ->secret_tunnel->station_name
+* {station_house and not secret_tunnel}[Clamber through the conspicuous bush] ->secret_tunnel->station_name
 +{secret_tunnel}[Take the hidden path to the Station House]->secret_tunnel->station_name
 
 ==enter_mon
@@ -422,7 +422,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==station_name
 
-- {station_house:You are standing outside the<b> Station House</b>. The trees rustle all around you.| <p>You have found <b>The Station House</b>.</p>}{station_name and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
+- {station_house:You are standing outside the<b> Station House</b>. The trees rustle all around you.| <p>You have found <b>The Station House</b>.</p>}{enter_mon and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
 ++[Approach the station house] ->station_house
 ++{not board_secret}[Return to the grove] You make your way back to the grove you first found yourself in. ->grove
 ++{board_secret}[Hop back] With a spring in your step, you skip your way back to the grove you first found yourself in. ->grove
@@ -605,9 +605,9 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 "As it always does, it ends with the woods... I am sure you understand the pickle I am in. I cannot for the life of me figure out which brother did it. He had the sword, obviously, but the details beyond that escape me. If you could figure out the answer to my little conundrum, I would be more than happy to tell you about your departing train." 
 
 *[Acquiesce]
-"Splendid!"
+"Splendid!
 *[Ask once more when your train is arriving]
-"It should not take that long. I can tell you right now that you have plenty of time before your train arrives to figure out the answer."
+"It should not take that long. I can tell you right now that you have plenty of time before your train arrives to figure out the answer.
 *[Ask if you have any choice in the matter]
 "I am sure I do not know what you mean." She makes no move to offer you any alternatives.
 - -> riddle_answer
