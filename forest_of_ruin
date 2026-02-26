@@ -54,7 +54,7 @@ You duck through the doorway, avoiding the now broken brambles. Once within you 
 -(scramble)
 *[Feel your way around the walls] You feel your way along the walls around the doorway and eventually alight upon a familiar shape. A lightswitch. You turn it on 
 *[Feel your way around the floor] You drop to your knees and feel your way around the floor. You don't find anything useful, but you do bang your head on something. ->scramble
--You hear a faint humming as a generator somewhere whirrs into life once more. Lights begin to flicker on. As your eyes adjust, the details of the room come into focus. A persian carpet frayed at the edges. A richly adorned, but faded room. Everything is covered in a fine layer of dust. 
+-You hear a faint humming as a generator somewhere whirrs into life once more. Lights begin to flicker on. As your eyes adjust, the details of the room come into focus. It's richly adorned, but faded. The floor is partially covered by a persian carpet, frayed at the edges. Everything is covered in a fine layer of dust. 
 *[Look around]
 As you look around you spot a number of things. ->things_in_room
 
