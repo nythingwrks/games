@@ -539,7 +539,7 @@ You don't think she will.
 "I see. No bother, I know its contents better than most."
 **[Ask how to leave the forest]
 //gather
-- "Ah. Trains <i>out</i> of the woods." The stationmaster thinks for a moment. "I could tell you, but..."
+- "Ah. Trains <i>out</i> of the woods." The station master thinks for a moment. "I could tell you, but..."
 *[But?]
 Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having the company... I would be sad to lose it. What would I gain by helping you leave?"
 ***{gun} [Shoot her]
@@ -727,13 +727,13 @@ Empty forest, overgrown tracks. No train in sight.
 *[Go through the door] As you make to head back inside
 *[Leave the platform] As you make to leave
 
-- <> the stationmaster pokes her head out of the doorway. 
-
+- <> the station master pokes her head out of the doorway. 
+ 
 "Hm. Must have been rerouted. Well, you know how trains are. I've never heard of a delay longer than two hours. They often just cancel them in that case."
 
 She smiles unhelpfully. There's only one thing to do now.
 *[Wait] You sink down onto the ground and put your head in your hands. You're not sure how long you'll be stuck here.
-*[Complain] "There is nothing I can do about it, is there ? I am just the stationmaster, I do not control the trains." You swear you see her wink.
+*[Complain] "There is nothing I can do about it, is there ? I am just the station master, I do not control the trains." You swear you see her wink.
 -"Tell you what, I have got a deck of cards. We can pass the time together."
 *[Decline]
 ->dot
@@ -746,8 +746,8 @@ She smiles unhelpfully. There's only one thing to do now.
 *[Wait]
 ->dot2
 *[Ask the station master about the information board]
--You get up to inspect the information board and the stationmaster follows you. She begins to explain how to interpret the map {not approach_donkey:and you find that you can {riddle_wrong<4:quite easily interpret it. Knowing what you know now, you shall have to return to the stationhouse for tea and card games again. |somewhat interpret it, though you have to sit down after a while as you head begins to spin and your vision blurs} |{riddle_wrong<4: and you can't begin to interpret it at all. The stationmaster brings you another cup of tea though, which is nice. | and you get so confused that you have to sit down. The station master instead shows you her magazine collection. It's a train magazine series, but they do have a swimsuit edition. Interesting.}} 
-
+-You get up to inspect the information board and the station master follows you. She begins to explain how to interpret the map {not approach_donkey:and you find that you can {riddle_wrong<4:quite easily interpret it. Knowing what you know now, you shall have to return to the stationhouse for tea and card games again. |somewhat interpret it, though you have to sit down after a while as you head begins to spin and your vision blurs} |{riddle_wrong<4: and you can't begin to interpret it at all. The station master brings you another cup of tea though, which is nice. | and you get so confused that you have to sit down. The station master instead shows you her magazine collection. It's a train magazine series, but they do have a swimsuit edition. Interesting.}} 
+ 
 - (dot2)The dot has grown somewhat bigger.
 
 *[Wait]
@@ -758,7 +758,7 @@ Before you lie down, you see that the dot is nearly double its original size.
 
 *[Nap]
 
--You feel a rumbling again and wake to the stationmaster telling you that your train is nearly here. 
+-You feel a rumbling again and wake to the station master telling you that your train is nearly here. 
 
 *[Leap to your feet]
 
@@ -773,7 +773,7 @@ There is a pause, one in which no one exits the train, but one can get on it.
 
 ==stay_end
 //make more neutral/ dont erase scariness of woods/ less permanent+ gun conditional that you hear the donkey 
-The stationmaster stands behind you.
+The station master stands behind you.
 
 You explain to her that, for some reason, you don't want to leave.
 
@@ -877,7 +877,7 @@ You hand the gun to the station master. She stows it away somewhere in her coat 
 
 
 ==gun_end_final1
-The force of the shot knocks you both back. You taste iron and hear your heartbeat in your ears. The stationmaster's body is crumpled on the platform, its edges blurring. You feel a sudden shift, and stagger slightly.
+The force of the shot knocks you both back. You taste iron and hear your heartbeat in your ears. The station master's body is crumpled on the platform, its edges blurring. You feel a sudden shift, and stagger slightly.
 *[Look down]
 ->gun_end_final2
 ==gun_end_final2
