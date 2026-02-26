@@ -183,7 +183,6 @@ You decide to let the crab be. It shuffles off deeper into the stream, away from
 ->grove
 
 ==approach_donkey
-//if you keep going back to the donkey eventually you get none of this text - not exactly a problem but maybe something to look into?
 {secret: A small bird is pecking the ground in front of the donkey.}
 {quiet or confession: |You approach the donkey. Hearing your footsteps, it lifts its head and regards you blankly.} 
 
@@ -216,7 +215,7 @@ You tell the donkey that {you pretend you don’t see people you know in public 
 +[Return to the grove]
 ->grove
 +[Try something else]
-->approach_donkey
+->approach_donkey.topside
 
 ==joke
 {existential_joke: You don't feel like joking anymore.->no_joke}
