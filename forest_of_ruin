@@ -5,7 +5,7 @@ You awaken in a forest,
  * [Close your eyes]
  ->close_eyes
  ==grove
- -(paths) The same two paths lead off from the clearing.{confession>4: You notice a seagull lurking in the shadows in a corner of the grove that you hadn't noticed before. It makes no move to approach you, yet you feel strangely threatened. | That same seagull watches you. Always watches you...{shot: You don't think shooting it again would make any difference.}}
+ -(paths) The same two paths lead off from the clearing.{confession>4:{ You notice a seagull lurking in the shadows in a corner of the grove that you hadn't noticed before. It makes no move to approach you, yet you feel strangely threatened. | That same seagull watches you. Always watches you...{shot: You don't think shooting it again would make any difference.}}}
  
  +[Take the path to {monastery: The Monastery | the right}]
  ->right
@@ -429,13 +429,24 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 +{secret_tunnel}[Take the hidden path to the Monastery]->secret_tunnel->monastery
 
 ==station_house
-{information_board or station_master: You are {give_it_up: now| } alone on the platform aside from {station_master: the silhouette of the station master, still doing who knows what in the waiting room|the frosted glass of the waiting room door } and, of course, the information board.|You make your way up and onto the platform. You can see the information board more clearly, and just behind it the frosted glass door of a small waiting room.}  
+{information_board or station_master: You are {give_it_up: now| } alone on the platform aside from {station_master: the silhouette of the station master, still doing who knows what in the waiting room|the frosted glass of the waiting room door } and, of course, the information board. {riddle_wrong>3 and (existential_joke or more_explore): {You notice something you hadn't before: a scrap of paper undernath one of the platform's benches. | }} |You make your way up and onto the platform. You can see the information board more clearly, and just behind it the frosted glass door of a small waiting room.} 
 
 + {information_board<2}[Inspect the information board] -> information_board
 + {not riddle_answer} [Go through the door] -> station_master
 + {riddle_answer} [Go through the door] -> riddle_answer
-+ [Leave the platform] -> station_name 
-->station_name
++ [Leave the platform] -> station_name
+*{riddle_wrong>3 and (existential_joke or more_explore)}[Look at the scrap of paper] ->old_receipt->station_house
+
+==old_receipt
+You pick it up and unfold what looks to be an old fashioned receipt. It's from <i>Swan and Edgar, Picadilly Circus</i> and is dated to 1972. Whoever's this was had bought a mauve cravat. 
+
+*[Turn it over]
+
+- (table) On the reverse side of the receipt someone has scrawled a table with numbers heading the columns and the words 'colour,' 'position,' 'trait,' and 'item' labelling the four rows. It's mostly complete 
+
++[Look away] You pocket the receipt and look away.
+
+->->
 ==information_board
 
 {A confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns with unfamiliar names and going along a coastline that you can't recognise. <p></p>The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful.| The same board as before with the same information. Confusing, jumbled, and entirely unintelligible. Your head begins to hurt after a while.}
@@ -649,6 +660,7 @@ VAR knows_p = false
 + {askedonce} [Ask for more time] "Pity. I shall be waiting with bated breath for your answer."
 ->station_house
 *{gun and not give_it_up}[Shoot her]->gun_end_final1
++{old_receipt}[Look at the receipt again] ->old_receipt.table->topside
 + [Solve the tale]
 {riddle_wrong<4: "Excellent! Please go on." | "Oh good. I'll just..." The station master {riddle_wrong<5:produces a magazine seemingly from nowhere and begins flipping through it. "Pay me no mind, I am still listening." You're not sure that she is.|returns to her magazine and idly flips to the next page. "Go on then."}}
 
