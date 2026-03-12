@@ -161,7 +161,7 @@ You decide to let the crab be. It shuffles off deeper into the stream, away from
 ->monastery
 
 ==monastery
-{monastery>1:{wade and stream>2:Crossing the stream, you|You} continue along to a familiar set of ruins. <p></p>You have returned to <b>The Monastery</b>.|Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p></p>You have found <b>The Monastery</b>.}{station_house and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
+{monastery>1:{wade and stream>2:Crossing the stream, you|You} continue along to a familiar set of ruins. <p></p>You have returned to <b>The Monastery</b>.|Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p></p>You have found <b>The Monastery</b>.}{(enter_mon>1 and station_house>1) and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
 
 +[Enter the Monastery]
 ->enter_mon
@@ -169,7 +169,7 @@ You decide to let the crab be. It shuffles off deeper into the stream, away from
 ->grove
 +{board_secret}[Hop back to the grove]
 ->grove
-* {station_house and not secret_tunnel}[Clamber through the conspicuous bush] ->secret_tunnel->station_name
+* {(enter_mon>1 and station_house>1) and not secret_tunnel}[Clamber through the conspicuous bush] ->secret_tunnel->station_name
 +{secret_tunnel}[Take the hidden path to the Station House]->secret_tunnel->station_name
 
 ==enter_mon
@@ -181,6 +181,8 @@ You decide to let the crab be. It shuffles off deeper into the stream, away from
 ->explore_mon
 +[Return to the grove]
 ->grove
+* {(enter_mon>1 and station_house>1) and not secret_tunnel}[Clamber through the conspicuous bush] ->secret_tunnel->station_name
++{secret_tunnel}[Take the hidden path to the Station House]->secret_tunnel->station_name
 
 ==approach_donkey
 {secret: A small bird is pecking the ground in front of the donkey.}
@@ -421,11 +423,11 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==station_name
 
-- {station_house:You are standing outside the<b> Station House</b>. The trees rustle all around you.| <p>You have found <b>The Station House</b>.</p>}{enter_mon and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
+- {station_house:You are standing outside the<b> Station House</b>. The trees rustle all around you.| <p>You have found <b>The Station House</b>.</p>}{(enter_mon>1 and station_house>1) and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
 ++[Approach the station house] ->station_house
 ++{not board_secret}[Return to the grove] You make your way back to the grove you first found yourself in. ->grove
 ++{board_secret}[Hop back] With a spring in your step, you skip your way back to the grove you first found yourself in. ->grove
-* {enter_mon and not secret_tunnel}[Clamber through the conspicuous bush] ->secret_tunnel->monastery
+* {(enter_mon>1 and station_house>1) and not secret_tunnel}[Clamber through the conspicuous bush] ->secret_tunnel->monastery
 +{secret_tunnel}[Take the hidden path to the Monastery]->secret_tunnel->monastery
 
 ==station_house
