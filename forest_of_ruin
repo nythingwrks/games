@@ -784,12 +784,12 @@ There is a pause, one in which no one exits the train, but one can get on it.
 
 ==stay_end
 //make more neutral/ dont erase scariness of woods/ less permanent+ gun conditional that you hear the donkey 
-The station master stands behind you.
+The station master stands nearby.
 
 You explain to her that, for some reason, you don't want to leave.
 
 "I will take that as a compliment to my company." You see an emotion that you don't recognise cross her face.
-
+*[Watch the train go]
 The train pulls away into the setting sun. Looking out into the darkness of the woods, the station master turns to you.
 
 "Luckily for you, I have a spare room. I have some jobs that you can do while you are with me if you'd like to keep busy."
