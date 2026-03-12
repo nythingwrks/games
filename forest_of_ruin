@@ -286,7 +286,7 @@ You pause for effect
 ==explore_mon
 You wander around The Monastery{. Stone slabs litter the ground, delicate carvings and mosaics eroded by time. A ray of sun breaks through the clouds and catches on one of the slabs. | again. The sun catches on the  mosaic slab {not secret: and the light diffracts around the room, casting stars onto the walls. | and reflects onto that strange message you revealed earlier.}}
 
-+[Inspect the glittering slab]
++{not secret}[Inspect the glittering slab]
 ->slab
 *{not more_explore} [Keep exploring] -> more_explore
 +{more_explore}[Return to the stained glass window]
