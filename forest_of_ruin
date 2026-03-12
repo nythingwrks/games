@@ -23,7 +23,7 @@ You awaken in a forest,
  
 ==tunnel_lost
  *[Look around] 
-You turn around and all you can see is thicket and brush and branches. 
+You turn around and all you can see is thicket and brush and branches.  
 You only took one step into the foliage, but wherever you came from is no longer one step behind you.
 -(topside)
 **{not pet}[Panic]You scrabble around in the darkness, scratching yourself on the branches to no avail.->topside 
@@ -188,7 +188,7 @@ You decide to let the crab be. It shuffles off deeper into the stream, away from
 
 {not conversation and quiet and confession>2:The donkey seems bored and is focused on his grazing. You feel like you're missing something...Maybe you should try the other path.}
 -(topside){confession>0 and confession <2: The donkey is looking at you. You feel a little judged.| }
-*{secret}[Kick the bird]
+*{secret}[Hurt the bird]
 ->laugh
 +{quiet<3}[Stay quiet]
 ->quiet
@@ -274,7 +274,7 @@ You pause for effect
 ->approach_donkey.topside
 
 ==laugh
- Your foot connects with the bird with a sickening crunch. The donkey lets out a long braying laugh. It echoes oddly around the ruined monastery and makes your teeth hurt. Your hand feels heavy.
+ You kick the small bird, hard; your foot connects with it with a sickening crunch. The donkey lets out a long braying laugh. It echoes oddly around the ruined monastery and makes your teeth hurt. Your hand feels heavy.
  *[Look down]
  ->gun
  ==gun
