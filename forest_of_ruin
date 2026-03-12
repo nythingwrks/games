@@ -5,13 +5,13 @@ You awaken in a forest,
  * [Close your eyes]
  ->close_eyes
  ==grove
- -(paths) The same two paths lead off from the clearing.{confession>4: You notice a seagull lurking in the shadows in a corner of the grove that you hadn't noticed before. It makes no move to approach you, yet you feel strangely threatened. | That same seagull watches you. Always watches you...{shot: You don't think shooting it again would make any difference.}
+ -(paths) The same two paths lead off from the clearing.{confession>4: You notice a seagull lurking in the shadows in a corner of the grove that you hadn't noticed before. It makes no move to approach you, yet you feel strangely threatened. | That same seagull watches you. Always watches you...{shot: You don't think shooting it again would make any difference.}}
  
  +[Take the path to {monastery: The Monastery | the right}]
  ->right
  +[Take the path to the {station_name: Station House| left}]
  {left>2 and not board_secret or pet:->station_name|->left}
-*{confession>4 and gun and not give_it_up}(shot)[Shoot the seagull] You shoot the seagull. There's a burst of feathers, but once they settle you see the seagull is entirely unharmed.->paths
+*(shot){confession>4 and gun and not give_it_up}[Shoot the seagull] You shoot the seagull. There's a burst of feathers, but once they settle you see the seagull is entirely unharmed.->paths
 ==secret_tunnel
  {
  - secret_tunnel<2: The thing that is most apparent to you as you first clamber through the leaves is the {pet:smell. Leaves. Rot. Earth. Home. Things move to either side of you. You can hear them even when they travel far.| darkness. Even in the dark pathway to the Station House you did not feel so separate from the sky.}->tunnel_lost->
