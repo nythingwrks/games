@@ -465,7 +465,7 @@ You begin to turn away when the pain from the bite on your hand flares up again.
 
 - As you look up from your hand, you notice something on the board that you hadn't before. A smudge that you took to be part of the map, but now your sense of <i>smell</i> tells you must be dirt.
 
-*[Scrape it off]
+*[Scrape it off]//soundeffect:scrape
 
 You use the fingernails of your non-wounded hand to scrape the dirt off the surface of the map. Underneath it you find the symbol for a temple - or monastery maybe- and a name that means nothing to you.
 
@@ -480,12 +480,13 @@ You open the door to see a modest waiting room, muffled by a thick layer of dust
 
 A figure stands in the middle of the room, wearing an immaculate double-breasted coat. Her name badge reads "STATION MASTER".
 
-*[Speak to the figure]
+*[Speak to the figure]//music: STATIONMASTERTHEME
 ->conversation
 *[Go back]
 ->station_house
 
 ==conversation
+
 *{gun} [Shoot her]//soundeffect: gunshot
 ->gun_end_final1
 
@@ -727,7 +728,7 @@ She grins at your expression{riddle_wrong>4: before dropping her magazine onto a
 
 You hear a rumbling faintly coming from behind the door.
 
-**[Go to the platform]
+**[Go to the platform]//soundeffect:train rumbling, cuts to nothing
 
 You burst out the door of the waiting room, onto the platform and see - 
 Empty forest, overgrown tracks. No train in sight.
@@ -776,7 +777,7 @@ Before you lie down, you see that the dot is nearly double its original size.
 *[Leap to your feet]
 
 - It's dusk in the forest, and the shadows have grown deeper, though this is nicely offset by the orange underglow of the setting sun. 
-
+//soundeffect:train arrives
 Your train is just pulling into the station as you emerge from the waiting room - the dying light plays nicely off of its red caboose. It screeches to a halt and a wood panelled door aligns itself perfectly in front of you. 
 
 There is a pause, one in which no one exits the train, but one can get on it. 
