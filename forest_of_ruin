@@ -486,7 +486,7 @@ A figure stands in the middle of the room, wearing an immaculate double-breasted
 ->station_house
 
 ==conversation
-*{gun} [Shoot her]
+*{gun} [Shoot her]//soundeffect: gunshot
 ->gun_end_final1
 
 
@@ -495,19 +495,19 @@ A figure stands in the middle of the room, wearing an immaculate double-breasted
 {pet: Now that you're standing closer to her, you notice she faintly smells of smoke and heat.} You clear your throat.
 * [Say hello] 
 You begin to introduce yourself, but realise your name has slipped right out of your mind. 
-**{gun} [Shoot her]
+**{gun} [Shoot her]//soundeffect: gunshot
 ->gun_end_final1
 ** [Tell her you are lost]
 "Good Afternoon, Lost. I am the station master, how may I be of service?" She replies, unblinking.
-***{gun} [Shoot her]
+***{gun} [Shoot her]//soundeffect: gunshot
 ->gun_end_final1
 ***[Correct her] You tell her your name isn't 'Lost', that it's just what you are.
 "Oh, of course. I am sorry."
-****{gun} [Shoot her]
+****{gun} [Shoot her]//soundeffect: gunshot
 ->gun_end_final1
 ****[...]
 She doesn't look particularly sorry.
-*****{gun} [Shoot her]
+*****{gun} [Shoot her]//soundeffect: gunshot
 ->gun_end_final1
 *****[Ask her name]
 She pauses. "Station master is fine."
@@ -521,30 +521,30 @@ She cocks her head.
 "That would be me," she taps her name badge with a well-manicured fingernail. "How can I help you?"
 //gather
 - (wabbit_talk) {She smiles but it doesn't quite reach her eyes. You can't tell how old she is. | Her strange smile has fallen in a most discomforting way.}
-*{gun} [Shoot her]
+*{gun} [Shoot her]//soundeffect: gunshot
 ->gun_end_final1
 *{board_secret}[Ask what the Lapinate Chantry is] The station master narrows her eyes. "Why would you like to know? I have no answers that would satisfy you. I would advise you to explore the matter no further." ->wabbit_talk
 *[Ask when the next train is]
 *[Ask where you are] You ask where you both are,  suddenly aware of your own ignorance.
 "The train station, of course." She finally blinks.
-**{gun} [Shoot her]
+**{gun} [Shoot her]//soundeffect: gunshot
 ->gun_end_final1
 **[Press further] You ask her where the train station is.
 "In the forest. You must have seen the trees, surely." 
 <p>You feel like this line of questioning isn't going to lead you anywhere.</p>
-***{gun} [Shoot her]
+***{gun} [Shoot her]//soundeffect: gunshot
 ->gun_end_final1
 ***[Ask when the next train is]
 //gather
 - She seems faintly amused. "That depends on where you want to go. We have an information board outside with routes and times."
 
-*{gun} [Shoot her]
+*{gun} [Shoot her]//soundeffect: gunshot
 ->gun_end_final1
 *[Tell her you want to leave the forest]
 *{information_board} [Tell her you've already looked at it] You tell her it was unhelpful.
 "I am sorry to hear that. I will talk to someone about updating it." 
 You don't think she will. 
-**{gun} [Shoot her]
+**{gun} [Shoot her]//soundeffect: gunshot
 ->gun_end_final1
 **[Ask her how to leave the forest]
 *{not information_board} [Tell her you haven't looked at it yet] You admit you came straight to talk to her.
@@ -554,18 +554,18 @@ You don't think she will.
 - "Ah. Trains <i>out</i> of the woods." The station master thinks for a moment. "I could tell you, but..."
 *[But?]
 Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having the company... I would be sad to lose it. What would I gain by helping you leave?"
-***{gun} [Shoot her]
+***{gun} [Shoot her]//soundeffect: gunshot
 ->gun_end_final1
 ***[Ask what she wants in return]
 //gather
 - "A pertinent question- I suppose I might find it in me to help you if you help me first. There is something that has been bothering me. An old man passed through a short while ago and told me a story that I can not make head or tails of..." She looks at you expectantly.
-*{gun} [Shoot her]
+*{gun} [Shoot her]//soundeffect: gunshot
 ->gun_end_final1
 * [Let her speak]
 * [Tell her you don't have time for this] She continues, ignoring you completely. 
 //gather
 - "{gun: Before I start- I see you are carrying something heavy. If you are not planning to use it, I can take it off your hands?|  Let me see if I remember it..."} 
-*{gun} [Shoot her]
+*{gun} [Shoot her]//soundeffect: gunshot
 ->gun_end_final1
 *{gun} [Hand her the gun]
 ->give_it_up
@@ -797,7 +797,7 @@ The train pulls away into the setting sun. Looking out into the darkness of the 
 "Luckily for you, I have a spare room. I have some jobs that you can do while you are with me if you'd like to keep busy."
 {confession>4: Following her gaze, you see the beady eyes of a seagull looking out at you. A shiver runs down your spine. You know it's only a matter of time before you'll have to confront your past.}
 
-*[Accept]
+*[Accept]//music:STAYEND
 - The station master takes you by the shoulders and leads you away from the edge of the platform. She takes you to a plain but comfortable room in the Station House and leaves you to get settled.
 <p></p>
 -(limple)
@@ -807,7 +807,7 @@ The train pulls away into the setting sun. Looking out into the darkness of the 
 -else: ->END
 }
 ==king
-*[Awaken]
+*[Awaken]//music:KING
 You wake to a faint braying laugh. Night has long fallen, the world beyond the small window lost to the moonless oily night. Something glints in the mirror.
 **[Go to the mirror] 
 - As you move to the mirror, you feel a strange but familiar heaviness in your hand. It's hard to make out in the darkness, but as you approach you notice something off about your silhouette. <p></p> It almost looks as if you are shrouded in thick black robes. 
@@ -825,14 +825,14 @@ You turn around and wave at the station master, who waves back.
 *[Board the train]
 
 -(on_train) Blessedly, the train is fairly empty, and you easily find a carriage to yourself. As you sink down onto the plush upholstery of the seating, you turn to the window and look out onto the platform. 
-
+//soundeffect: train chugging
 {contractdestroyed: The brass key is warm in your pocket. As the train pulls out of the station, you see the station master walk into the station house. Lights begin to turn off in each room, until the whole house is dark. It's hard to make out in the distance, but you think you see the station master walk into the woods.| The station master busies herself clearing away the detritus the pair of you left, only turning as the train begins to pull away. She watches you go, and you soon find yourself speeding through the forest at night. }
 
-*[Dream]
+*[Dream]//music: DREAM
 - <i>Three children in red and green and black. They fight over something that you can't quite make out. A figure in the corner laughs, a heavy, braying laugh. All is then lost amongst the trees.</i>
 *[Wake up]
 {
-- not contractdestroyed: You awaken in a forest. 
+- not contractdestroyed: You awaken in a forest. //soundeffect / music: GROVE
 * [Look around]You are standing in a clearing. The light is filtering through the trees, the sun fighting through to hit your face. 
  Two paths lead off from the clearing. ->END
 * [Close your eyes]You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin. ->END
@@ -852,7 +852,7 @@ A shadow passes over her face. " I cannot."
 *[Ask who Millicent is]She looks puzzled. "Someone I knew once, I expect."->askinglimple
 *[Tell her what you found] Her face is oddly absent of emotion. When you mention returning the contract to the desk, she looks as if she wants to say something, but holds her tongue. Once you've finished, she says "I am glad you left all as you found it." You're not sure if she means that. "Did you happen to hold on to the key?"->give_key
 
--(give_key)
+-(give_key)//soundeffect: train hoot
 *[Give her the key] You hand her the brass key. Her eyes widen and she clutches it tightly. She thanks you, and you feel a deep and genuine gratitude in her words. The train hoots, and you jump aboard, leaving her on the platform.->go_end.on_train
 
 ==invitation_2
@@ -875,7 +875,7 @@ You hand her the brass key. Her eyes widen and she clutches it tightly. She than
 
 - Blessedly, the train is fairly empty, and you easily find a carriage just for the two of you. As you sink down onto the plush upholstery of the seating, you turn to the window and look out onto the woods.
 
-*[Dream]
+*[Dream] //music: DREAM
  <i>You are standing in the Monastery at dawn. {lapinate_chantry: The long grass sways softly as you feel an unnatural breeze from the forest's edge. Looking out into the thicket you see a pair of yellow eyes watching you. When you meet their gaze, they vanish.|} The earth under your feet shudders and you watch as the ruins crumble around you. You know without seeing, as one does in dreams, that the station house is disintegrating too. Just before the sun breaks over the horizon, you hear a bitter, braying laugh echo through the rubble.</i> You awaken.
 *[Chat with the station master] You pass the time together, playing cards and trading interests (hers are mostly train related). As you get further into the journey, you feel as though a fog is lifting and your name returns to you. You introduce yourself properly, for the first time. She does the same. 
 
