@@ -11,13 +11,13 @@ You awaken in a forest,
  ->right
  +[Take the path to the {station_name: Station House| left}]
  {left>2 and not board_secret or pet:->station_name|->left}
-*(shot){confession>4 and gun and not give_it_up}[Shoot the seagull] You shoot the seagull. There's a burst of feathers, but once they settle you see the seagull is entirely unharmed.->paths
+*(shot){confession>4 and gun and not give_it_up}[Shoot the seagull] You shoot the seagull. There's a burst of feathers, but once they settle you see the seagull is entirely unharmed.->paths //soundeffect: gunshot + squawk?
 ==secret_tunnel
  {
- - secret_tunnel<2: The thing that is most apparent to you as you first clamber through the leaves is the {pet:smell. Leaves. Rot. Earth. Home. Things move to either side of you. You can hear them even when they travel far.| darkness. Even in the dark pathway to the Station House you did not feel so separate from the sky.}->tunnel_lost->
+ - secret_tunnel<2: The thing that is most apparent to you as you first clamber through the leaves is the {pet:smell. Leaves. Rot. Earth. Home. Things move to either side of you. You can hear them even when they travel far.| darkness. Even in the dark pathway to the Station House you did not feel so separate from the sky.}->tunnel_lost-> //soundeffect: rustling
 - secret_tunnel==5 and key: As you make your way through the undergrowth, you notice that you're clutching the key you found earlier. It seems strangely warm to the touch. You push through the thicket and find your hand meets stone instead of the air you were expecting. ->secret_room->
 - else: 
- You make your way through the dark{pet:, loamy undergrowth}. You can hear things all around you but can't quite make them out.{secret_tunnel>3:<p></p>Though you have been this way a number of times now, you're still never entirely sure where you'll emerge.} 
+ You make your way through the dark{pet:, loamy undergrowth}. You can hear things all around you but can't quite make them out.{secret_tunnel>3:<p></p>Though you have been this way a number of times now, you're still never entirely sure where you'll emerge.} //soundeffect: rustling
 }
 ->->
  
@@ -45,7 +45,7 @@ You only took one step into the foliage, but wherever you came from is no longer
 
 *[Put the key in the keyhole]
 
-You put the key in the keyhole and twist. At first nothing happens, but twisting it further, you hear something click in the lock mechanism buried within the stone. 
+You put the key in the keyhole and twist. At first nothing happens, but twisting it further, you hear something click in the lock mechanism buried within the stone. //soundeffect: lock click + door opening
 
 - The <i>door</i> swings open. 
 *[Enter the room]
@@ -54,7 +54,7 @@ You duck through the doorway, avoiding the now broken brambles. Once within you 
 -(scramble)
 *[Feel your way around the walls] You feel your way along the walls around the doorway and eventually alight upon a familiar shape. A lightswitch. You turn it on 
 *[Feel your way around the floor] You drop to your knees and feel your way around the floor. You don't find anything useful, but you do bang your head on something. ->scramble
--You hear a faint humming as a generator somewhere whirrs into life once more. Lights begin to flicker on. As your eyes adjust, the details of the room come into focus. It's richly adorned, but faded. The floor is partially covered by a persian carpet, frayed at the edges. Everything is covered in a fine layer of dust. 
+-You hear a faint humming as a generator somewhere whirrs into life once more. Lights begin to flicker on. As your eyes adjust, the details of the room come into focus. It's richly adorned, but faded. The floor is partially covered by a persian carpet, frayed at the edges. Everything is covered in a fine layer of dust. //soundeffect: generator startup/hum
 *[Look around]
 As you look around you spot a number of things. ->things_in_room
 
@@ -110,7 +110,7 @@ Here you see several days go by without entry. The handwriting becomes more erra
  +[Take the path to the left]
  ->left
  ==close_eyes
- You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin. //remove?: Though you hear no sounds of people, you cannot be certain that you are not being watched.
+ You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin. ////soundeffect: birdsong
 *[Follow your ears]
 {~-> right | ->left}
 *[Follow your intuition]
@@ -119,7 +119,7 @@ Here you see several days go by without entry. The handwriting becomes more erra
 
 ==right
 //route to donkey
-{stream: You head back towards the Monastery, hearing the stream ahead of you.|You walk deeper into the woods. The ground is cool underfoot, the air has a chill here. {board_secret: You can't think of a more wonderful place. | You think of soft carpet and wood floors, and find yourself missing a home you can't quite remember.} You hear water ahead of you.}
+{stream: You head back towards the Monastery, hearing the stream ahead of you.|You walk deeper into the woods. The ground is cool underfoot, the air has a chill here. {board_secret: You can't think of a more wonderful place. | You think of soft carpet and wood floors, and find yourself missing a home you can't quite remember.} You hear water ahead of you.} //soundeffect: stream faint
 
 +[Continue on]
 {wade and stream>2: ->monastery |->stream}
@@ -134,7 +134,7 @@ Here you see several days go by without entry. The handwriting becomes more erra
 Your clothes feel heavy in the frigid water, the current tugs at you aggressively.
 Out of the corner of your eye, you see something glinting at the bottom of the stream. 
 You hear a sound in the woods behind you, almost like an intake of breath.
-//maybe add something after this about crossing the stream quickly?
+//soundeffect: stream loud
 *[Cross the stream quickly]
 ->monastery
 *[Investigate the glinting]
@@ -148,7 +148,7 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 ->shell
 
 ==shell
-You rip the crab out of the shell and toss it aside, pocketing the shell.
+You rip the crab out of the shell and toss it aside, pocketing the shell. //soundeffect: splash
 *[Finish crossing the stream]
 ->monastery
 
@@ -173,7 +173,7 @@ You decide to let the crab be. It shuffles off deeper into the stream, away from
 +{secret_tunnel}[Take the hidden path to the Station House]->secret_tunnel->station_name
 
 ==enter_mon
-{approach_donkey or explore_mon: You are standing in the entryway of The Monastery.{gun: The grass where the donkey had been standing is scorched, and still glows faintly with heat| The old donkey is still happily chewing his grass}.| You carefully cross the moss-covered threshold of The Monastery. The ground beyond is blanketed by a tall yellow grass, the horizon is swallowed up again by thick forest. An old donkey is a few yards off, feeding in the grass contentedly.}    
+{approach_donkey or explore_mon: You are standing in the entryway of The Monastery.{gun: The grass where the donkey had been standing is scorched, and still glows faintly with heat //soundeffect: fire crackle| The old donkey is still happily chewing his grass}.| You carefully cross the moss-covered threshold of The Monastery. The ground beyond is blanketed by a tall yellow grass, the horizon is swallowed up again by thick forest. An old donkey is a few yards off, feeding in the grass contentedly.}    
 
 +{not gun}[Approach the donkey]
 ->approach_donkey
@@ -276,7 +276,7 @@ You pause for effect
 ->approach_donkey.topside
 
 ==laugh
- You kick the small bird, hard; your foot connects with it with a sickening crunch. The donkey lets out a long braying laugh. It echoes oddly around the ruined monastery and makes your teeth hurt. Your hand feels heavy.
+ You kick the small bird, hard; your foot connects with it with a sickening crunch. The donkey lets out a long braying laugh. It echoes oddly around the ruined monastery and makes your teeth hurt. Your hand feels heavy. //soundeffect: kick
  *[Look down]
  ->gun
  ==gun
@@ -312,7 +312,7 @@ The slab has a pearlescent mosiac on it, pieces of shell forming an ornate spira
 ->lapinate_chantry
 
 ==secret
-You hear the grinding of stone against stone, and notice a section of ruined wall you don't remember seeing before. Inscribed in it are the words "The Laughing Mule Craves Violence".
+You hear the grinding of stone against stone, and notice a section of ruined wall you don't remember seeing before. Inscribed in it are the words "The Laughing Mule Craves Violence". //soundeffect: stone grinding
 +[Return to the entrance of The Monastery]
 ->enter_mon
 *{not more_explore} [Explore more]
@@ -320,7 +320,7 @@ You hear the grinding of stone against stone, and notice a section of ruined wal
 
 ==lapinate_chantry
 There is something humming - no - singing to you from behind the stained glass window.
-*[Break through]
+*[Break through] //soundeffect: glass smashing
 You smash what remains of the window to pieces and clamber through, the song's urgent beauty distracting you from any cuts.
 -You enter a small hidden courtyard. It appears to have been blocked off from the rest of the monastery sometime after its construction.
 *[Look around]
@@ -409,7 +409,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==station
 
-{station_name: You make your way back to the outside of the old <b>Station House.</b> The trees rustle all around you. {board_secret:You can smell them in the darkness of the forest, hear their footsteps in the undergrowth.}| You make your way through the trees {pet: , nursing the weeping bite you now sport on your hand,|, trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
+{station_name: You make your way back to the outside of the old <b>Station House.</b> The trees rustle all around you. //soundeffect: rustling {board_secret:You can smell them in the darkness of the forest, hear their footsteps in the undergrowth.}| You make your way through the trees {pet: , nursing the weeping bite you now sport on your hand,|, trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
 +{station_name}[Approach the Station House] ->station_house
 +{(station_house or grove) and not board_secret}[Return to the grove] You take the path back to the grove you first found yourself in. ->grove
 +{board_secret}[Scurry back the way you came] The forest doesn't seem so dark anymore as you take the route back the way you came. 
@@ -423,7 +423,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==station_name
 
-- {station_house:You are standing outside the<b> Station House</b>. The trees rustle all around you.| <p>You have found <b>The Station House</b>.</p>}{(enter_mon>1 and station_house>1) and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
+- {station_house:You are standing outside the<b> Station House</b>. The trees rustle all around you. //soundeffect: rustling| <p>You have found <b>The Station House</b>.</p>}{(enter_mon>1 and station_house>1) and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
 ++[Approach the station house] ->station_house
 ++{not board_secret}[Return to the grove] You make your way back to the grove you first found yourself in. ->grove
 ++{board_secret}[Hop back] With a spring in your step, you skip your way back to the grove you first found yourself in. ->grove
