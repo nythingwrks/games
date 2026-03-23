@@ -3,7 +3,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: lighter;
-    background: #d1e7da;
+    background: #001e03;
     overflow: hidden;
 }
 
@@ -298,7 +298,7 @@ body.dark {
 }
 
 .dark .end {
-    color: #d1e7da;
+    color: #001e03;
 }
 
 .dark #controls {
