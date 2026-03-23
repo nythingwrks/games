@@ -307,5 +307,8 @@ body.dark {
 }
 
 backimage {
-    background-image: url(Forest_of_Ruin_Graphics_test/pxArtbridge2.png)
+    body
+    {
+        background-image: url(Forest_of_Ruin_Graphics_test/pxArtbridge2.png)
+    }
 }
