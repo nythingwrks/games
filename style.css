@@ -290,7 +290,7 @@ body.dark {
 }
 
 .dark strong {
-    color: #d1e7da;
+    color: #001e03;
 }
 
 .dark #controls [disabled] {
@@ -302,5 +302,5 @@ body.dark {
 }
 
 .dark #controls {
-    background: #d1e7da;
+    background: #001e03;
 }
