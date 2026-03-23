@@ -255,8 +255,8 @@ img {
 */
 
 body.dark {
-    background: black;
-    color: white;
+    background: #d1e7da;
+    color: #d1e7da;
 }
 
 .dark h2 {
@@ -280,7 +280,7 @@ body.dark {
 }
 
 .dark a:hover {
-    color: white;
+    color: #d1e7da;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -290,7 +290,7 @@ body.dark {
 }
 
 .dark strong {
-    color: white;
+    color: #d1e7da;
 }
 
 .dark #controls [disabled] {
@@ -298,7 +298,7 @@ body.dark {
 }
 
 .dark .end {
-    color: white;
+    color: #d1e7da;
 }
 
 .dark #controls {
