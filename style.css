@@ -4,7 +4,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: lighter;
     background: #d1e7da;
-    color: #001e03
+    color: #001e03;
     overflow: hidden;
 }
 
@@ -105,7 +105,7 @@ h2 {
     margin: 0 auto;
     padding: 20px;
     padding-top: 4em;
-    background: #d1e7da;;
+    background: transparent;;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -265,7 +265,7 @@ body.dark {
 }
 
 .dark .container {
-    background: #001e03;
+    background: transparent;
 }
 
 .dark .written-in-ink {
