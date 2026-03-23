@@ -264,7 +264,7 @@ body.dark {
 }
 
 .dark .container {
-    background: #d1e7da;
+    background: #001e03;
 }
 
 .dark .written-in-ink {
@@ -272,7 +272,7 @@ body.dark {
 }
 
 .dark a {
-    color: #001e03;
+    color: #d1e7da;
 }
 .dark .unclickable{
     color: #c4af87;
