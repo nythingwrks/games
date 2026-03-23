@@ -305,13 +305,3 @@ body.dark {
 .dark #controls {
     background: #001e03;
 }
-
-.backimage {
-    body
-    {
-        background-image: url(Forest_of_Ruin_Graphics_test/pxArtbridge2.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-}
