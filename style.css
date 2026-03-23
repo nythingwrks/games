@@ -306,9 +306,12 @@ body.dark {
     background: #001e03;
 }
 
-backimage {
+.backimage {
     body
     {
-        background-image: url(Forest_of_Ruin_Graphics_test/pxArtbridge2.png)
+        background-image: url(Forest_of_Ruin_Graphics_test/pxArtbridge2.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }
