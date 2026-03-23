@@ -136,7 +136,7 @@ a {
 }
 
 a:hover {
-    color: black;
+    color: #001e03;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -208,7 +208,7 @@ img {
 .end {
     text-align: center;
     font-weight: bold;
-    color: black;
+    color: #001e03;
     padding-top: 20px;
     padding-bottom: 20px;
 }
