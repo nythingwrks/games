@@ -256,7 +256,7 @@ img {
 
 body.dark {
     background: #d1e7da;
-    color: #d1e7da;
+    color: #001e03;
 }
 
 .dark h2 {
@@ -264,15 +264,15 @@ body.dark {
 }
 
 .dark .container {
-    background: black;
+    background: #d1e7da;
 }
 
 .dark .written-in-ink {
-    background: black;
+    background: #d1e7da;
 }
 
 .dark a {
-    color: #cc8f1a;
+    color: #001e03;
 }
 .dark .unclickable{
     color: #c4af87;
@@ -302,5 +302,5 @@ body.dark {
 }
 
 .dark #controls {
-    background: black;
+    background: #d1e7da;
 }
