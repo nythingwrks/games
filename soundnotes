@@ -35,20 +35,22 @@ DONE Secret tunnel: Monastery theme still playing
 DONE need rustle whenever you "take the hidden path" from either side
 
   Secret room: 
-    - lighter sounds (multiple attempts to use it)
-    - Tearing paper
+- desk click DONE
+    - lighter sounds (multiple attempts to use it) DONE
+    - Tearing paper DONE
 
-station_master loop needs to replace station house when you solve the riddle
 
-"you hear a rumbling" needs to be seperated from the stationmaster. 
+DONE station_master loop needs to replace station house when you solve the riddle
 
-train_passes is really long?? and loud
+DONE "you hear a rumbling" needs to be seperated from the stationmaster. 
 
-train arrives needs to be louder and sooner
+DONE train_passes is really long?? and loud
 
-"stay" gives you an "accept" option but theres no offer- this also causes 'stay_end.mp3' not to play if you don't click accept
+DONE train arrives needs to be louder and sooner
 
-'The train pulls away' needs a noise
+DONE "stay" gives you an "accept" option but theres no offer- this also causes 'stay_end.mp3' not to play if you don't click accept
+
+DONE 'The train pulls away' needs a noise
 
 
 
