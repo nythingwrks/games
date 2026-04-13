@@ -15,7 +15,7 @@ You awaken in a forest,
 *(shot){confession>4 and gun and not give_it_up}[Shoot the seagull]  You shoot the seagull. There's a burst of feathers, but once they settle you see the seagull is entirely unharmed.# AUDIO: seagull_shot.mp3 
 ->paths 
 ==secret_tunnel
- #AUDIO: bush_rustle.mp3
+#AUDIOLOOP: 
  {
  - secret_tunnel<2: The thing that is most apparent to you as you first clamber through the leaves is the {pet:smell. Leaves. Rot. Earth. Home. Things move to either side of you. You can hear them even when they travel far.| darkness. Even in the dark pathway to the Station House you did not feel so separate from the sky.}->tunnel_lost-> //soundeffect: rustling
 - secret_tunnel==5 and key: As you make your way through the undergrowth, you notice that you're clutching the key you found earlier. It seems strangely warm to the touch. You push through the thicket and find your hand meets stone instead of the air you were expecting. ->secret_room->
@@ -82,11 +82,12 @@ VAR contractdestroyed = false
 *[Read the notebook] Picking up the notebook, you realise everything apart from the first few pages is blackened and scorched. Your fingers come away black with ash.
 ->notebook
 
-- (finishnotebook) As you finish reading you hear a click and notice that one of the desk drawers is now slightly ajar.
+- (finishnotebook) As you finish reading you hear a click and notice that one of the desk drawers is now slightly ajar.#AUDIO: desk.mp3
 *[Open the desk drawer] You open the desk drawer and the smell of sulphur and coal permeates the small room. Inside the drawer is a surprisingly pristine sheet of paper and a lighter. 
 **[Read the paper] The document itself makes your head spin. It's a complex series of clauses, subclauses, caveats, and limitations. You manage to make out that it's a contract - what for, you can't entirely say. It's signed at the bottom with a name you can't make out, and something that looks suspiciously like a hoofprint.
 - (contract)
-*****[Put it back] You put the contract back in the drawer, which then closes and locks itself with a click. ->looking
+*****[Put it back] You put the contract back in the drawer, which then closes and locks itself with a click.#AUDIO: desk.mp3
+    ->looking
 *****(burn)[Burn it] When you touch the contract you find it almost uncomfortably warm. You flick the lighter a number of times before it catches and hold the flame to the paper. It does not burn. ->contract
 *****{burn}[Tear it] It takes a surprising amount of force to tear the paper, but you manage it nonetheless. The contract splits down the middle and as you go to tear it further, each half begins to flake away into ash until it is as if the contract never existed to begin with. 
 ~ contractdestroyed = true
@@ -147,7 +148,7 @@ You hear a sound in the woods behind you, almost like an intake of breath.
 
 ==shell_choice
 Plunging your hand into the icy water, you fumble around until the cold becomes too much to bear. You open your fist and see a small iridescent shell nestled in your palm. A hermit crab has made a home in it.
-*[Toss it back] 
+*[Toss it back]  #AUDIO: crab_splash.mp3
 ->key
 *[Take it from the crab]
 ->shell
@@ -163,6 +164,9 @@ You decide to let the crab be. It shuffles off deeper into the stream, away from
 
 *[Pick it up]
 ~ has_key = true
+You pocket the key.
+
+**[Finish crossing the stream]
 ->monastery
 
 ==monastery
@@ -176,28 +180,34 @@ You decide to let the crab be. It shuffles off deeper into the stream, away from
 ->grove
 +{board_secret}[Hop back to the grove]
 ->grove
-* {(enter_mon>1 and station_house>1) and not secret_tunnel}[Clamber through the conspicuous bush] ->secret_tunnel->station_name
-+{secret_tunnel}[Take the hidden path to the Station House]->secret_tunnel->station_name
+* {(enter_mon>1 and station_house>1) and not secret_tunnel}[Clamber through the conspicuous bush]#AUDIO: bush_rustle.mp3
+    ->secret_tunnel->station_name
++{secret_tunnel}[Take the hidden path to the Station House]#AUDIO: bush_rustle.mp3
+    ->secret_tunnel->station_name
 
 ==enter_mon
 
-{approach_donkey or explore_mon: You are standing in the entryway of The Monastery.{gun: The grass where the donkey had been standing is scorched, and still glows faintly with heat | The old donkey is still happily chewing his grass}.| You carefully cross the moss-covered threshold of The Monastery. The ground beyond is blanketed by a tall yellow grass, the horizon is swallowed up again by thick forest. An old donkey is a few yards off, feeding in the grass contentedly.}    
+{approach_donkey or explore_mon: You are standing in the entryway of The Monastery.{gun: The grass where the donkey had been standing is scorched, and still glows faintly with heat | The old donkey is still happily chewing his grass}.| You carefully cross the moss-covered threshold of The Monastery. The ground beyond is blanketed by a tall yellow grass, the horizon is swallowed up again by thick forest. An old donkey is a few yards off, feeding in the grass contentedly.} 
+{(enter_mon>1 and station_house>1) and not secret_tunnel: That strange tall bush is just to the left of you. }
 
-+{not gun}[Approach the donkey]#AUDIOLOOP: donkey_theme.mp3
++{not gun}[Approach the donkey]{existential_joke: #AUDIOLOOP: donkey_scary.mp3"|#AUDIOLOOP: donkey_theme.mp3}
 ->approach_donkey
 +[Explore The Monastery]
 ->explore_mon
 +[Return to the grove]
 ->grove
-* {(enter_mon>1 and station_house>1) and not secret_tunnel}[Clamber through the conspicuous bush] ->secret_tunnel->station_name
+* {(enter_mon>1 and station_house>1) and not secret_tunnel}[Clamber through the conspicuous bush]#AUDIO: bush_rustle.mp3
+    ->secret_tunnel->station_name
 +{secret_tunnel}[Take the hidden path to the Station House]->secret_tunnel->station_name
 
 ==approach_donkey
+
 {secret: A small bird is pecking the ground in front of the donkey.}
 {quiet or confession: |You approach the donkey. Hearing your footsteps, it lifts its head and regards you blankly.} 
 
 {not conversation and quiet and confession>2:The donkey seems bored and is focused on his grazing. You feel like you're missing something...Maybe you should try the other path.}
 -(topside){confession>0 and confession <2: The donkey is looking at you. You feel a little judged.| }
+
 *{secret}[Hurt the bird]
 ->laugh
 +{quiet<3}[Stay quiet]
@@ -222,8 +232,8 @@ You tell the donkey that {you pretend you don’t see people you know in public 
 //sending you back to the donkey as opposed to the entrance of the monastery again (in case you have more stuff to say/do to it 
 ==no_joke
  You think of the station master and her riddle.
-+[Return to the grove]
-->grove
++[Walk away] #AUDIOLOOP: monastery.mp3
+->enter_mon
 +[Try something else]
 ->approach_donkey.topside
 
@@ -258,10 +268,10 @@ He seems unimpressed.
 ->joke
 ==existential_joke
 You ask the donkey if he ever wonders why he's here. If he ever dreams of death. You can't think of a way to make that funny.
-*[...]
+*[...]#AUDIOLOOP: donkey_scary.mp3
 ->existential_joke1
 ==existential_joke1 
-#AUDIOLOOP: donkey_scary.mp3
+
 The donkey seems to consider your words. The edges of the forest darken and you become uncomfortably aware of your own mortality. 
 *[...]
 ->existential_joke2
@@ -364,7 +374,7 @@ A figurine of a Hare, carved in the same material as the beads, with yellow opal
 
 *[<b>ACCEPT THE SONG</b>]->transformation
 *[Reject the song] The hare figurine crumbles away to ash in your hands - leaving only its opal eyes. The bite on your hand throbs sharply. You have a feeling it will never fully heal. You should leave this place before something worse happens
-**[Return to the monastery]#AUDIOLOOP: monastery.mp3
+**[Return to The Monastery]#AUDIOLOOP: monastery.mp3
 
 ->enter_mon 
 
@@ -427,6 +437,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==station
 #AUDIO: 
+//TRANSITION
 {station_name: You make your way back to the outside of the old <b>Station House.</b> The trees rustle all around you. {board_secret:You can smell them in the darkness of the forest, hear their footsteps in the undergrowth.}| You make your way through the trees {pet: , nursing the weeping bite you now sport on your hand,|, trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
 +{station_name}[Approach the Station House] ->station_house
 +{(station_house or grove) and not board_secret}[Return to the grove] You take the path back to the grove you first found yourself in. ->grove
@@ -446,10 +457,12 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 ++{not board_secret}[Return to the grove] You make your way back to the grove you first found yourself in. ->grove
 ++{board_secret}[Hop back] With a spring in your step, you skip your way back to the grove you first found yourself in. ->grove
 * {(enter_mon>1 and station_house>1) and not secret_tunnel}[Clamber through the conspicuous bush] ->secret_tunnel->monastery
-+{secret_tunnel}[Take the hidden path to the Monastery]->secret_tunnel->monastery
++{secret_tunnel}[Take the hidden path to the Monastery]#AUDIO: bush_rustle.mp3
+    ->secret_tunnel->monastery
 
 ==station_house
 #AUDIOLOOP: station_house.mp3
+-(stationhouse)
 {information_board or station_master: You are {give_it_up: now| } alone on the platform aside from {station_master: the silhouette of the station master, still doing who knows what in the waiting room|the frosted glass of the waiting room door } and, of course, the information board. {riddle_wrong>3 and (existential_joke or more_explore): {You notice something you hadn't before: a scrap of paper undernath one of the platform's benches. | }} |You make your way up and onto the platform. You can see the information board more clearly, and just behind it the frosted glass door of a small waiting room.} 
 
 + {information_board<2}[Inspect the information board] -> information_board
@@ -474,7 +487,7 @@ You pick it up and unfold what looks to be an old fashioned receipt. It's from <
 
 {pet and information_board>1: ->board_secret}
 
-+[Look away] ->station_house 
++[Look away] ->station_house.stationhouse
 
 ==board_secret
 
@@ -492,10 +505,10 @@ You use the fingernails of your non-wounded hand to scrape the dirt off the surf
 Yet as you read it, you can't help but feel your heart <i>thump-thump-thumping</i>.
 -Perhaps you should look out for the <b>"Lapinate Chantry" </b>, whatever that may be. 
 
-*[Look away] ->station_house
+*[Look away] ->station_house.stationhouse
 
 ==station_master
-
+#AUDIOLOOP: stationmaster_loop.mp3
 You open the door to see a modest waiting room, muffled by a thick layer of dust. One of the back windows is broken and through it the forest has begun to reclaim the space.
 
 A figure stands in the middle of the room, wearing an immaculate double-breasted coat. Her name badge reads "STATION MASTER".
@@ -506,7 +519,7 @@ A figure stands in the middle of the room, wearing an immaculate double-breasted
 ->station_house
 
 ==conversation
-#AUDIOLOOP: stationmaster_loop.mp3
+
 *{gun} [Shoot her]  #AUDIO: gunshot.mp3
 ->gun_end_final1
 
@@ -660,15 +673,15 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 
 <i>Three thrones were set in place at the royal court, <b>side by side</b>. Each king sat resplendent in his signature colour: one in <b>red</b>, one in <b>black</b> and one in <b>green</b></i>
 
-<i>An old man with a donkey spoke to them one day. The most cunning king, in red, leaned back and paused to contemplate the man's words. From the left, the black-robed king leapt up and made as if to strike the man. The final brother, in green, adjusted his crown nervously.</i>  
+<i>An old man with a donkey visited them, speaking words lost to time. The most cunning king, in red, leaned back and paused to contemplate the man's words. From the left, the black-robed king leapt up and made as if to strike the man. The final brother, in green, adjusted his crown nervously.</i>  
 
-- <i>The donkey laughed and the king who had been gifted the imperial sword drew it and ran the brother next to him through. The remaining king stood wide-eyed, and ever the fool, watched the goblet roll from where it had fallen in between him and his kinslaying brother, but he too was struck down.</i>
+- <i>The tense silence was broken by the donkey's laugh. All of a sudden, the king who had been gifted the imperial sword drew it and ran the brother next to him through. The remaining king stood wide-eyed, and ever the fool, watched the goblet roll from where it had fallen in between him and his kinslaying brother, before he too was struck down.</i>
 
 +[...] "And there it is. The most pertinent details, anyway."
 ->riddle_answer.topside
 
 ==riddle_answer
-
+#AUDIOLOOP: stationmaster_loop.mp3
 VAR r_colour = ""
 VAR k_trait = ""
 VAR t_pos = ""
@@ -733,7 +746,7 @@ As you return to the platform, she calls out behind you to offer you some words 
 **{enter_mon and not gun} [She must mean the donkey. You better go see it again... and tell it a joke?]
 -> station_house
 
-**{gun}[Tell her he's gone]"Ah, that explains the gun. I suspect you'll come to regret acquiescing to his rather vulgar tastes. Regardless, there may be some useful insight into my tale elsewhere in the Monastery if you still wish to assist me."
+**{gun}[Tell her he's gone]"Ah, that explains the pistol. I suspect you'll come to regret acquiescing to his rather vulgar tastes. Regardless, there may be some useful insight into my tale elsewhere in the Monastery if you still wish to assist me."
 ->station_house
 
 ==the_end
@@ -746,10 +759,11 @@ Her face lights up in a smile.
 She grins at your expression{riddle_wrong>4: before dropping her magazine onto a nearby chair | taking out her pocketwatch} and moving towards you.
 
 "{not approach_donkey and riddle_wrong<4:Perhaps you know better than I do. | Questions for another time, perhaps.} Right, I believe you have a train to catch. It should be arriving shortly. For future reference it is the half-past train that takes you out of the woods."
-
+**[Ask the time]
+She produces a pocket watch from inside her coat. "Ah. Half past exactly."
 You hear a rumbling faintly coming from behind the door.
 #AUDIO: train_passes.mp3
-**[Go to the platform]//soundeffect:train rumbling, cuts to nothing
+***[Go to the platform]
 
 You burst out the door of the waiting room, onto the platform and see - 
 Empty forest, overgrown tracks. No train in sight.
@@ -795,10 +809,10 @@ Before you lie down, you see that the dot is nearly double its original size.
 
 -You feel a rumbling again and wake to the station master telling you that your train is nearly here. 
 
-*[Leap to your feet]
+*[Leap to your feet] #AUDIO: train_arrives.mp3
 
 - It's dusk in the forest, and the shadows have grown deeper, though this is nicely offset by the orange underglow of the setting sun. 
-#AUDIO: train_arrives.mp3
+
 Your train is just pulling into the station as you emerge from the waiting room - the dying light plays nicely off of its red caboose. It screeches to a halt and a wood panelled door aligns itself perfectly in front of you. 
 
 There is a pause, one in which no one exits the train, but one can get on it. 
@@ -813,13 +827,13 @@ The station master stands nearby.
 You explain to her that, for some reason, you don't want to leave.
 
 "I will take that as a compliment to my company." You see an emotion that you don't recognise cross her face.
-*[Watch the train go]
+*[Watch the train go] #AUDIO: train_passes.mp3
 The train pulls away into the setting sun. Looking out into the darkness of the woods, the station master turns to you.
 
 "Luckily for you, I have a spare room. I have some jobs that you can do while you are with me if you'd like to keep busy."
 {confession>4: Following her gaze, you see the beady eyes of a seagull looking out at you. A shiver runs down your spine. You know it's only a matter of time before you'll have to confront your past.}
 
-*[Accept] #AUDIOLOOP: stay_end.mp3
+**[Accept] #AUDIOLOOP: stay_end.mp3
 - The station master takes you by the shoulders and leads you away from the edge of the platform. She takes you to a plain but comfortable room in the Station House and leaves you to get settled.
 <p></p>
 -(limple)
@@ -923,4 +937,3 @@ The gun is no longer in your hand. The light glances off of something on your ch
 ==gun_end_final3
 It's a small metal badge. The text on it reads STATION MASTER.
 ->END
-
