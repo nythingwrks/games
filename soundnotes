@@ -1,0 +1,56 @@
+PLAYTHROUGH 1:
+full volume
+
+- grove music works well 
+
+- 'take path to the left' audio stops and that feels abrupt
+
+- station_house.mp3 is much louder than grove- need to get all of these pieces in one project file and level them
+
+DONE , added a gather -(stationhouse) : station_house restarts after looking at info board 
+
+DONE I think 'stationmaster' should start playing on "say hello" OR when you enter the waiting room
+
+DONE "Toss it back" needs a splash
+
+DONE (added an extra step after you pick the key up). Transition from "pick it up" to the monastery is sonically abrupt 
+
+DONE "return to the monastery" should be Return to The Monastery
+
+DONE - if you 'reject the song', you get the "clamber through the conspicuous bush" without description of the bush
+
+I think donkey song should have a fade in, its long enough to be an "audio" 
+
+DONE music change for dark donkey theme can happen on "tell an existential joke" / "you can't find a way to make that dunny"
+
+Flashback: goblet clattering, donkey laugh, obscured voices, sword swinging
+
+DONE post flashback you can only "try something else' or "return to the grove"- there should be a "walk away" option 
+DONE Also, when you do walk away from the donkey, same bush problem
+
+DONE Approaching the donkey after existential joke should play dark donkey theme
+
+DONE Secret tunnel: Monastery theme still playing
+
+DONE need rustle whenever you "take the hidden path" from either side
+
+  Secret room: 
+- desk click DONE
+    - lighter sounds (multiple attempts to use it) DONE
+    - Tearing paper DONE
+
+
+DONE station_master loop needs to replace station house when you solve the riddle
+
+DONE "you hear a rumbling" needs to be seperated from the stationmaster. 
+
+DONE train_passes is really long?? and loud
+
+DONE train arrives needs to be louder and sooner
+
+DONE "stay" gives you an "accept" option but theres no offer- this also causes 'stay_end.mp3' not to play if you don't click accept
+
+DONE 'The train pulls away' needs a noise
+
+
+
