@@ -115,6 +115,7 @@ Here you see several days go by without entry. The handwriting becomes more erra
  +[Take the path to the left]
  ->left
  ==close_eyes
+#AUDIOLOOP: left.mp3
  You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin. ////soundeffect: birdsong
 *[Follow your ears]
 {~-> right | ->left}
