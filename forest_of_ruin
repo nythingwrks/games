@@ -609,6 +609,7 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 
 ->riddle_begins
 ==riddle_begins==
+#AUDIOLOOP: riddle_song.mp3
 - <i>Many years ago, this forest was once the site of an ancient kingdom.</i>
 
 <i>The king, on his deathbed, bequeathed his three sons each equal part of the kingdom and gifted each an item from his imperial regalia: the goblet, the crown, and the sword.</i>
@@ -629,15 +630,15 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 
 - <i>The most cunning king, in red, leaned back and paused to contemplate the man's words. From the left, the black-robed king leapt up and made as if to strike the man. The final brother, in green, adjusted his crown nervously.</i>  
 
-*[...]
+*[...]#AUDIO: donkey_laugh.mp3
 
 - <i>The donkey at the old man’s side let out a long braying laugh, shattering the tense silence.</i>
 
-*[...]
+*[...]#AUDIO: red_king.mp3
 
 - <i>At once, the king who had been gifted the imperial sword drew it and ran the brother next to him through. </i>
 <i>The remaining king stood wide-eyed, and ever the fool, watched the goblet roll from where it had fallen in between him and his kinslaying brother. He could not imagine the same fate would befall him. </i>
-
+*[...]#AUDIO: green_king.mp3
 <i>His expression remained fixed in disbelief as his head fell from his body. </i>   
 
 *[...]
