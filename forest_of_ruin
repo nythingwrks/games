@@ -413,7 +413,7 @@ I tell her that she should have kept us away better. Her claim on this land is w
 ->END
 
 ==left
-#AUDIOLOOP: 
+#AUDIOLOOP: left.mp3
 {You walk deeper into the woods. Everything is quieter here. Shadows seem to grow from the spaces between leaves. Glancing at them, you see something looking back at you.|You walk back into the deep-woods. You still feel hidden eyes on you.{pet: Your bite throbs sympathetically. <i>It</i> watches you from the shadows, you know it.{board_secret: You feel strangely comforted by this}}}
 
 *  { not station }         [Reach into the shadows]          ->critter
