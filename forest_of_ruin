@@ -508,7 +508,7 @@ Yet as you read it, you can't help but feel your heart <i>thump-thump-thumping</
 *[Look away] ->station_house.stationhouse
 
 ==station_master
-#AUDIOLOOP: stationmaster_loop.mp3
+#AUDIOLOOP: stationmaster.mp3
 You open the door to see a modest waiting room, muffled by a thick layer of dust. One of the back windows is broken and through it the forest has begun to reclaim the space.
 
 A figure stands in the middle of the room, wearing an immaculate double-breasted coat. Her name badge reads "STATION MASTER".
@@ -681,7 +681,7 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 ->riddle_answer.topside
 
 ==riddle_answer
-#AUDIOLOOP: stationmaster_loop.mp3
+#AUDIOLOOP: stationmaster.mp3
 VAR r_colour = ""
 VAR k_trait = ""
 VAR t_pos = ""
