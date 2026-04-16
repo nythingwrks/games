@@ -77,7 +77,7 @@ VAR contractdestroyed = false
 - (chest) An ornate steamer chest sits adjacent to one of the walls. You heave it open and cough as a cloud of dust fills the air. Inside you see an older version of a station master's uniform - mostly just more buttons, a yellowing dress that looks to be a century old in style, costume jewelery, and a small stuffed doll made out of scrap fabric. ->looking
 
 - (desk) {More of a bureau, really. All the drawers seem locked but on the writing surface sits an old notebook. Atop the backboard sits an old gramophone. | }
-*[Turn on the gramophone] The gramophone starts playing with a lurch. The room seems to hum in approval as the music begins. # AUDIO: gramaphone.mp3
+*[Turn on the gramophone] The gramophone starts playing with a lurch. The room seems to hum in approval as the music begins. # AUDIOLOOP: gramaphone.mp3
     ->desk
 *[Read the notebook] Picking up the notebook, you realise everything apart from the first few pages is blackened and scorched. Your fingers come away black with ash.
 ->notebook
@@ -88,8 +88,9 @@ VAR contractdestroyed = false
 - (contract)
 *****[Put it back] You put the contract back in the drawer, which then closes and locks itself with a click.#AUDIO: desk.mp3
     ->looking
-*****(burn)[Burn it] When you touch the contract you find it almost uncomfortably warm. You flick the lighter a number of times before it catches and hold the flame to the paper. It does not burn. ->contract
-*****{burn}[Tear it] It takes a surprising amount of force to tear the paper, but you manage it nonetheless. The contract splits down the middle and as you go to tear it further, each half begins to flake away into ash until it is as if the contract never existed to begin with. 
+*****(burn)[Burn it] When you touch the contract you find it almost uncomfortably warm. You flick the lighter a number of times before it catches and hold the flame to the paper. It does not burn.#AUDIO: lighter.mp3
+    ->contract      
+*****{burn}[Tear it] It takes a surprising amount of force to tear the paper, but you manage it nonetheless. The contract splits down the middle and as you go to tear it further, each half begins to flake away into ash until it is as if the contract never existed to begin with. #AUDIO: paper.mp3 
 ~ contractdestroyed = true
 ->looking
 
@@ -198,7 +199,8 @@ You pocket the key.
 ->grove
 * {(enter_mon>1 and station_house>1) and not secret_tunnel}[Clamber through the conspicuous bush]#AUDIO: bush_rustle.mp3
     ->secret_tunnel->station_name
-+{secret_tunnel}[Take the hidden path to the Station House]->secret_tunnel->station_name
++{secret_tunnel}[Take the hidden path to the Station House]#AUDIO: bush_rustle.mp3 
+    ->secret_tunnel->station_name
 
 ==approach_donkey
 
@@ -456,7 +458,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 ++[Approach the station house] ->station_house
 ++{not board_secret}[Return to the grove] You make your way back to the grove you first found yourself in. ->grove
 ++{board_secret}[Hop back] With a spring in your step, you skip your way back to the grove you first found yourself in. ->grove
-* {(enter_mon>1 and station_house>1) and not secret_tunnel}[Clamber through the conspicuous bush] ->secret_tunnel->monastery
+* {(enter_mon>1 and station_house>1) and not secret_tunnel}[Clamber through the conspicuous bush]#AUDIO:bush_rustle.mp3 ->secret_tunnel->monastery
 +{secret_tunnel}[Take the hidden path to the Monastery]#AUDIO: bush_rustle.mp3
     ->secret_tunnel->monastery
 
