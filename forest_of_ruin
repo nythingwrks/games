@@ -358,13 +358,14 @@ You get down onto your haunches and scrabble around in the dirt and grass.
 
 *[Inspect the beads] You hold one of the beads up to your eye. They look to be made from bone. They appear slightly ovular in shape and each is tipped with a yellow opal, the colour of which runs through the etched spirals like veins. ->inscription  //fred: I find the last sentence unclear to imagine for some reason , can you think of another way to describe what you mean? 
 *[Smell the candles] They are lightly scented with spring flowers. ->inscription
-*[Gather the wood together] You manage to connect some of the scraps of wood into the semblance of a whole text - it's a prayer of some kind.
+*[Gather the wood together]#AUDIO: gather_wood.mp3
+    You manage to connect some of the scraps of wood into the semblance of a whole text - it's a prayer of some kind.
 
 <i>...and so our fecund lord, who bounds through the gloaming... make haste to greet your piteous subjects...we from whom you spring eternal...Lapinite songs uplift you...swiftly dash through warren and briar, bringing with your blessing...anoint our Lagomane as your chosen...use the vessel...bring forth your divine music...keen through the sepulchre...<i>
 
 -Your nose twitches as you read the fragments of an ancient call to an ancient god. Something is buried here. 
 
-*[BURROW]
+*[BURROW]#AUDIO: dig.mp3
 
 -You scratch-scratch-scratch at the hard-packed earth. You don't know what you're looking for, but you know it's here. Just as you begin to lose faith, your dirt-caked hands reveal something.
 
@@ -383,7 +384,7 @@ A figurine of a Hare, carved in the same material as the beads, with yellow opal
 ==transformation
 
 The Bone-Hare's eyes glow yellow and the timpanic pounding, the cacophany of rush and dew and fervor, coalesces into a single keening note. Beginning in the wound on your hand, it reverberates through your very being. 
-*[<b>CHANGE</b>]
+*[<b>CHANGE</b>]#AUDIO:transformation.mp3
 <i>Wound closing - flesh tearing - muscle engorging - hair spreading - tooth elongating - nail sharpening - ear stretching - stature building - divine encapsulating
 
 <i>frog - viper - cicada - ant - butterfly  - alate - larvae - egg - embryo - spawn - quicken</i>
