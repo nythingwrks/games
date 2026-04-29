@@ -7,7 +7,7 @@ You awaken in a forest,
  ==grove
  #AUDIOLOOP: grove.mp3
  -(paths) The same two paths lead off from the clearing.{confession>4:{ You notice a seagull lurking in the shadows in a corner of the grove that you hadn't noticed before. It makes no move to approach you, yet you feel strangely threatened. | That same seagull watches you. Always watches you...{shot: You don't think shooting it again would make any difference.}}}
- 
+ {confession>4: {not shot: #IMAGE: Images/Ominous Seagull.png |  # IMAGE: Images/Seagull_Animated.gif}} 
  +[Take the path to {monastery: The Monastery | the right}]
  ->right
  +[Take the path to the {station_name: Station House| left}]
@@ -16,6 +16,7 @@ You awaken in a forest,
 ->paths 
 ==secret_tunnel
 #AUDIOLOOP: 
+#IMAGE: Images/Conspicuous Bush.png
  {
  - secret_tunnel<2: The thing that is most apparent to you as you first clamber through the leaves is the {pet:smell. Leaves. Rot. Earth. Home. Things move to either side of you. You can hear them even when they travel far.| darkness. Even in the dark pathway to the Station House you did not feel so separate from the sky.}->tunnel_lost-> //soundeffect: rustling
 - secret_tunnel==5 and key: As you make your way through the undergrowth, you notice that you're clutching the key you found earlier. It seems strangely warm to the touch. You push through the thicket and find your hand meets stone instead of the air you were expecting. ->secret_room->
@@ -38,13 +39,14 @@ You only took one step into the foliage, but wherever you came from is no longer
 ---You follow the trail {pet: confidently and|for so long that you begin to lose hope, but} eventually find what you think is an exit. 
 ****[{pet: Exit |Escape}]
 ----You push the branches out of the way, and breach into the sunlit world once more. <>
+#IMAGE: Images/Conspicuous Bush.png
 ->->
 
 ==secret_room
 *[Ignore it] ->->
 *[Investigate the stone]
 
-- You push aside some of the brambles and find a small brass keyhole. 
+- You push aside some of the brambles and find a small brass keyhole. #IMAGE: Images/Keyhole.png
 
 *[Put the key in the keyhole] #AUDIO: secret_door.mp3
 
@@ -70,16 +72,22 @@ VAR contractdestroyed = false
 +[Look at the old poster] ->poster
 +{desk}[Leave the room] You walk back through the doorway, into the brush, and soon find yourself wandering a trail you recognise.->->
 
-- (poster) It's a London & South Western train poster. It has a faded but colourful depiction of a countryside scene through a train window. ->looking
+- (poster) It's a London & South Western train poster. It has a faded but colourful depiction of a countryside scene through a train window. 
+#IMAGE: Images/Rail Poster.png
+->looking
 
 - (chair) An old chair, but comfortable looking. It's draped in a number of blankets. You would sit on it, but it looks like a historical artifact. Better not. ->looking
 
-- (chest) An ornate steamer chest sits adjacent to one of the walls. You heave it open and cough as a cloud of dust fills the air. Inside you see an older version of a station master's uniform - mostly just more buttons, a yellowing dress that looks to be a century old in style, costume jewelery, and a small stuffed doll made out of scrap fabric. ->looking
+- (chest) An ornate steamer chest sits adjacent to one of the walls. You heave it open and cough as a cloud of dust fills the air. Inside you see an older version of a station master's uniform - mostly just more buttons, a yellowing dress that looks to be a century old in style, costume jewelery, and a small stuffed doll made out of scrap fabric. 
+#IMAGE: Images/Chest.png
+->looking
 
 - (desk) {More of a bureau, really. All the drawers seem locked but on the writing surface sits an old notebook. Atop the backboard sits an old gramophone. | }
+#IMAGE: Images/Gramophone.png
 *[Turn on the gramophone] The gramophone starts playing with a lurch. The room seems to hum in approval as the music begins. # AUDIOLOOP: gramaphone.mp3
     ->desk
 *[Read the notebook] Picking up the notebook, you realise everything apart from the first few pages is blackened and scorched. Your fingers come away black with ash.
+#IMAGE: Images/Burnt Journal.png
 ->notebook
 
 - (finishnotebook) As you finish reading you hear a click and notice that one of the desk drawers is now slightly ajar.#AUDIO: desk.mp3
@@ -149,6 +157,7 @@ You hear a sound in the woods behind you, almost like an intake of breath.
 
 ==shell_choice
 Plunging your hand into the icy water, you fumble around until the cold becomes too much to bear. You open your fist and see a small iridescent shell nestled in your palm. A hermit crab has made a home in it.
+#IMAGE: Images/Shell Full.png
 *[Toss it back]  #AUDIO: crab_splash.mp3
 ->key
 *[Take it from the crab]
@@ -156,12 +165,14 @@ Plunging your hand into the icy water, you fumble around until the cold becomes 
 
 ==shell
 You rip the crab out of the shell and toss it aside, pocketing the shell. #AUDIO: crab_splash.mp3
+#IMAGE: Images/Shell Empty.png
 *[Finish crossing the stream]
 ->monastery
 
 ==key
 VAR has_key = false 
 You decide to let the crab be. It shuffles off deeper into the stream, away from prying eyes. Underneath where the crab was you spot an old brass key half buried in the silt.
+#IMAGE: Images/Brass Key.png
 
 *[Pick it up]
 ~ has_key = true
@@ -203,7 +214,7 @@ You pocket the key.
     ->secret_tunnel->station_name
 
 ==approach_donkey
-
+#IMAGE: Images/Donkey.gif
 {secret: A small bird is pecking the ground in front of the donkey.}
 {quiet or confession: |You approach the donkey. Hearing your footsteps, it lifts its head and regards you blankly.} 
 
@@ -304,6 +315,7 @@ You pause for effect
  *[Look down]
  ->gun
  ==gun
+ #IMAGE: Images/Revolver.png
  You are holding a pistol in your left hand. The donkey is nowhere to be seen.
  *[Return to the entrance of The Monastery]#AUDIOLOOP: monastery.mp3
  ->enter_mon
@@ -330,6 +342,7 @@ The slab has a pearlescent mosiac on it, pieces of shell forming an ornate spira
 +{more_explore}[Return to the entrance of the Monastery]
 ->enter_mon
 ==more_explore
+#IMAGE: Images/Stained Glass.png
 {In a far corner of The Monastery you find the remnants of a stained glass window, still partially intact. As the sparse sunlight illuminates it, you see it depicts three figures in majestic robes. One in green on the left, one in red in the middle, and one in black on the right. The glass is shattered where the first figure's head should have been.| You are back in the corner of The Monastery, looking up at the stained glass window of a line of three imposing figures. The one on the right in green, the next in red and the last in black.}
 +[Return to the entrance of The Monastery]
 ->enter_mon
@@ -356,8 +369,12 @@ You get down onto your haunches and scrabble around in the dirt and grass.
 
 -(inscription){You find small beads inscribed with spirals, candle stumps, and fragments of wood covered in faded carvings. <i>Something</i> was once worshipped here. |What else?}
 
-*[Inspect the beads] You hold one of the beads up to your eye. They look to be made from bone. They appear slightly ovular in shape and each is tipped with a yellow opal, the colour of which runs through the etched spirals like veins. ->inscription  //fred: I find the last sentence unclear to imagine for some reason , can you think of another way to describe what you mean? 
-*[Smell the candles] They are lightly scented with spring flowers. ->inscription
+*[Inspect the beads] You hold one of the beads up to your eye. They look to be made from bone. They appear slightly ovular in shape and each is tipped with a yellow opal, the colour of which runs through the etched spirals like veins. 
+#IMAGE: Images/Lapinate Beads.png
+->inscription
+*[Smell the candles] They are lightly scented with spring flowers. 
+#IMAGE: Images/Lapinate Candles.png
+->inscription
 *[Gather the wood together]#AUDIO: gather_wood.mp3
     You manage to connect some of the scraps of wood into the semblance of a whole text - it's a prayer of some kind.
 
@@ -372,6 +389,7 @@ You get down onto your haunches and scrabble around in the dirt and grass.
 *[UNEARTH]
 
 A figurine of a Hare, carved in the same material as the beads, with yellow opals for eyes. This is what was making the song. 
+#IMAGE: Images/Lapinate Idol.png
 
 -You can <b>smell</b> it, and <b>hear</b> it, and <b>taste</b> it. The song of things <b>growing</b>, of things <b>multiplying</b>, of things <b>becoming greater</b> than they are. The song of <b>creeping overgrowth</b> and <b>glut</b> and <b>rot</b>. It sings to you now of <b>change</b>, an <b>incredible change</b>. One already partly underway. 
 
@@ -383,13 +401,16 @@ A figurine of a Hare, carved in the same material as the beads, with yellow opal
 
 ==transformation
 
-The Bone-Hare's eyes glow yellow and the timpanic pounding, the cacophany of rush and dew and fervor, coalesces into a single keening note. Beginning in the wound on your hand, it reverberates through your very being. 
+The Bone-Hare's eyes glow yellow and the timpanic pounding, the cacophany of rush and dew and fervor, coalesces into a single keening note. Beginning in the wound on your hand, it reverberates through your very being.
+#IMAGE: Images/Idol Activated.gif
 *[<b>CHANGE</b>]#AUDIO:transformation.mp3
 <i>Wound closing - flesh tearing - muscle engorging - hair spreading - tooth elongating - nail sharpening - ear stretching - stature building - divine encapsulating
 
 <i>frog - viper - cicada - ant - butterfly  - alate - larvae - egg - embryo - spawn - quicken</i>
 
 <i>shed - molt - cocoon - pupate - metamorphise -</i> 
+
+#IMAGE: Images/Transformation.gif
 **[EMERGE] 
 
 - I <b>am</b> now. I <b>smell</b> now I <b>hear</b> now. Out - out - out - time to <b>run</b>, time to <b>flee</b>. I once was lost. I once was other. I can <b>grow</b> more - must grow more. 
@@ -426,6 +447,7 @@ I tell her that she should have kept us away better. Her claim on this land is w
 
 ==critter
 #AUDIO: short_rustle.mp3
+#IMAGE: Images/Bunny.gif
 You pull back the leaves to reveal an unusually calm rabbit. As it gazes at you with those too-big, too-smart eyes, it seems to make a decision. 
 *[Try to pet it]
 ->pet
@@ -480,11 +502,13 @@ You pick it up and unfold what looks to be an old fashioned receipt. It's from <
 *[Turn it over]
 
 - (table) On the reverse side of the receipt someone has scrawled a table with numbers heading the columns and the words 'colour,' 'position,' 'trait,' and 'item' labelling the four rows. It's mostly complete 
+#IMAGE: Images/Receipt.png
 
 +[Look away] You pocket the receipt and look away.
 
 ->->
 ==information_board
+#IMAGE: Images/Information Board.png
 
 {A confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns with unfamiliar names and going along a coastline that you can't recognise. <p></p>The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful.| The same board as before with the same information. Confusing, jumbled, and entirely unintelligible. Your head begins to hurt after a while.}
 
@@ -522,6 +546,7 @@ A figure stands in the middle of the room, wearing an immaculate double-breasted
 ->station_house
 
 ==conversation
+#IMAGE: Images/Station Master.gif
 
 *{gun} [Shoot her]  #AUDIO: gunshot.mp3
 ->gun_end_final1
@@ -615,14 +640,15 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 #AUDIOLOOP: riddle_song.mp3
 - <i>Many years ago, this forest was once the site of an ancient kingdom.</i>
 
+#IMAGE: Images/Riddle Part 1.png
 <i>The king, on his deathbed, bequeathed his three sons each equal part of the kingdom and gifted each an item from his imperial regalia: the goblet, the crown, and the sword.</i>
 
 *[...]
-
+#IMAGE: Images/Riddle Part 2.png
 - <i>Three thrones were set in place at the royal court and for a while the brothers ruled peacefully, side by side.</i>
 
 *[...]
-
+#IMAGE: Images/Riddle Part 3.png
 - <i>One day, a man with a donkey entered the court seeking the brothers’ counsel. Each king sat resplendent in his signature colour: one in red, one in black and one in green.</i>
 
 *[...]
@@ -634,18 +660,20 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 - <i>The most cunning king, in red, leaned back and paused to contemplate the man's words. From the left, the black-robed king leapt up and made as if to strike the man. The final brother, in green, adjusted his crown nervously.</i>  
 
 *[...]#AUDIO: donkey_laugh.mp3
-
+#IMAGE: Images/Riddle Part 6.png
 - <i>The donkey at the old man’s side let out a long braying laugh, shattering the tense silence.</i>
 
 *[...]#AUDIO: red_king.mp3
-
+#IMAGE: Images/Riddle Part 7.png
 - <i>At once, the king who had been gifted the imperial sword drew it and ran the brother next to him through. </i>
 <i>The remaining king stood wide-eyed, and ever the fool, watched the goblet roll from where it had fallen in between him and his kinslaying brother. He could not imagine the same fate would befall him. </i>
+
 *[...]#AUDIO: green_king.mp3
-<i>His expression remained fixed in disbelief as his head fell from his body. </i>   
+
+- <i>His expression remained fixed in disbelief as his head fell from his body. </i>   
 
 *[...]
-
+#IMAGE: Images/Riddle Part 8.png
 - <i>The king with the sword took the crown from where it lay, and lifted his other brother's goblet to toast the man as he led his donkey out of the castle and into the woods.</i>
 
 *[...]
@@ -686,6 +714,7 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 
 ==riddle_answer
 #AUDIOLOOP: stationmaster.mp3
+#IMAGE: Images/Station Master.gif
 VAR r_colour = ""
 VAR k_trait = ""
 VAR t_pos = ""
@@ -921,7 +950,7 @@ You hand her the brass key. Her eyes widen and she clutches it tightly. She than
 You pass the time together, playing cards and trading interests (hers are mostly train related). As you get further into the journey, you feel as though a fog is lifting and your name returns to you. You introduce yourself properly, for the first time. She does the same. 
 
 - The ticket master, an elderly man with shrewd eyes and a sleepy smile, comes to check your tickets. As you realise you never bothered to buy one, your companion produces two from the pocket of her thick overcoat. Isn't it nice to have company?
-
+#IMAGE: Images/Ending1.gif
 ->END
 
 
