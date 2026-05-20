@@ -156,16 +156,16 @@ You hear a sound in the woods behind you, almost like an intake of breath. //sou
 ->shell_choice
 
 ==shell_choice
-Plunging your hand into the icy water, you fumble around until the cold becomes too much to bear. You open your fist and see a small iridescent shell nestled in your palm. A hermit crab has made a home in it.
 #IMAGE: Images/Shell Full.png
+Plunging your hand into the icy water, you fumble around until the cold becomes too much to bear. You open your fist and see a small iridescent shell nestled in your palm. A hermit crab has made a home in it.
 *[Toss it back]  #AUDIO: crab_splash.mp3
 ->key
 *[Take it from the crab]
 ->shell
 
 ==shell
-You rip the crab out of the shell and toss it aside, pocketing the shell. #AUDIO: crab_splash.mp3
 #IMAGE: Images/Shell Empty.png
+You rip the crab out of the shell and toss it aside, pocketing the shell. #AUDIO: crab_splash.mp3
 *[Finish crossing the stream]
 ->monastery
 
