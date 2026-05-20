@@ -1,3 +1,5 @@
+VAR came_from = ""
+
 You awaken in a forest,
 #AUDIOLOOP: grove.mp3
  * [Look around]
@@ -491,6 +493,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==station_house
 #AUDIOLOOP: station_house.mp3
+{came_from = "riddle_answer"} Before you realise what's happening, the stationmaster has ushered you out of the waiting room. 
 -(stationhouse)
 {information_board or station_master: You are {give_it_up: now| } alone on the platform aside from {station_master: the silhouette of the station master, still doing who knows what in the waiting room|the frosted glass of the waiting room door } and, of course, the information board. {riddle_wrong>3 and (existential_joke or more_explore): {You notice something you hadn't before: a scrap of paper undernath one of the platform's benches. | }} |You make your way up and onto the platform. You can see the information board more clearly, and just behind it the frosted glass door of a small waiting room.} 
 
@@ -717,6 +720,7 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 ->riddle_answer.topside
 
 ==riddle_answer
+~ came_from = 'riddle_answer' 
 #AUDIOLOOP: stationmaster.mp3
 #IMAGE: Images/Station Master.gif
 VAR r_colour = ""
