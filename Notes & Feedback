@@ -1,3 +1,20 @@
+ROUND 3
+- receipt not showing up
+- bush sound bug
+- reduce bush visuals
+- hermit crab visual should be before text
+- three chair visual during riddle is mistimed
+- riddle music is jolting, riddle music should play during recap 
+- have the stationmaster shunt you out if you elect to leave the riddle conversation
+
+- stationmaster hidden room: 
+   add a haskey variable: whatever ending you get some kind of hint towards the true good ending 
+
+- take a look at css file for font colour(s), image size
+
+- Endings: all  need visuals and all need music 
+- info board: put mention of it being wooden/painted
+
 ROUND TWO :
 - Extra clue (in the station house?/from the station master?) that's conditional on getting the riddle wrong twice?
 
