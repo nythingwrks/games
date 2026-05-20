@@ -39,7 +39,6 @@ You only took one step into the foliage, but wherever you came from is no longer
 ---You follow the trail {pet: confidently and|for so long that you begin to lose hope, but} eventually find what you think is an exit. 
 ****[{pet: Exit |Escape}]
 ----You push the branches out of the way, and breach into the sunlit world once more. <>
-#IMAGE: Images/Conspicuous Bush.png
 ->->
 
 ==secret_room
@@ -117,6 +116,7 @@ Here you see several days go by without entry. The handwriting becomes more erra
 - On the last page before the book turns charcoal, you read: <p></p><i>"It will be done. He has promised me everything I have ever wished for."</i>->finishnotebook
 
  ==look_around
+#IMAGE: Images/Paths.png
  You are standing in a clearing. The light is filtering through the trees, the sun fighting through to hit your face. 
  Two paths lead off from the clearing. 
  +[Take the path to the right]
@@ -184,6 +184,7 @@ You pocket the key.
 ==monastery
 #AUDIO: 
 #AUDIOLOOP: monastery.mp3
+{monastery: | #IMAGE: Images/Monastery.png}
 {monastery>1:{wade and stream>2:Crossing the stream, you|You} continue along to a familiar set of ruins. <p></p>You have returned to <b>The Monastery</b>.|Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions. <p></p>You have found <b>The Monastery</b>.}{(enter_mon>1 and station_house>1) and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
 
 +[Enter the Monastery]
@@ -466,7 +467,8 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 ==station
 #AUDIO: 
 //TRANSITION
-{station_name: You make your way back to the outside of the old <b>Station House.</b> The trees rustle all around you. {board_secret:You can smell them in the darkness of the forest, hear their footsteps in the undergrowth.}| You make your way through the trees {pet: , nursing the weeping bite you now sport on your hand,|, trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
+{station_name: | #IMAGE: Images/Station House.png}
+{station_name: You make your way back to the outside of the old <b>Station House.</b> The trees rustle all around you. {board_secret:You can smell them in the darkness of the forest, hear their footsteps in the undergrowth.}|You make your way through the trees {pet: , nursing the weeping bite you now sport on your hand,|, trying to put the thought of those large yellow eyes out of your head,} until, without warning, you find yourself standing before an old building.}
 +{station_name}[Approach the Station House] ->station_house
 +{(station_house or grove) and not board_secret}[Return to the grove] You take the path back to the grove you first found yourself in. ->grove
 +{board_secret}[Scurry back the way you came] The forest doesn't seem so dark anymore as you take the route back the way you came. 
@@ -876,13 +878,16 @@ The train pulls away into the setting sun. Looking out into the darkness of the 
 *[Look around]You take a look around the room. There's a small mirror on the far wall. Angling yourself so you don't have to face your own reflection, you observe the room through it. The shadows in the reflected room pool more deeply in its corners.->limple
 *[Lay down on the bed] You lay down on the bed, exhausted by the strangeness of the day. Drifting into sleep, you think of the life you cannot remember and did not return to. More trains will come, whether you take them or not. <p></p> Unsure of your own name, and now your future, you cross into a fitful sleep full of vivid dreams.{
 -gun:->king
--else: ->END
+-else: 
+#IMAGE: Images/Ending 4.gif 
+->END
 }
 ==king
 *[Awaken]//music:KING
 You wake to a faint braying laugh. Night has long fallen, the world beyond the small window lost to the moonless oily night. Something glints in the mirror.
 **[Go to the mirror] 
 - As you move to the mirror, you feel a strange but familiar heaviness in your hand. It's hard to make out in the darkness, but as you approach you notice something off about your silhouette. <p></p> It almost looks as if you are shrouded in thick black robes. 
+#IMAGE: Images/Ending 4.5.gif
 -> END
 
 ==go_end
@@ -906,8 +911,12 @@ You turn around and wave at the station master, who waves back.
 {
 - not contractdestroyed: You awaken in a forest. #AUDIOLOOP: grove.mp3
 * [Look around]You are standing in a clearing. The light is filtering through the trees, the sun fighting through to hit your face. 
- Two paths lead off from the clearing. ->END
-* [Close your eyes]You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin. ->END
+ Two paths lead off from the clearing.  
+#IMAGE: Images/Paths.gif 
+->END
+* [Close your eyes]You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin. 
+#IMAGE: Images/Paths.gif 
+->END
 
 - else: 
 #AUDIOLOOP:train_ambience.mp3
@@ -953,7 +962,7 @@ You hand her the brass key. Her eyes widen and she clutches it tightly. She than
 You pass the time together, playing cards and trading interests (hers are mostly train related). As you get further into the journey, you feel as though a fog is lifting and your name returns to you. You introduce yourself properly, for the first time. She does the same. 
 
 - The ticket master, an elderly man with shrewd eyes and a sleepy smile, comes to check your tickets. As you realise you never bothered to buy one, your companion produces two from the pocket of her thick overcoat. Isn't it nice to have company?
-#IMAGE: Images/Ending1.gif
+#IMAGE: Images/Ending 4.gif
 ->END
 
 
@@ -972,4 +981,5 @@ The gun is no longer in your hand. The light glances off of something on your ch
 ->gun_end_final3
 ==gun_end_final3
 It's a small metal badge. The text on it reads STATION MASTER.
+#IMAGE: Images/Ending 2.gif
 ->END
