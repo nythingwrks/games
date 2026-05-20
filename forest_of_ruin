@@ -884,7 +884,8 @@ The train pulls away into the setting sun. Looking out into the darkness of the 
 ->END
 }
 ==king
-*[Awaken]//music:KING
+#AUDIOLOOP: king_end.mp3
+*[Awaken] #AUDIO: donkey_laugh.mp3
 You wake to a faint braying laugh. Night has long fallen, the world beyond the small window lost to the moonless oily night. Something glints in the mirror.
 **[Go to the mirror] 
 - As you move to the mirror, you feel a strange but familiar heaviness in your hand. It's hard to make out in the darkness, but as you approach you notice something off about your silhouette. <p></p> It almost looks as if you are shrouded in thick black robes. 
