@@ -1,27 +1,32 @@
 ROUND 3
-NOT NEEDED - receipt not showing up
+
+- info board: put mention of it being wooden/painted
+
+- lapinate chantry rewrites:
+   through bush you find an old ritual site. you infer the ritual order from it and find the final piece of the chant. 
+   if you find lapinate chantry first and can't complete the ritual, you can return to the chantry again once you've found the wooden piece and then complete the ritual. 
+
 - bush sound bug
-DONE - reduce bush visuals
-DONE - hermit crab visual should be before text
-- three chair visual during riddle is mistimed
-DONE- riddle music is jolting, riddle music should play during recap 
-DONE - have the stationmaster shunt you out if you elect to leave the riddle conversation
-- When SM magazine description in wrong order
 
 - stationmaster hidden room: 
    add a haskey variable: whatever ending you get some kind of hint towards the true good ending 
 
 - take a look at css file for font colour(s), image size
 
-- Endings: all  need visuals and all need music
+- check all endings have music
+
+NOT NEEDED - receipt not showing up
+DONE - reduce bush visuals
+DONE - hermit crab visual should be before text
+DONE (personal issue) three chair visual during riddle is mistimed
+DONE- riddle music is jolting, riddle music should play during recap 
+DONE - have the stationmaster shunt you out if you elect to leave the riddle conversation
+DONE When SM magazine description in wrong order
+
+DONE Endings: all  need visuals 
+
+
 DONE - gun end and king end need donkey laugh + distorted donkey music
-
-- info board: put mention of it being wooden/painted
-
-lapinate chantry:
-through bush you find an old ritual site. you infer the ritual order from it and find the final piece of the chant. 
-if you find lapinate chantry first and can't complete the ritual, you can return to the chantry again once you've found the wooden piece and then complete the ritual. 
-
 
 ROUND TWO :
 - Extra clue (in the station house?/from the station master?) that's conditional on getting the riddle wrong twice?
