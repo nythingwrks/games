@@ -702,7 +702,7 @@ Her blank eyes take on a glint of mischief. "Well, I am rather enjoying having t
 "Want to give it another shot?" -> riddle_answer.topside
 
 ==riddle_recap
-
+#AUDIOLOOP: riddle_song.mp3
 +[...]
 
 <i>The king, on his deathbed, bequeathed his three sons each equal part of the kingdom and gifted each <b>an item from his imperial regalia</b>.</i>
@@ -792,8 +792,6 @@ As you return to the platform, she calls out behind you to offer you some words 
 Her face lights up in a smile.
 
 "Yes, of course. {gun:  It is funny how stories and truth diverge and intersect... If our experiences with a certain local donkey are anything to go by, I wonder if that throne room encounter was not the first time the king in black had met the man and the donkey. Our mutual equine friend *has* always had a nasty penchant for instigating violence." She pauses. "All just a thought experiment of course- surely, no donkey could live that long".  |That makes perfect sense.}   {not things_in_room and not gun: I wonder why the donkey laughed?}"
-
-She grins at your expression{riddle_wrong>3: before dropping her magazine onto a nearby chair | taking out her pocketwatch} and moving towards you.
 
 She grins at your expression{riddle_wrong>3: before dropping her magazine onto a nearby chair | taking out her pocketwatch} and moving towards you.
 
