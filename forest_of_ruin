@@ -982,6 +982,7 @@ The gun is no longer in your hand. The light glances off of something on your ch
 *[Inspect it]
 ->gun_end_final3
 ==gun_end_final3
+#AUDIO: king_end.mp3
 It's a small metal badge. The text on it reads STATION MASTER.
 #IMAGE: Images/Ending 2.gif
 ->END
