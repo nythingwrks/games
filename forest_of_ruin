@@ -792,7 +792,9 @@ As you return to the platform, she calls out behind you to offer you some words 
 *[...]
 Her face lights up in a smile.
 
-"Yes, of course. That makes perfect sense. But what did the man say?{not things_in_room: And why did the donkey laugh?}"
+"Yes, of course. {gun:  It is funny how stories and truth diverge and intersect... If our experiences with a certain local donkey are anything to go by, I wonder if that throne room encounter was not the first time the king in black had met the man and the donkey. Our mutual equine friend *has* always had a nasty penchant for instigating violence." She pauses. "All just a thought experiment of course- surely, no donkey could live that long".  |That makes perfect sense.}   {not things_in_room and not gun: I wonder why the donkey laughed?}"
+
+She grins at your expression{riddle_wrong>4: before dropping her magazine onto a nearby chair | taking out her pocketwatch} and moving towards you.
 
 She grins at your expression{riddle_wrong>4: before dropping her magazine onto a nearby chair | taking out her pocketwatch} and moving towards you.
 
