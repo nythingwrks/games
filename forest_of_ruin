@@ -736,7 +736,7 @@ VAR knows_p = false
 ->gun_end_final1
 +{old_receipt}[Look at the receipt again] ->old_receipt.table->topside
 + [Solve the tale]
-{riddle_wrong<4: "Excellent! Please go on." | "Oh good. I'll just..." The station master {riddle_wrong<5:produces a magazine seemingly from nowhere and begins flipping through it. "Pay me no mind, I am still listening." You're not sure that she is.|returns to her magazine and idly flips to the next page. "Go on then."}}
+{riddle_wrong<3: "Excellent! Please go on." | "Oh good. I'll just..." The station master {riddle_wrong<4:produces a magazine seemingly from nowhere and begins flipping through it. "Pay me no mind, I am still listening." You're not sure that she is.|returns to her magazine and idly flips to the next page. "Go on then."}}
 
 ++"The king with the sword..."[] you begin, feeling unsure of yourself. "Wore robes of..."
 +++"Red.["] 
