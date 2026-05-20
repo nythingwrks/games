@@ -793,9 +793,9 @@ Her face lights up in a smile.
 
 "Yes, of course. {gun:  It is funny how stories and truth diverge and intersect... If our experiences with a certain local donkey are anything to go by, I wonder if that throne room encounter was not the first time the king in black had met the man and the donkey. Our mutual equine friend *has* always had a nasty penchant for instigating violence." She pauses. "All just a thought experiment of course- surely, no donkey could live that long".  |That makes perfect sense.}   {not things_in_room and not gun: I wonder why the donkey laughed?}"
 
-She grins at your expression{riddle_wrong>4: before dropping her magazine onto a nearby chair | taking out her pocketwatch} and moving towards you.
+She grins at your expression{riddle_wrong>3: before dropping her magazine onto a nearby chair | taking out her pocketwatch} and moving towards you.
 
-She grins at your expression{riddle_wrong>4: before dropping her magazine onto a nearby chair | taking out her pocketwatch} and moving towards you.
+She grins at your expression{riddle_wrong>3: before dropping her magazine onto a nearby chair | taking out her pocketwatch} and moving towards you.
 
 "{not approach_donkey and riddle_wrong<4:Perhaps you know better than I do. | Questions for another time, perhaps.} Right, I believe you have a train to catch. It should be arriving shortly. For future reference it is the half-past train that takes you out of the woods."
 **[Ask the time]
