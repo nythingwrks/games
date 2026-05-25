@@ -5,7 +5,6 @@ ROUND 3
    through bush you find an old ritual site. you infer the ritual order from it and find the final piece of the chant. 
    if you find lapinate chantry first and can't complete the ritual, you can return to the chantry again once you've found the wooden piece and then complete the ritual. 
 
-- bush sound bug
 
 - stationmaster hidden room: 
    add a haskey variable: whatever ending you get some kind of hint towards the true good ending 
@@ -15,6 +14,7 @@ ROUND 3
 
 
 NOT NEEDED - receipt not showing up
+DONE- bush sound bug (however maybe I have fucked up the bush...)
 DONE- check all endings have music
 DONE- info board: put mention of it being wooden/painted
 DONE - reduce bush visuals
