@@ -476,7 +476,7 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ->grove
 
-* {not station_name} [Inspect the building] A comfortable looking old thing, if slightly overgrown. What you first took for a porch you quickly realise is actually a train platform, complete with an information board and benches.
+* {not station_name} [Inspect the building] A comfortable looking old thing, if slightly overgrown. What you first took for a porch you quickly realise is actually a train platform, complete with a wooden information board and benches.
 * {not station_name} [Look around] As you glance around, looking for any signs of civilization that may accompany this strange structure, something in the distance catches your eye; a line that you follow right to your feet. 
 
 - You're standing on railway tracks hidden by leaves and grasses, either end receding into the gloaming. ->station_name
@@ -517,7 +517,7 @@ You pick it up and unfold what looks to be an old fashioned receipt. It's from <
 ==information_board
 #IMAGE: Images/Information Board.png
 
-{A confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns with unfamiliar names and going along a coastline that you can't recognise. <p></p>The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful.| The same board as before with the same information. Confusing, jumbled, and entirely unintelligible. Your head begins to hurt after a while.}
+{A large chalkboard displaying a confusing mess of symbols and lines loop in an odd spiralling pattern, passing through towns with unfamiliar names and going along a coastline that you can't recognise. <p></p>The next train to where you think 'here' is will either arrive in half an hour, tomorrow, or three months from now. Helpful.| The same board as before with the same information. Confusing, jumbled, and entirely unintelligible. Your head begins to hurt after a while.}
 
 {pet and information_board>1: ->board_secret}
 
