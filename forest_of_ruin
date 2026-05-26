@@ -1,5 +1,5 @@
 VAR came_from = ""
-
+VAR has_key = "false"
 You awaken in a forest,
 #AUDIOLOOP: grove.mp3
  * [Look around]
@@ -240,13 +240,12 @@ You rip the crab out of the shell and toss it aside, pocketing the shell. #AUDIO
 ->monastery
 
 ==key
-VAR has_key = false 
 You decide to let the crab be. It shuffles off deeper into the stream, away from prying eyes. Underneath where the crab was you spot an old brass key half buried in the silt.
 # CLASS: img-character
 #IMAGE: Images/Brass Key.png
 
 *[Pick it up]
-~ has_key = true
+~ has_key = "true"
 You pocket the key.
 
 **[Finish crossing the stream]
@@ -1031,7 +1030,7 @@ You explain to her that, for some reason, you don't want to leave.
 *[Watch the train go] #AUDIO: train_passes.mp3
 The train pulls away into the setting sun. Looking out into the darkness of the woods, the station master turns to you.
 
-"Luckily for you, I have a spare room. I have some jobs that you can do while you are with me if you'd like to keep busy."
+"Luckily for you, I have a spare room. I have some jobs that you can do while you are with me if you would like to keep busy."
 {confession>4: Following her gaze, you see the beady eyes of a seagull looking out at you. A shiver runs down your spine. You know it's only a matter of time before you'll have to confront your past.}
 
 **[Accept] #AUDIOLOOP: stay_end.mp3
@@ -1039,12 +1038,21 @@ The train pulls away into the setting sun. Looking out into the darkness of the 
 <p></p>
 -(limple)
 *[Look around]You take a look around the room. There's a small mirror on the far wall. Angling yourself so you don't have to face your own reflection, you observe the room through it. The shadows in the reflected room pool more deeply in its corners.->limple
-*[Lay down on the bed] You lay down on the bed, exhausted by the strangeness of the day. Drifting into sleep, you think of the life you cannot remember and did not return to. More trains will come, whether you take them or not. <p></p> Unsure of your own name, and now your future, you cross into a fitful sleep full of vivid dreams.{
+*[Lay down on the bed] You lay down on the bed, exhausted by the strangeness of the day. {has_key=="true" and not secret_room: Something sharp digs into your thigh.|Drifting into sleep, you think of the life you cannot remember and did not return to. More trains will come, whether you take them or not. <p></p> Unsure of your own name, and now your future, you cross into a fitful sleep full of vivid dreams.} 
+{
 -gun:->king
+-has_key=="true" and not secret_room:->pocket
 -else: 
 #IMAGE: Images/Ending 1.gif 
 ->END
 }
+==pocket
+*[Check your pockets]
+Your hand closes around the small brass key you found under the hermit crab at the bottom of the stream. You wonder what it unlocks. An adventure for tomorrow, perhaps.
+
+Drifting into sleep, you think of the life you cannot remember and did not return to. More trains will come, whether you take them or not. <p></p> Unsure of your own name, and now your future, you cross into a fitful sleep full of vivid dreams.
+#IMAGE: Images/Ending 1.gif 
+->END
 ==king
 #AUDIOLOOP: king_end.mp3
 *[Awaken] #AUDIO: donkey_laugh.mp3
@@ -1074,11 +1082,11 @@ You turn around and wave at the station master, who waves back.
 *[Wake up] #AUDIO 
 {
 - not contractdestroyed: You awaken in a forest. #AUDIOLOOP: grove.mp3
-* [Look around]You are standing in a clearing. The light is filtering through the trees, the sun fighting through to hit your face. 
+* [Look around]You are standing in a clearing. The light is filtering through the trees, the sun fighting through to hit your face. {has_key =="true": A small brass key is clasped tightly in your left hand, but you don't remember how you got it.}
  Two paths lead off from the clearing.  
 #IMAGE: Images/Paths.png 
 ->END
-* [Close your eyes]You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin. 
+* [Close your eyes]You hear faint birdsong and twigs snapping. Branches rustle and you feel the wind gentle on your skin. {has_key =="true": A small brass key is clasped tightly in your left hand, but you don't remember how you got it.}
 #IMAGE: Images/Paths.png 
 ->END
 
