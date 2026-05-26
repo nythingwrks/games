@@ -57,7 +57,7 @@ A nearly circular portal into the deep blue of the sky hangs above you. A cloud 
 
 *[Look around]
 
-- As you wander around this strange empty space you suddenly feel something strange underfoot. At the same time, you notice the curve of something startlingly white peeking out from the undergrowth. You can hear a very faint drumming coming from somewhere. 
+- As you wander around this strange empty space you suddenly feel something strange underfoot. At the same time, you notice the curve of something startlingly white peeking out from the undergrowth. You hear a faint drumming coming from somewhere. 
 
 --(glade_choices) {campfire && prayer_book: You don't think there's anything else here to find, you get the impression that the resting place of the final neophyte has given you all it can. Time to return to the world as it is, not as it was. You spot a trail leading away. | }
 **{skull}[Investigate the death-clutched thing] ->prayer_book
@@ -68,21 +68,21 @@ A nearly circular portal into the deep blue of the sky hangs above you. A cloud 
 
 ->tunnel_lost.ending
 
--- (campfire) Clearing away the thick growth of intertwined grass and meadow flowers - unusually abundant now that you think about it - you find an old stone that smells of old fires long extinguished. 
+-- (campfire) Clearing away the thick growth of intertwined grass and meadow flowers - unusually abundant now that you think about it - you find an old stone that smells of fires long extinguished. 
 You soon find others, in a neat little ring. This must have been a campsite at some point. 
 
 ->glade_choices
 
--- (skull) As you pull the object from the ground, you find that knotted roots tether it to the earth. It's a skull. Sunbleached and picked clean of any flesh by small chittering things. A dandelion is growing out of one of the eye sockets. 
+-- (skull) As you pull the object from the ground, you find that knotted roots tether it to the earth. It's a skull. Sunbleached and picked clean of any flesh by small, chittering things. A dandelion is growing out of one of the eye sockets. 
 You realise that what you had taken for an unremarkable mound is actually an overgrown skeleton, held together by earth and vines. There's something in its hands.
 
 ->glade_choices
 
---(fragment) Searching the area, you find a fine white powder, dotted with glintings of something yellow, an old leather cord, the waxy remains of a number of destroyed candles, and the bone-white shards of what once might have been a small statue. You think you're holding one if its ears. 
+--(fragment) Searching the area, you find a fine white powder dotted with glintings of something yellow, an old leather cord, the waxy remains of a number of destroyed candles, and the bone-white shards of what once might have been a small statue. You think you're holding one of its ears. 
 
 **[continue searching]
 
-Expecting everything worthwhile having long dissolved into ash, surprisingly, you come upon an irregularly-edged scrap of wood{lapinate_chantry: that seems to match the fragments you found in the bricked up courtyard of the monastery}. Carved onto its surface is a phrase that means very litte to you, but at the same time seems to buzz with potential. 
+Expecting everything worthwhile having long dissolved into ash, surprisingly, you come upon an irregularly-edged scrap of wood{lapinate_chantry: that seems to match the fragments you found in the bricked up courtyard of the monastery}. Carved onto its surface is a phrase that means very litte to you, but seems to buzz with potential. 
 
 <i> Fio servus exuberans. Fio Lagomane </i>
 
@@ -90,9 +90,9 @@ You wonder how, or perhaps why, this was saved from the fire.
 
 ->glade_choices
 
---(prayer_book) Releasing it from it's ages-old grasp, you discover what appears to be an old book, bound in a fine vellum inscribed with vines and insects. The title is incomprehensible, as is most of the inside of the book, having been worn away by time and the elements, but you manage to glean that it appears to a some sort of hymnal. 
+--(prayer_book) Prying the skeleton's ages-old grasp loose, you discover what appears to be an old book, bound in a fine vellum inscribed with vines and insects. The title is incomprehensible- as is most of the inside of the book, having been worn away by time and the elements-  but you manage to glean that it is some sort of hymnal. 
 **[Read on]
---- One page in particular stands out to you, being the most legible, though it appears not to be a part of the original text, but written in by someone else.
+--- One page in particular stands out to you. It is more legible than the others, written by a different hand and clearly not a part of the original text.
 
 <i><p>Teeming Lord forgive me. I had heard of the sackings of the other Chantries from Sister Agneta, but I must confess I did not believe them to be true. I thought to escape, to bring you to my favourite hidden place in your embrace, that perhaps I could save your worship. When our Chantry was sacked, when the king's men came, when Lagomane Iusticar was killed, I knew not what to do, so I took your means and ran. <i><p>
 
@@ -447,9 +447,11 @@ You get down onto your haunches and scrabble around in the dirt and grass.
 -(inscription){You find small beads inscribed with spirals, candle stumps, and fragments of wood covered in faded carvings. <i>Something</i> was once worshipped here. |What else?}
 
 *[Inspect the beads] You hold one of the beads up to your eye. They look to be made from bone. They appear slightly ovular in shape and each is tipped with a yellow opal, the colour of which runs through the etched spirals like veins. 
+# CLASS: img-character
 #IMAGE: Images/Lapinate Beads.png
 ->inscription
 *[Smell the candles] They are lightly scented with spring flowers. 
+# CLASS: img-character
 #IMAGE: Images/Lapinate Candles.png
 ->inscription
 *[Gather the wood together]#AUDIO: gather_wood.mp3
@@ -465,7 +467,8 @@ You get down onto your haunches and scrabble around in the dirt and grass.
 
 *[UNEARTH]
 
-A figurine of a Hare, carved in the same material as the beads, with yellow opals for eyes. This is what was making the song. 
+A figurine of a Hare, carved in the same material as the beads, with yellow opals for eyes. This is what was making the song.
+# CLASS: img-character
 #IMAGE: Images/Lapinate Idol.png
 
 -You can <b>smell</b> it, and <b>hear</b> it, and <b>taste</b> it. The song of things <b>growing</b>, of things <b>multiplying</b>, of things <b>becoming greater</b> than they are. The song of <b>creeping overgrowth</b> and <b>glut</b> and <b>rot</b>. It sings to you now of <b>change</b>, an <b>incredible change</b>. One already partly underway. 
@@ -536,7 +539,7 @@ You recite the fragmented prayer you assembled, {step1 && step2 && step 3: each 
 ++[Just start shrieking] A number of birds are shocked into the sky, you're somewhat sure one even begins to glare at you. Other than that nothing happens.->ritual_start
 ++{gun}[<i>'I forsake you, Scorched Wishgiver'</i>] You feel an intense heat in your dominant handand your vision darkens for a moment. While you feel that this was a right thing to say, it wasn't the right thing to say.->ritual_start
 ++{riddle_wrong>4}[<i>'I fucking hate riddles'</i>] You feel a primordial confusion from the presence within you. It's not entirely sure why you've said that.->ritual_start
-++{secret_room}[<i>'The Station Master's dresses are so ugly, I can really understand why she seems to exclusively dress in her uniform.</i>] While you feel the entity you are chanelling agreeing with you, it seems to what something else. ->ritual_start
+++{secret_room}[<i>'The Station Master's dresses are so ugly, I can really understand why she seems to exclusively dress in her uniform.</i>] While you feel the entity you are chanelling agreeing with you, it seems to want something else. ->ritual_start
 ++{secret_glade}['<i>Fio servus exuberans. Fio Lagomane</i>'] 
 {
 - step1 && step2 && step3: ->becoming
