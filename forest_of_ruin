@@ -426,7 +426,7 @@ The slab has a pearlescent mosiac on it, pieces of shell forming an ornate spira
 *{board_secret}[Follow your ears]
 ->lapinate_chantry
 +{lapinate_chantry} [Return to the hidden courtyard]
-->lapinate_chantry
+->lagomane_ritual
 ==secret
 #AUDIO: slab.mp3
 You hear the grinding of stone against stone, and notice a section of ruined wall you don't remember seeing before. Inscribed in it are the words "The Laughing Mule Craves Violence". 
