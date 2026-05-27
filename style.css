@@ -1,10 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700|Quattrocento:700');
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@700&family=Cinzel:wght@700&family=Spectral:wght@300;400&display=swap');
+
+/* ============================================================
+   CUSTOM CURSOR
+   ============================================================ */
+/* Light theme */
+*, *::before, *::after {
+    cursor: url('leaf.png') 30 30, auto;
+}
+
+a, .choice a, button, [role="button"] {
+    cursor: url('leaf.png') 30 30, pointer;
+}
+
+/* Dark theme override */
+.dark *, .dark *::before, .dark *::after {
+    cursor: url('sword.png') 10 10, auto;
+}
+
+.dark a, .dark .choice a, .dark button, .dark [role="button"] {
+    cursor: url('sword.png') 10 10, pointer;
+}
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: lighter;
-    background: #d1e7da;
-    color: #001e03;
+    font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+    font-weight: 300;
+    background: #0d2614;
+    color: #b8c9bb;
     overflow: hidden;
 }
 
@@ -36,8 +57,7 @@ h2 {
 }
 
 .header {
-    padding-top: 3em;
-    padding-bottom: 3em;
+    display: none;
 }
 
 /*
@@ -57,7 +77,7 @@ h2 {
     position: fixed;
     display: block;
     width: 100%;
-    background: #d1e7da;;
+    background: #0d2614;
     margin: 0;
     padding-top: 6px;
     padding-bottom: 6px;
@@ -105,7 +125,7 @@ h2 {
     margin: 0 auto;
     padding: 20px;
     padding-top: 4em;
-    background: transparent;;
+    background: transparent;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -115,29 +135,58 @@ h2 {
 }
 
 p {
-    font-size: 13pt;
-    color: #888;
-    line-height: 1.7em;
-    font-weight: lighter;
+    font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+    font-size: 15pt;
+    color: #b8c9bb;
+    line-height: 1.8em;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 600px) {
+    p {
+        font-size: 13pt;
+        line-height: 1.75em;
+    }
+}
+
+/* ============================================================
+   BOLD / DRAMATIC TEXT  (a) 
+   Uses Cinzel — a dramatic serif that's Google Fonts safe.
+   Fallback chain: Trajan Pro → Palatino → Georgia → serif
+   ============================================================ */
+b, strong {
+    font-family: 'Cinzel', 'Trajan Pro', Palatino, Georgia, serif;
+    font-size: 1.15em;
+    font-weight: 700;
+    color: #d4e8d6;
+    letter-spacing: 0.03em;
+}
+
+/* Override for riddle_recap knot — Spectral bold instead of Cinzel */
+.riddle-recap-section b, .riddle-recap-section strong {
+    font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 0;
 }
 
 a {
     font-weight: 700;
-    color: #001e03;
-    font-family: sans-serif;
+    color: #8ab891;
+    font-family: 'Spectral', Georgia, serif;
     text-decoration: none;
 }
 
 .unclickable {
     font-weight: 700;
-    color: #4f3411;
-    font-family: sans-serif;
+    color: #5a7a5c;
+    font-family: 'Spectral', Georgia, serif;
     text-decoration: none;
     cursor: not-allowed;
 }
 
 a:hover {
-    color: #001e03;
+    color: #c8e0ca;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -150,15 +199,16 @@ a:hover {
     }
 }
 
-strong {
-    color: #001e03;
-    font-weight: bold;
-}
-
 img {
     display: block;
     margin: 0 auto;
     max-width: 100%;
+}
+
+/* Character/item images — roughly half size, responsive */
+img.img-character,
+.img-character img {
+    max-width: 45%;
 }
 
 .container .hide {
@@ -199,7 +249,13 @@ img {
   Class applied to choice links
 */
 .choice a, .choice span {
-    font-size: 15pt;
+    font-size: 17pt;
+}
+
+@media screen and (max-width: 600px) {
+    .choice a, .choice span {
+        font-size: 14pt;
+    }
 }
 
 /* 
@@ -209,7 +265,7 @@ img {
 .end {
     text-align: center;
     font-weight: bold;
-    color: #001e03;
+    color: #b8c9bb;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -223,7 +279,7 @@ img {
     right: 14px;
     top: 4px;
     user-select: none;
-    background: #d1e7da;;
+    background: #0d2614;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -233,7 +289,7 @@ img {
 }
 
 #controls [disabled] {
-    color: #ccc;
+    color: #3a5c3c;
 }
 
 #controls>*:not(:last-child):after {
@@ -251,57 +307,117 @@ img {
 }
 
 /* 
+  Light Theme (default)
+  Pale sage background, dark forest text
+*/
+
+body {
+    background: #b8c9bb;
+    color: #0d2614;
+}
+
+.written-in-ink {
+    background: #b8c9bb;
+}
+
+#controls {
+    background: #b8c9bb;
+}
+
+p {
+    color: #0d2614;
+}
+
+a {
+    color: #5a7a5c;
+}
+
+a:hover {
+    color: #0d2614;
+}
+
+.unclickable {
+    color: #8aaa8c;
+}
+
+b, strong {
+    color: #1a3d1c;
+}
+
+h2 {
+    color: #5a7a5c;
+}
+
+#controls [disabled] {
+    color: #8aaa8c;
+}
+
+.end {
+    color: #0d2614;
+}
+
+/* 
   Dark Theme (Added in Inky 0.10.0)
     # theme: dark
+  Deep forest green palette
 */
 
 body.dark {
-    background: #001e03;
-    color: #d1e7da;
-} 
+    background: #0d2614;
+    color: #b8c9bb;
+}
 
-.dark h2 {
-    color: #666;
+.dark .written-in-ink {
+    background: #0d2614;
+}
+
+.dark #controls {
+    background: #0d2614;
 }
 
 .dark .container {
     background: transparent;
 }
 
-.dark .written-in-ink {
-    background: #001e03;
+.dark p {
+    color: #b8c9bb;
+}
+
+.dark h2 {
+    color: #5a7a5c;
 }
 
 .dark a {
-    color: #d1e7da;
-}
-.dark .unclickable{
-    color: #c4af87;
-    cursor:not-allowed;
+    color: #8ab891;
 }
 
 .dark a:hover {
-    color: #d1e7da;
+    color: #c8e0ca;
+}
+
+.dark .unclickable {
+    color: #5a7a5c;
+    cursor: not-allowed;
+}
+
+.dark b, .dark strong {
+    font-family: 'Cinzel', 'Trajan Pro', Palatino, Georgia, serif;
+    font-size: 1.15em;
+    font-weight: 700;
+    color: #d4e8d6;
+    letter-spacing: 0.03em;
+}
+
+.dark #controls [disabled] {
+    color: #3a5c3c;
+}
+
+.dark .end {
+    color: #b8c9bb;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
     .dark a {
         transition: color 0.6s;
     }
-}
-
-.dark strong {
-    color: #d1e7da;
-}
-
-.dark #controls [disabled] {
-    color: #444;
-}
-
-.dark .end {
-    color: #001e03;
-}
-
-.dark #controls {
-    background: #001e03;
 }
