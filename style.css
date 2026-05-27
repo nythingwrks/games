@@ -208,7 +208,7 @@ img {
 /* Character/item images — roughly half size, responsive */
 img.img-character,
 .img-character img {
-    max-width: 45%;
+    max-width: 65%;
 }
 
 .container .hide {
