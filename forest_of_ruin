@@ -633,11 +633,11 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==station_name
 {#IMAGE: Images/Station House.png | }
-- {station_house:You are standing outside the<b> Station House</b>. The trees rustle all around you. | <p></p> You have found <b>The Station House</b>. <p></p> }{(enter_mon and not secret_tunnel): A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting|}
+- {station_house:You are standing outside the<b> Station House</b>. The trees rustle all around you. | <p></p> You have found <b>The Station House</b>. <p></p> }{(monastery and not secret_tunnel): A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting|}
 ++[Approach the station house] ->station_house
 ++{not board_secret}[Return to the grove] You make your way back to the grove you first found yourself in. ->grove
 ++{board_secret}[Hop back] With a spring in your step, you skip your way back to the grove you first found yourself in. ->grove
-** {(enter_mon>1 and station_house>1) and not secret_tunnel and (came_from == "" or came_from== "riddle_answer")}[Clamber through the conspicuous bush]#AUDIO: bush_rustle.mp3 
+** {(monastery>1 and station_house>1) and not secret_tunnel and (came_from == "" or came_from== "riddle_answer")}[Clamber through the conspicuous bush]#AUDIO: bush_rustle.mp3 
     ->secret_tunnel->monastery.tunnel     
 ++{secret_tunnel}[Take the hidden path to the Monastery] #AUDIO: bush_rustle.mp3
     ->secret_tunnel->monastery.tunnel
