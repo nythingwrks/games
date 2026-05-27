@@ -421,6 +421,7 @@ The slab has a pearlescent mosiac on it, pieces of shell forming an ornate spira
 ==more_explore
 #IMAGE: Images/Stained Glass.png
 {lapinate_chantry: The stained glass window has been completely destroyed. Your shoes crunch on red, green, and black glass. The hidden courtyard beckons to you. | {In a far corner of The Monastery you find the remnants of a stained glass window, still partially intact. As the sparse sunlight illuminates it, you see it depicts three figures in majestic robes. One in green on the left, one in red in the middle, and one in black on the right. The glass is shattered where the first figure's head should have been.| You are back in the corner of The Monastery, looking up at the stained glass window of a line of three imposing figures. The one on the right in green, the next in red and the last in black.}}
+*[Return to the entrance of the Monastery] 
 ->enter_mon
 *{board_secret}[Follow your ears]
 ->lapinate_chantry
@@ -635,13 +636,14 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 ++[Approach the station house] ->station_house
 ++{not board_secret}[Return to the grove] You make your way back to the grove you first found yourself in. ->grove
 ++{board_secret}[Hop back] With a spring in your step, you skip your way back to the grove you first found yourself in. ->grove
-* {(enter_mon>1 and station_house>1) and not secret_tunnel and (came_from == "" or came_from== "riddle_answer")}[Clamber through the conspicuous bush]#AUDIO: bush_rustle.mp3 
+** {(enter_mon>1 and station_house>1) and not secret_tunnel and (came_from == "" or came_from== "riddle_answer")}[Clamber through the conspicuous bush]#AUDIO: bush_rustle.mp3 
     ->secret_tunnel->monastery.tunnel     
-+{secret_tunnel}[Take the hidden path to the Monastery] #AUDIO: bush_rustle.mp3
+++{secret_tunnel}[Take the hidden path to the Monastery] #AUDIO: bush_rustle.mp3
     ->secret_tunnel->monastery.tunnel
 
 ==station_house
 #AUDIOLOOP: station_house.mp3
+{came_from =="donkey_direct": As you leave the waiting room, she shares a word of warning: "Be careful in the woods, the forest has grown wilder over time and it is easy to get turned around in the undergrowth." } 
 {came_from == "riddle_answer": Before you realise what's happening, the stationmaster has ushered you out of the waiting room. }
 -(stationhouse)
 ~came_from ="stationhouse"
@@ -722,7 +724,7 @@ You begin to introduce yourself, but realise your name has slipped right out of 
 ***{gun} [Shoot her] #AUDIO: gunshot.mp3
 ->gun_end_final1
 ***[Correct her] You tell her your name isn't 'Lost', that it's just what you are.
-"Oh, of course. I am sorry."
+"It is an easy thing to be in these parts. Sometimes I am certain I have walked one path, only to find myself at the end of another one. I am sorry for my initial misunderstanding. "
 ****{gun} [Shoot her] #AUDIO: gunshot.mp3
 ->gun_end_final1
 ****[...]
@@ -933,16 +935,18 @@ VAR knows_p = false
 The station master{riddle_wrong<3: pauses to consider this | looks up from her magazine}{knows_t && knows_p && knows_c :... -> the_end | and frowns. "No, that does not feel quite right." She taps her chin and looks back at you. -> riddle_wrong }
 
 ==donkey_direct
+~came_from = "donkey_direct"
 "Of course! Take the time you need. I have been turning it over myself for who knows how long."
 
 She pauses for a moment before adding:
 
 "The nearby monastery has a certain {gun: Ass |equine abbot} in residence that may be able to help you. He is an uncooperative type, but if you are interesting enough to him he may see fit to offer some insight. He is partial to comedy and philosophy, I hear." 
+    ... She must mean the donkey.
 
 **{not enter_mon and not gun} [Equine abbot?]
 -> station_house
 
-**{enter_mon and not gun} [She must mean the donkey.]
+**{enter_mon and not gun} [Leave the waiting room]
 -> station_house
 
 **{gun}[Tell her he's gone]"Ah, that explains the pistol. I suspect you'll come to regret acquiescing to his rather vulgar tastes. Regardless, there may be some useful insight into my tale elsewhere in the Monastery if you still wish to assist me."
@@ -1048,9 +1052,11 @@ The train pulls away into the setting sun. Looking out into the darkness of the 
 }
 ==pocket
 *[Check your pockets]
-Your hand closes around the small brass key you found under the hermit crab at the bottom of the stream. You wonder what it unlocks. An adventure for tomorrow, perhaps.
+Your hand closes around the small brass key you found under the hermit crab at the bottom of the stream. You wonder what it unlocks.
 
-Drifting into sleep, you think of the life you cannot remember and did not return to. More trains will come, whether you take them or not. <p></p> Unsure of your own name, and now your future, you cross into a fitful sleep full of vivid dreams.
+Drifting into sleep, you think of the life you cannot remember and did not return to. More trains will come, whether you take them or not. <p></p> Unsure of your own name, and now your future, you cross into a fitful sleep. 
+
+** [Dream] In your dreams, you are deep in the undergrowth of the forest. You can hardly discern up from down, and the leaves rustle as creaking roots creep closer. You walk on, clasping the key in your hand, every turn pulling you deeper into the darkness. 
 #IMAGE: Images/Ending 1.gif 
 ->END
 ==king
