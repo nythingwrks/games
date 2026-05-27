@@ -256,7 +256,7 @@ You pocket the key.
 -(tunnel)
 #AUDIOLOOP: monastery.mp3
 {#IMAGE: Images/Monastery.png | }
-{monastery>1:{wade and stream>2:Crossing the stream, you|You} continue along to a familiar set of ruins. <p></p>You have returned to <b>The Monastery</b>.<p></p>|Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions.<p></p>You have found <b>The Monastery</b>.<p></p>}{(enter_mon>1 and station_house>1) and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
+{monastery>1:{wade and stream>2:Crossing the stream, you|You} continue along to a familiar set of ruins. <p></p>You have returned to <b>The Monastery</b>.<p></p>|Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions.<p></p>You have found <b>The Monastery</b>.<p></p>}{monastery and station_house and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
 
 +[Enter the Monastery]
 ->enter_mon
@@ -264,15 +264,15 @@ You pocket the key.
 ->grove
 +{board_secret}[Hop back to the grove]
 ->grove
-* {(enter_mon>1 and station_house>1) and not secret_tunnel}[Clamber through the conspicuous bush]#AUDIO: bush_rustle.mp3
+* {(monastery>1 and station_house>1) and not secret_tunnel}[Clamber through the conspicuous bush]#AUDIO: bush_rustle.mp3
     ->secret_tunnel->station_name
 +{secret_tunnel}[Take the hidden path to the Station House]#AUDIO: bush_rustle.mp3
     ->secret_tunnel->station_name
+    
 
 ==enter_mon
 
 {approach_donkey or explore_mon: You are standing in the entryway of The Monastery.{gun: The grass where the donkey had been standing is scorched, and still glows faintly with heat | The old donkey is still happily chewing his grass}.| You carefully cross the moss-covered threshold of The Monastery. The ground beyond is blanketed by a tall yellow grass, the horizon is swallowed up again by thick forest. An old donkey is a few yards off, feeding in the grass contentedly.} 
-{(enter_mon>1 and station_house) and not secret_tunnel: There's a conspicuous bush similar to the one near the station house.| }
 
 +{not gun}[Approach the donkey]{existential_joke: #AUDIOLOOP: donkey_scary.mp3"|#AUDIOLOOP: donkey_theme.mp3}
 ->approach_donkey
