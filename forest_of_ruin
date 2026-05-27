@@ -1,5 +1,6 @@
 VAR came_from = ""
 VAR has_key = "false"
+#IMAGE: Images/ Title Card.png
 You awaken in a forest,
 #AUDIOLOOP: grove.mp3
  * [Look around]
