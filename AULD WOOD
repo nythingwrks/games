@@ -52,7 +52,7 @@ You only took one step into the foliage, but wherever you came from is no longer
 ->->
 
 ==secret_glade
-
+#IMAGE: Images/Glade.png
 You make your way to somewhere familiar, yes, and yet unkown to you at the same time. A natural clearing, smaller than the grove you first found yourself in. 
 A nearly circular portal into the deep blue of the sky hangs above you. A cloud passes briefly over the sun. 
 
@@ -74,12 +74,14 @@ You soon find others, in a neat little ring. This must have been a campsite at s
 
 ->glade_choices
 
--- (skull) As you pull the object from the ground, you find that knotted roots tether it to the earth. It's a skull. Sunbleached and picked clean of any flesh by small, chittering things. A dandelion is growing out of one of the eye sockets. 
+-- (skull) #IMAGE: Images/Skull.png
+As you pull the object from the ground, you find that knotted roots tether it to the earth. It's a skull. Sunbleached and picked clean of any flesh by small, chittering things. A dandelion is growing out of one of the eye sockets. 
 You realise that what you had taken for an unremarkable mound is actually an overgrown skeleton, held together by earth and vines. There's something in its hands.
 
 ->glade_choices
 
---(fragment) Searching the area, you find a fine white powder dotted with glintings of something yellow, an old leather cord, the waxy remains of a number of destroyed candles, and the bone-white shards of what once might have been a small statue. You think you're holding one of its ears. 
+--(fragment) #IMAGE: Images/Broken Idol.png
+Searching the area, you find a fine white powder dotted with glintings of something yellow, an old leather cord, the waxy remains of a number of destroyed candles, and the bone-white shards of what once might have been a small statue. You think you're holding one of its ears. 
 
 **[continue searching]
 
@@ -257,7 +259,7 @@ You pocket the key.
 -(tunnel)
 #AUDIOLOOP: monastery.mp3
 {#IMAGE: Images/Monastery.png | }
-{monastery>1:{wade and stream>2:Crossing the stream, you|You} continue along to a familiar set of ruins. <p></p>You have returned to <b>The Monastery</b>.<p></p>|Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions.<p></p>You have found <b>The Monastery</b>.<p></p>}{monastery and station_house and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
+{monastery>1:{wade and stream>2:Crossing the stream, you|You} continue along to a familiar set of ruins. <p></p>You have returned to <b>The Monastery</b>.<p></p>|Beyond the stream, the path leads to a set of ruins. Your gaze settles on a crumbled set of arches, and several stone slabs with detailed carvings long eroded into vague impressions.<p></p>You have found <b>The Monastery</b>.<p></p>}{monastery>1 and station_house>1 and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting}
 
 +[Enter the Monastery]
 ->enter_mon
@@ -641,11 +643,11 @@ You attempt to pet the rabbit. It swiftly bites you on the hand and lopes back i
 
 ==station_name
 {#IMAGE: Images/Station House.png | }
-- {station_house:You are standing outside the<b> Station House</b>. The trees rustle all around you. | <p></p> You have found <b>The Station House</b>. <p></p> }{(monastery and not secret_tunnel): A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting|}
+- {station_house:You are standing outside the<b> Station House</b>. The trees rustle all around you. | <p></p> You have found <b>The Station House</b>. <p></p> }{station_house>1 and monastery>1 and not secret_tunnel: A tall bush stands out to you. You're not entirely sure why. It seems somehow... inviting|}
 ++[Approach the station house] ->station_house
 ++{not board_secret}[Return to the grove] You make your way back to the grove you first found yourself in. ->grove
 ++{board_secret}[Hop back] With a spring in your step, you skip your way back to the grove you first found yourself in. ->grove
-** {(monastery>1 and station_house>1) and not secret_tunnel and (came_from == "" or came_from== "riddle_answer")}[Clamber through the conspicuous bush]#AUDIO: bush_rustle.mp3 
+** {(monastery>1 and station_house>1) and not secret_tunnel}[Clamber through the conspicuous bush]#AUDIO: bush_rustle.mp3 
     ->secret_tunnel->monastery.tunnel     
 ++{secret_tunnel}[Take the hidden path to the Monastery] #AUDIO: bush_rustle.mp3
     ->secret_tunnel->monastery.tunnel
