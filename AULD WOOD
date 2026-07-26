@@ -53,11 +53,12 @@ You only took one step into the foliage, but wherever you came from is no longer
 
 ==secret_glade
 #IMAGE: Images/Glade.png
+
 You make your way to somewhere familiar, yes, and yet unkown to you at the same time. A natural clearing, smaller than the grove you first found yourself in. 
 A nearly circular portal into the deep blue of the sky hangs above you. A cloud passes briefly over the sun. 
 
 *[Look around]
-
+#AUDIOLOOP: secret_glade.mp3
 - As you wander around this strange empty space you suddenly feel something strange underfoot. At the same time, you notice the curve of something startlingly white peeking out from the undergrowth. You hear a faint drumming coming from somewhere. 
 
 --(glade_choices) {campfire && prayer_book: You don't think there's anything else here to find, you get the impression that the resting place of the final neophyte has given you all it can. Time to return to the world as it is, not as it was. You spot a trail leading away. | }
