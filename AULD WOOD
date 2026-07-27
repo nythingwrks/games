@@ -484,6 +484,9 @@ Now you must complete the ritual - but how? ->lagomane_ritual
 VAR step1 = false
 VAR step2 = false
 VAR step3 = false
+VAR candle = true
+VAR bead = true
+VAR idol = true
 VAR finalwords = false
 VAR idolbroke = false
 
@@ -493,6 +496,9 @@ VAR idolbroke = false
 ~step2 = false
 ~step3 = false
 ~finalwords = false
+~candle = true
+~bead = true
+~idol = true
 
 +[Attempt the ritual] ->step_1
 +[Leave the courtyard] ->more_explore
@@ -500,40 +506,46 @@ VAR idolbroke = false
 -(step_1)
 +Firstly[...]
 ++ The beads[...]
+~bead = false
 +++ Around my neck ->step_2
 +++ Bind my wrists 
 ~ step1 = true
 ->step_2
 ++ The candles[...]
+~candle = false
 +++ Around me, lit ->step_2
 +++ Around me, unlit ->step_2
 ++The Idol [...]
+~idol = false
 +++ On the ground, facing the sky ->step_2
 +++ In my hands, facing me ->step_2
 
 -(step_2)
 +Secondly[...]
-++The beads[...]
+++{bead}The beads[...]
+~bead = false
 +++ Around my neck ->step_3
 +++ Bind my wrists ->step_3
-++ The candles[...]
+++{candle}The candles[...]
+~candle = false
 +++ Around me, lit ->step_3
 +++ Around me, unlit 
 ~ step2 = true
 ->step_3
-++The Idol [...]
+++{idol}The Idol [...]
+~idol = false
 +++ On the ground, facing the sky ->step_3
 +++ In my hands, facing me ->step_3
 
 -(step_3)
 +Finally[...]
-++The beads[...]
+++{bead}The beads[...]
 +++ Around my neck ->final_words
 +++ Bind my wrists ->final_words
-++ The candles[...]
+++{candle}The candles[...]
 +++ Around me, lit ->final_words
 +++ Around me, unlit ->final_words
-++The Idol [...]
+++{idol}The Idol [...]
 +++ On the ground, facing the sky ->final_words
 +++ In my hands, facing me 
 ~ step3 = true
@@ -541,7 +553,7 @@ VAR idolbroke = false
 
 -(final_words)
 +[Recite the words]
-You recite the fragmented prayer you assembled, {step1 && step2 && step 3: each word raising the crescendo of the song within you, until you finally feel yourself at a precipice. | feeling a little unsure if anything that you're doing is correct.} You have run out of words on the unearthed hymn{secret_glade:, but have yet to utter the ones you found in the glade}. What do you say to complete your {secret_glade: Becoming | transformation}?
+You recite the fragmented prayer you assembled, {step1 && step2 && step3: each word raising the crescendo of the song within you, until you finally feel yourself at a precipice. | feeling a little unsure if anything that you're doing is correct.} You have run out of words on the unearthed hymn{secret_glade:, but have yet to utter the ones you found in the glade}. What do you say to complete your {secret_glade: Becoming | transformation}?
 ++[<i>'Uhh... Flopsy topsy make me mopsy'</i>] The powerful rush wanes until all you feel is a slight embarassment. Better try again. ->ritual_start
 ++[<i>'I let you in!'</i>] The powerful feeling begins to seep out of you, though you can still hear the music calling.->ritual_start
 ++[<i>'Nicole Kidman'</i>] The presence inside you shudders at the invoking of an elder deity. You yourself aren't entirely sure why you did it. She moves in mysterious ways. Better try again. ->ritual_start
